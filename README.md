@@ -220,6 +220,38 @@ cd frontend && npm run dev
 
 ---
 
+## 🌐 Production Cloud Deployment
+
+The application is fully prepared for zero-configuration production cloud deployments:
+
+### 1. Frontend (Vercel)
+The Next.js frontend has been compiled and is deployed live on Vercel:
+- **Live Frontend URL**: [https://frontend-five-self-57.vercel.app](https://frontend-five-self-57.vercel.app)
+- Framework configuration is set up in [vercel.json](file:///c:/Users/shubh/Desktop/hackathon/frontend/vercel.json).
+
+### 2. Backend (Render Blueprint)
+The FastAPI backend has been containerized and configured for one-click deployment to Render using the Blueprint specification.
+- **Blueprint Config**: [render.yaml](file:///c:/Users/shubh/Desktop/hackathon/render.yaml)
+- **Container Config**: [Dockerfile](file:///c:/Users/shubh/Desktop/hackathon/Dockerfile) and [.dockerignore](file:///c:/Users/shubh/Desktop/hackathon/.dockerignore)
+
+#### How to Deploy Backend on Render:
+1. Log in to your Render dashboard.
+2. Click **New +** at the top right and select **Blueprint**.
+3. Link your GitHub repository `shubha9696/maintenance-wizard`.
+4. Render will read the `render.yaml` specification and create a new Web Service automatically.
+5. In the configuration prompt:
+   - Provide your `GEMINI_API_KEY` and `GROQ_API_KEY`.
+   - Set the `CHROMA_DB_PATH` to `./chroma_db`.
+6. Click **Deploy** to build and launch the backend.
+
+#### Linking Frontend & Backend:
+Once your Render backend is deployed and you have its live URL (e.g., `https://maintenance-wizard-backend.onrender.com`), configure it in your Vercel project:
+1. Go to your **Vercel Project Settings** → **Environment Variables**.
+2. Add a new variable: `NEXT_PUBLIC_API_URL` with your Render backend URL as the value.
+3. Redeploy your project. The Vercel app will dynamically routing all agentic requests, diagnostics, and reports to your cloud backend!
+
+---
+
 ## 💡 Sample Input/Output
 
 ### Input 1: Diagnostic Query
