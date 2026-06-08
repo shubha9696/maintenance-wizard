@@ -19,6 +19,18 @@ async def lifespan(app: FastAPI):
     """Initialize services on startup."""
     print("Initializing Maintenance Wizard...")
 
+    # Check and generate synthetic data if missing
+    eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
+    if not os.path.exists(eq_path):
+        print("  Generated data not found. Running synthetic data generator...")
+        try:
+            os.makedirs(settings.DATA_DIR, exist_ok=True)
+            from backend.data.generate_synthetic_data import main as generate_data
+            generate_data()
+            print("  Synthetic data generated.")
+        except Exception as e:
+            print(f"  Warning: Synthetic data generation failed: {e}")
+
     # Initialize vector store (ingest knowledge base)
     print("  Loading knowledge base into vector store...")
     try:
