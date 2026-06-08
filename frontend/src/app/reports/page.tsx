@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ReactMarkdown from 'react-markdown';
 import { Printer, FileText, BarChart2, Bell, ShieldAlert, Sparkles, Download, ChevronDown } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 interface Report {
   id: string;
@@ -30,7 +31,7 @@ export default function ReportsPage() {
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/reports')
+    fetch(`${API_BASE}/api/reports`)
       .then(r => r.json())
       .then(d => setReports(d.reports || []))
       .catch(() => {});
@@ -43,7 +44,7 @@ export default function ReportsPage() {
       if (type === 'equipment_health' && equipmentId) {
         body.equipment_id = equipmentId;
       }
-      const res = await fetch('http://localhost:8000/api/reports/generate', {
+      const res = await fetch(`${API_BASE}/api/reports/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),

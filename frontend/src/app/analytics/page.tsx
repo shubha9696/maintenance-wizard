@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
+import { API_BASE } from '@/lib/api';
 import {
   TrendingUp, TrendingDown, AlertTriangle, Shield, Activity,
   BarChart3, PieChart, ArrowDownRight, ArrowUpRight, Minus,
@@ -38,7 +39,7 @@ export default function AnalyticsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/equipment/analytics')
+    fetch(`${API_BASE}/api/equipment/analytics`)
       .then(r => r.json())
       .then(d => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));

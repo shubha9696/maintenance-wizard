@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ReactMarkdown from 'react-markdown';
 import { Bot, Send, Trash2, Activity, Terminal, X } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -115,7 +116,7 @@ export default function ChatPage() {
     }, 1200);
 
     try {
-      const res = await fetch('http://localhost:8000/api/chat', {
+      const res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -181,7 +182,7 @@ export default function ChatPage() {
   const handleFeedback = async (index: number, type: 'thumbs_up' | 'thumbs_down') => {
     if (!sessionId) return;
     try {
-      await fetch('http://localhost:8000/api/feedback', {
+      await fetch(`${API_BASE}/api/feedback`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

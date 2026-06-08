@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import Link from 'next/link';
+import { API_BASE } from '@/lib/api';
 
 interface Alert {
   id: string;
@@ -33,7 +34,7 @@ export default function AlertsPage() {
   const [severityFilter, setSeverityFilter] = useState('all');
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/alerts/summary')
+    fetch(`${API_BASE}/api/alerts/summary`)
       .then(r => r.json())
       .then(d => { setSummary(d); setLoading(false); })
       .catch(() => setLoading(false));

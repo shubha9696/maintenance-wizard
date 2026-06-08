@@ -17,10 +17,10 @@ import {
   ShieldAlert, 
   Wrench,
   AlertOctagon,
-  ArrowRight,
-  TrendingDown,
   X
 } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
+
 
 interface Equipment {
   id: string;
@@ -83,8 +83,8 @@ export default function InventoryPage() {
     const fetchData = async () => {
       try {
         const [eqRes, partsRes] = await Promise.all([
-          fetch('http://localhost:8000/api/equipment'),
-          fetch('http://localhost:8000/api/equipment/spare-parts/all')
+          fetch(`${API_BASE}/api/equipment`),
+          fetch(`${API_BASE}/api/equipment/spare-parts/all`)
         ]);
         
         const eqData = await eqRes.json();

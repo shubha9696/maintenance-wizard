@@ -6,6 +6,7 @@ import Sidebar from '@/components/Sidebar';
 import Link from 'next/link';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Play, Square, Flame, Zap, Activity, ShieldAlert, ArrowLeft, Heart, Calendar, Clock } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 interface EquipmentDetail {
   id: string;
@@ -102,8 +103,8 @@ export default function EquipmentDetailPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch(`http://localhost:8000/api/equipment/${equipmentId}`).then(r => r.json()),
-      fetch(`http://localhost:8000/api/equipment/${equipmentId}/health`).then(r => r.json()),
+      fetch(`${API_BASE}/api/equipment/${equipmentId}`).then(r => r.json()),
+      fetch(`${API_BASE}/api/equipment/${equipmentId}/health`).then(r => r.json()),
     ])
       .then(([eq, h]) => {
         setEquipment(eq);
@@ -158,7 +159,7 @@ export default function EquipmentDetailPage() {
         };
 
         // Query FastAPI backend for immediate telemetry check
-        fetch(`http://localhost:8000/api/equipment/${equipmentId}/analyze`, {
+        fetch(`${API_BASE}/api/equipment/${equipmentId}/analyze`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

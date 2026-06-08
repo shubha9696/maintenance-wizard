@@ -6,6 +6,8 @@ import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
 import { Cpu, CheckCircle2, AlertTriangle, AlertCircle, TrendingUp, Activity, ArrowRight, Zap, Shield } from 'lucide-react';
 
+import { API_BASE } from '@/lib/api';
+
 interface DashboardData {
   total_equipment: number;
   healthy_count: number;
@@ -62,8 +64,8 @@ export default function DashboardPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:8000/api/equipment/dashboard').then(r => r.json()),
-      fetch('http://localhost:8000/api/equipment').then(r => r.json()),
+      fetch(`${API_BASE}/api/equipment/dashboard`).then(r => r.json()),
+      fetch(`${API_BASE}/api/equipment`).then(r => r.json()),
     ])
       .then(([dash, eq]) => {
         setDashboard(dash);

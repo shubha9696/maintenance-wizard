@@ -1,0 +1,11 @@
+node_modules
+.next
+frontend
+.git
+.venv
+__pycache__
+*.zip
+.vercel
+.gemini
+venv
+*.pyc

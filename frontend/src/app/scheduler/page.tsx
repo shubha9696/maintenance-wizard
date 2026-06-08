@@ -5,6 +5,7 @@ import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
 import { Calendar, User, Wrench, ShieldCheck, Clock, CheckCircle, AlertTriangle } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 interface Equipment {
   id: string;
@@ -40,7 +41,7 @@ export default function SchedulerPage() {
   const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/equipment')
+    fetch(`${API_BASE}/api/equipment`)
       .then(r => r.json())
       .then(d => {
         const list = d.equipment || [];

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, Bot, Wrench, Bell, FileText, Activity, AlertTriangle, FileSpreadsheet, Calendar, Package, Cpu, TrendingUp, Award, Database } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -12,7 +13,7 @@ export default function Sidebar() {
   const [uptime, setUptime] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/alerts/summary')
+    fetch(`${API_BASE}/api/alerts/summary`)
       .then(r => r.json())
       .then(d => setAlertCount(d.critical + d.high))
       .catch(() => {});

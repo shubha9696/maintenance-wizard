@@ -5,6 +5,7 @@ import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
 import { Search, SlidersHorizontal, Cpu, ShieldAlert } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 interface Equipment {
   id: string;
@@ -25,7 +26,7 @@ export default function EquipmentPage() {
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/equipment')
+    fetch(`${API_BASE}/api/equipment`)
       .then(r => r.json())
       .then(d => { setEquipment(d.equipment || []); setLoading(false); })
       .catch(() => setLoading(false));
