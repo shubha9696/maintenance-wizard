@@ -13,7 +13,6 @@ RUN pip install --no-cache-dir -r backend/requirements.txt
 
 # Copy the rest of the application code
 COPY backend/ ./backend
-COPY chroma_db/ ./chroma_db
 
 # Expose the port
 EXPOSE 8000
