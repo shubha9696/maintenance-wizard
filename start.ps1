@@ -28,7 +28,7 @@ Start-Sleep -Seconds 3
 # Start Frontend
 Write-Host "[3/3] Starting Next.js frontend on http://localhost:3000 ..." -ForegroundColor Yellow
 Push-Location frontend
-$frontend = Start-Process -FilePath "npm" -ArgumentList "run", "dev" -PassThru -NoNewWindow
+$frontend = Start-Process -FilePath "npm.cmd" -ArgumentList "run", "dev" -PassThru -NoNewWindow
 Pop-Location
 
 Write-Host ""
