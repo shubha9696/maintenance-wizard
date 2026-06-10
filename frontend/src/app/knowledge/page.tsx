@@ -265,7 +265,7 @@ export default function KnowledgeCenterPage() {
                 <input
                   type="file"
                   id="doc-upload"
-                  accept=".pdf,.doc,.docx,.txt,.md,.json"
+                  accept=".pdf,.doc,.docx,.txt,.md,.json,.csv"
                   onChange={handleFileChange}
                   disabled={ingesting}
                   style={{ position: 'absolute', inset: 0, opacity: 0, cursor: 'pointer' }}
@@ -278,7 +278,7 @@ export default function KnowledgeCenterPage() {
                     {ingesting ? 'Analyzing document...' : 'Drag & Drop document or click to browse'}
                   </p>
                   <p style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '4px' }}>
-                    Supports PDF, DOCX, TXT, MD, JSON
+                    Supports PDF, DOCX, TXT, MD, JSON, CSV
                   </p>
                 </div>
               </div>

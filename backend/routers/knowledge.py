@@ -85,8 +85,30 @@ async def upload_document(
             json_data = json.loads(file_bytes.decode("utf-8", errors="ignore"))
             content = json.dumps(json_data, indent=2)
             
+        # Parse CSV
+        elif filename.endswith(".csv"):
+            import csv
+            import io
+            file_bytes = await file.read()
+            csv_text = file_bytes.decode("utf-8", errors="ignore")
+            f_io = io.StringIO(csv_text.strip())
+            reader = csv.reader(f_io)
+            rows = list(reader)
+            if not rows:
+                raise ValueError("CSV file is empty.")
+            
+            header = rows[0]
+            structured_lines = []
+            for r_idx, row in enumerate(rows[1:]):
+                line_parts = []
+                for col_idx, val in enumerate(row):
+                    col_name = header[col_idx] if col_idx < len(header) else f"Column{col_idx+1}"
+                    line_parts.append(f"{col_name}: {val}")
+                structured_lines.append(f"Row {r_idx+1}: {', '.join(line_parts)}")
+            content = f"CSV DATA FROM {filename}:\n" + "\n".join(structured_lines)
+            
         else:
-            raise ValueError("Unsupported file format. Please upload PDF, TXT, MD, or JSON files.")
+            raise ValueError("Unsupported file format. Please upload PDF, TXT, MD, JSON, or CSV files.")
 
         if not content.strip():
             raise ValueError("Uploaded file is empty.")

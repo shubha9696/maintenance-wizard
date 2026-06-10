@@ -413,15 +413,69 @@ class VectorStoreService:
                 return [[0.0] * 3072]
             return self.embed_fn([query])
 
+    def keyword_search_fallback(self, query: str, collection_name: str, n_results: int = 5, equipment_id: str = None, equipment_type: str = None):
+        """Perform simple keyword fallback matching over a ChromaDB collection when embeddings are rate-limited."""
+        try:
+            collection = self._get_collection(collection_name)
+            # Fetch all documents in the collection
+            where_filter = {}
+            if equipment_id and collection_name in ["maintenance_logs", "failure_reports"]:
+                where_filter = {"equipment_id": equipment_id}
+            elif equipment_type and collection_name == "failure_modes":
+                where_filter = {"equipment_type": equipment_type}
+                
+            results = collection.get(where=where_filter if where_filter else None, include=["documents", "metadatas"])
+            if not results or not results.get("documents"):
+                return []
+                
+            query_words = [w.lower() for w in query.split() if len(w) > 2]
+            scored_docs = []
+            
+            for idx, doc in enumerate(results["documents"]):
+                doc_lower = doc.lower()
+                # Score based on how many query words are present
+                score = sum(1 for w in query_words if w in doc_lower)
+                
+                # Bonus if exact phrases are present
+                if query.lower() in doc_lower:
+                    score += 5
+                    
+                if score > 0:
+                    meta = results["metadatas"][idx] if results.get("metadatas") else {}
+                    max_words = max(len(query_words), 1)
+                    distance = max(0.1, min(0.9, 1.0 - (score / (max_words + 5.0))))
+                    scored_docs.append({
+                        "content": doc,
+                        "metadata": meta,
+                        "distance": distance,
+                        "relevance_score": round(1.0 - distance, 3)
+                    })
+            
+            scored_docs.sort(key=lambda x: x["distance"])
+            return scored_docs[:n_results]
+        except Exception as e:
+            print(f"Error in keyword search fallback for {collection_name}: {e}")
+            return []
+
     def search_all(self, query: str, n_results: int = 3, equipment_id: str = None):
-        """Search across all collections and merge results using a single query embedding."""
+        """Search across all collections and merge results using a single query embedding or keyword fallback."""
         query_embeddings = self.embed_query(query)
         
+        # Check if we got a zero vector fallback
+        is_zero_vector = (query_embeddings == [[0.0] * 3072])
+        
         all_results = []
-        all_results.extend(self.search_knowledge(n_results=n_results, query_embeddings=query_embeddings))
-        all_results.extend(self.search_maintenance_history(n_results=n_results, equipment_id=equipment_id, query_embeddings=query_embeddings))
-        all_results.extend(self.search_failure_reports(n_results=n_results, equipment_id=equipment_id, query_embeddings=query_embeddings))
-        all_results.extend(self.search_failure_modes(n_results=n_results, query_embeddings=query_embeddings))
+        if is_zero_vector:
+            print("Embedding function rate-limited or zero-vector fallback detected. Using keyword search fallback.")
+            all_results.extend(self.keyword_search_fallback(query, "knowledge_docs", n_results=n_results))
+            all_results.extend(self.keyword_search_fallback(query, "maintenance_logs", n_results=n_results, equipment_id=equipment_id))
+            all_results.extend(self.keyword_search_fallback(query, "failure_reports", n_results=n_results, equipment_id=equipment_id))
+            all_results.extend(self.keyword_search_fallback(query, "failure_modes", n_results=n_results))
+        else:
+            all_results.extend(self.search_knowledge(n_results=n_results, query_embeddings=query_embeddings))
+            all_results.extend(self.search_maintenance_history(n_results=n_results, equipment_id=equipment_id, query_embeddings=query_embeddings))
+            all_results.extend(self.search_failure_reports(n_results=n_results, equipment_id=equipment_id, query_embeddings=query_embeddings))
+            all_results.extend(self.search_failure_modes(n_results=n_results, query_embeddings=query_embeddings))
 
         # Sort by relevance (distance — lower is better)
         all_results.sort(key=lambda x: x.get("distance", 1.0))
