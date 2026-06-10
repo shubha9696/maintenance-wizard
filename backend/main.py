@@ -11,7 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.config import settings
 from backend.services.vector_store import vector_store
 from backend.services.anomaly_detector import anomaly_detector
-from backend.routers import chat, equipment, alerts, reports, feedback
+from backend.routers import chat, equipment, alerts, reports, feedback, knowledge
 
 
 @asynccontextmanager
@@ -81,6 +81,7 @@ app.include_router(equipment.router)
 app.include_router(alerts.router)
 app.include_router(reports.router)
 app.include_router(feedback.router)
+app.include_router(knowledge.router)
 
 
 @app.get("/")

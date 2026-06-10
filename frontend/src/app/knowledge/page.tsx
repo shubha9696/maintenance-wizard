@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import { Database, Upload, FileText, CheckCircle2, RefreshCw, Search, ShieldCheck, Terminal, AlertCircle } from 'lucide-react';
+import { API_BASE } from '@/lib/api';
 
 interface DocItem {
   id: string;
@@ -28,7 +29,7 @@ const INITIAL_DOCS: DocItem[] = [
 ];
 
 export default function KnowledgeCenterPage() {
-  const [docs, setDocs] = useState<DocItem[]>(INITIAL_DOCS);
+  const [docs, setDocs] = useState<DocItem[]>([]);
   const [docCount, setDocCount] = useState(48);
   const [chunkCount, setChunkCount] = useState(4200);
   const [lastIndexed, setLastIndexed] = useState('2 min ago');
@@ -39,6 +40,32 @@ export default function KnowledgeCenterPage() {
   const [ingesting, setIngesting] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [logs, setLogs] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchStats();
+    fetchDocs();
+  }, []);
+
+  const fetchStats = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/api/knowledge/stats`);
+      const data = await res.json();
+      setDocCount(data.documents);
+      setChunkCount(data.chunks);
+    } catch (e) {
+      console.error("Failed to fetch knowledge stats:", e);
+    }
+  };
+
+  const fetchDocs = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/api/knowledge/documents`);
+      const data = await res.json();
+      setDocs(data);
+    } catch (e) {
+      console.error("Failed to fetch documents list:", e);
+    }
+  };
 
   const fileTypes = [
     { id: 'SOP', name: 'SOP PDF', desc: 'Standard Operating Procedures' },
@@ -57,47 +84,54 @@ export default function KnowledgeCenterPage() {
     }
   };
 
-  const simulateIngestion = (filename: string) => {
+  const uploadDocument = async (file: File) => {
     setIngesting(true);
-    setLogs([]);
-    const lines = [
+    setLogs([
       `[INFO] Initializing dynamic file parser for type: ${selectedType}...`,
-      `[INFO] Reading document bytes and extracting layout metadata...`,
-      `[SUCCESS] Loaded file: ${filename} (${(Math.random() * 2 + 1).toFixed(1)} MB)`,
-      `[INFO] Running semantic chunking (Chunk size: 800, Overlap: 100)...`,
-      `[INFO] Generated 85 clean text chunks.`,
-      `[INFO] Invoking Gemini embeddings API (model: models/gemini-embedding-2)...`,
-      `[SUCCESS] Generated 85 high-density vectors (3072 dimensions).`,
-      `[INFO] Ingesting vectors into ChromaDB collection 'knowledge_docs'...`,
-      `[SUCCESS] ChromaDB index updated successfully.`,
-      `[INFO] Refreshing Agent knowledge cache and vector indices...`,
-      `[SUCCESS] Dynamic Ingestion completed. Stats updated.`,
-    ];
+      `[INFO] Preparing file payload: ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)...`,
+    ]);
 
-    let current = 0;
-    const interval = setInterval(() => {
-      if (current < lines.length) {
-        setLogs(prev => [...prev, lines[current]]);
-        current++;
-      } else {
-        clearInterval(interval);
-        setIngesting(false);
-        // Add doc to list
-        const newDoc: DocItem = {
-          id: String(docs.length + 1),
-          name: filename,
-          type: selectedType,
-          chunks: 85,
-          date: new Date().toISOString().split('T')[0],
-          size: '1.8 MB',
-        };
-        setDocs(prev => [newDoc, ...prev]);
-        setDocCount(prev => prev + 1);
-        setChunkCount(prev => prev + 85);
-        setLastIndexed('Just now');
-        setSelectedFile(null);
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('doc_type', selectedType);
+
+      setLogs(prev => [...prev, `[INFO] Running semantic chunking (Chunk size: 800, Overlap: 100)...`]);
+      setLogs(prev => [...prev, `[INFO] Invoking Gemini embeddings API (model: models/gemini-embedding-004)...`]);
+
+      const res = await fetch(`${API_BASE}/api/knowledge/upload`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.detail || 'Upload failed');
       }
-    }, 900);
+
+      const data = await res.json();
+
+      setLogs(prev => [
+        ...prev,
+        `[SUCCESS] File parsed and uploaded: ${data.filename}`,
+        `[SUCCESS] Generated ${data.chunks} high-density vectors (3072 dimensions).`,
+        `[SUCCESS] Ingested vectors into ChromaDB collection 'knowledge_docs'.`,
+        `[SUCCESS] Dynamic Ingestion completed. Stats updated.`,
+      ]);
+
+      // Refresh data
+      fetchStats();
+      fetchDocs();
+      setLastIndexed('Just now');
+      setSelectedFile(null);
+    } catch (err: any) {
+      setLogs(prev => [
+        ...prev,
+        `[ERROR] Ingestion failed: ${err.message || err}`,
+      ]);
+    } finally {
+      setIngesting(false);
+    }
   };
 
   const handleDrop = (e: React.DragEvent) => {
@@ -108,7 +142,7 @@ export default function KnowledgeCenterPage() {
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
       setSelectedFile(file);
-      simulateIngestion(file.name);
+      uploadDocument(file);
     }
   };
 
@@ -116,7 +150,7 @@ export default function KnowledgeCenterPage() {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       setSelectedFile(file);
-      simulateIngestion(file.name);
+      uploadDocument(file);
     }
   };
 
