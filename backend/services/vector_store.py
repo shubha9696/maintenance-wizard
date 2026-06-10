@@ -428,22 +428,40 @@ class VectorStoreService:
             if not results or not results.get("documents"):
                 return []
                 
-            query_words = [w.lower() for w in query.split() if len(w) > 2]
+            stop_words = {"what", "who", "whom", "how", "why", "where", "when", "which", "this", "that", "these", "those", "the", "and", "but", "for", "are", "was", "were", "been", "have", "has", "had", "does", "did", "from", "with", "about", "into", "through", "after", "before", "under", "over", "same", "some", "such", "than", "then", "very", "your", "them", "their", "is", "in", "it", "on", "at", "of", "to", "by"}
+            query_words = [w.lower() for w in query.replace("?", "").replace(".", "").split() if len(w) > 2 and w.lower() not in stop_words]
+            if not query_words:
+                query_words = [w.lower() for w in query.split() if len(w) > 2]
+                
+            words = [w.lower() for w in query.replace("?", "").replace(".", "").split()]
+            phrases_2 = [" ".join(words[i:i+2]) for i in range(len(words)-1)]
+            phrases_3 = [" ".join(words[i:i+3]) for i in range(len(words)-2)]
+            
+            phrases_2 = [p for p in phrases_2 if len(p.split()) == 2 and not all(w in stop_words for w in p.split())]
+            phrases_3 = [p for p in phrases_3 if len(p.split()) == 3 and not all(w in stop_words for w in p.split())]
+            
             scored_docs = []
             
             for idx, doc in enumerate(results["documents"]):
                 doc_lower = doc.lower()
-                # Score based on how many query words are present
-                score = sum(1 for w in query_words if w in doc_lower)
+                # Score based on word presence
+                score = sum(2 for w in query_words if w in doc_lower)
                 
-                # Bonus if exact phrases are present
+                # Bonus for matching phrases
+                for p in phrases_2:
+                    if p in doc_lower:
+                        score += 3
+                for p in phrases_3:
+                    if p in doc_lower:
+                        score += 5
+                
                 if query.lower() in doc_lower:
-                    score += 5
+                    score += 10
                     
                 if score > 0:
                     meta = results["metadatas"][idx] if results.get("metadatas") else {}
-                    max_words = max(len(query_words), 1)
-                    distance = max(0.1, min(0.9, 1.0 - (score / (max_words + 5.0))))
+                    max_possible = len(query_words) * 2.0 + len(phrases_2) * 3.0 + len(phrases_3) * 5.0 + 10.0
+                    distance = max(0.1, min(0.9, 1.0 - (score / max_possible)))
                     scored_docs.append({
                         "content": doc,
                         "metadata": meta,
