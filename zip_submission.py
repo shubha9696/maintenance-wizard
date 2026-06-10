@@ -35,12 +35,17 @@ def zip_project(output_filename="submission.zip"):
             for file in files:
                 if file in exclude_files or file.startswith('.'):
                     continue
+                if file == "Maintenance_Wizard_Project_Report.pdf":
+                    continue
                 
                 full_path = os.path.join(root, file)
                 # Compute relative path for zip archive
                 rel_path = os.path.relpath(full_path, root_dir)
                 
-                zipf.write(full_path, rel_path)
+                if file == "Maintenance_Wizard_Project_Report_v2.pdf":
+                    zipf.write(full_path, "Maintenance_Wizard_Project_Report.pdf")
+                else:
+                    zipf.write(full_path, rel_path)
                 count += 1
 
     print(f"Successfully created {output_filename} containing {count} files.")
