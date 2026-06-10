@@ -18,8 +18,29 @@ class KnowledgeAgent:
     async def search_and_synthesize(self, query: str, equipment_id: str = None,
                                      equipment_type: str = None) -> dict:
         """Search knowledge base and synthesize a coherent answer."""
+        # Resolve equipment_id from query if not provided
+        if not equipment_id:
+            try:
+                eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
+                if os.path.exists(eq_path):
+                    with open(eq_path, "r", encoding="utf-8") as f:
+                        eq_list = json.load(f)
+                        query_lower = query.lower()
+                        for eq in eq_list:
+                            if eq["id"].lower() in query_lower:
+                                equipment_id = eq["id"]
+                                equipment_type = eq.get("type")
+                                break
+                            name_parts = eq["name"].lower().split()
+                            if all(part in query_lower for part in name_parts if len(part) > 3):
+                                equipment_id = eq["id"]
+                                equipment_type = eq.get("type")
+                                break
+            except Exception:
+                pass
+
         # Fetch equipment_type if not provided
-        if equipment_id and not equipment_type:
+        elif equipment_id and not equipment_type:
             try:
                 eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
                 if os.path.exists(eq_path):
@@ -87,6 +108,24 @@ class KnowledgeAgent:
         # Build context from retrieved documents
         context_parts = []
         sources = []
+
+        # Inject active equipment metadata if available
+        if equipment_id:
+            try:
+                eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
+                if os.path.exists(eq_path):
+                    with open(eq_path, "r", encoding="utf-8") as f:
+                        eq_list = json.load(f)
+                        for eq in eq_list:
+                            if eq["id"] == equipment_id:
+                                eq_str = f"ACTIVE EQUIPMENT METADATA for {eq['name']} (Tag: {eq['id']}):\n"
+                                for k, v in eq.items():
+                                    eq_str += f"- {k.replace('_', ' ').title()}: {v}\n"
+                                context_parts.append(eq_str)
+                                break
+            except Exception as e:
+                print(f"Error loading equipment details in KnowledgeAgent: {e}")
+
         for i, result in enumerate(results[:8]):
             context_parts.append(f"[Source {i+1}] ({result['metadata'].get('doc_type', 'unknown')}):\n{result['content']}")
             sources.append({

@@ -191,7 +191,9 @@ Return ONLY the JSON object, no explanation."""
 
             else:
                 # General query — use knowledge agent with broader context
-                result = await knowledge_agent.search_and_synthesize(message)
+                result = await knowledge_agent.search_and_synthesize(
+                    message, equipment_id=eq_id, equipment_type=eq_type
+                )
                 response_text = result.get("answer", "")
 
         except Exception as e:
