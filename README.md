@@ -97,6 +97,164 @@ An interactive scheduler showing past logs and planned corrective/preventive act
 
 ---
 
+## 📷 Original High-Resolution Screenshots Gallery (37 Views)
+
+<details>
+<summary><b>Click to expand the 37 original high-resolution screenshots gallery</b></summary>
+
+Here is the complete gallery of 37 original, uncompressed screenshot captures demonstrating the platform's user interfaces, conversational dialogs, multi-agent console logs, and diagnostic flows.
+
+### Screenshot 1: AI Chat (Query: "Ask the AI about diagnostics, predictions, procedures, or in")
+![Screenshot 1: AI Chat (Query: "Ask the AI about diagnostics, predictions, procedures, or in")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-09-22.png)
+
+---
+### Screenshot 2: Application View
+![Screenshot 2: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-35.png)
+
+---
+### Screenshot 3: Application View
+![Screenshot 3: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-48.png)
+
+---
+### Screenshot 4: Application View (Query: "Not visible. The input field displays a placeholder text: As")
+![Screenshot 4: Application View (Query: "Not visible. The input field displays a placeholder text: As")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-55.png)
+
+---
+### Screenshot 5: Application View
+![Screenshot 5: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-06.png)
+
+---
+### Screenshot 6: Application View
+![Screenshot 6: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-10.png)
+
+---
+### Screenshot 7: Application View
+![Screenshot 7: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-20.png)
+
+---
+### Screenshot 8: Application View
+![Screenshot 8: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-48.png)
+
+---
+### Screenshot 9: Application View
+![Screenshot 9: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-01.png)
+
+---
+### Screenshot 10: Application View
+![Screenshot 10: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-12.png)
+
+---
+### Screenshot 11: Application View
+![Screenshot 11: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-27.png)
+
+---
+### Screenshot 12: Application View
+![Screenshot 12: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-56.png)
+
+---
+### Screenshot 13: Application View
+![Screenshot 13: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-13-23.png)
+
+---
+### Screenshot 14: Application View
+![Screenshot 14: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-14-31.png)
+
+---
+### Screenshot 15: Application View
+![Screenshot 15: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-14-58.png)
+
+---
+### Screenshot 16: Application View
+![Screenshot 16: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-05.png)
+
+---
+### Screenshot 17: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")
+![Screenshot 17: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-23.png)
+
+---
+### Screenshot 18: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")
+![Screenshot 18: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-30.png)
+
+---
+### Screenshot 19: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (The q")
+![Screenshot 19: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (The q")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-44.png)
+
+---
+### Screenshot 20: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (trunc")
+![Screenshot 20: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (trunc")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-49.png)
+
+---
+### Screenshot 21: Application View (Query: "The Blast Furnace Cool ing Pump (BF-CP-001) is show... (The ")
+![Screenshot 21: Application View (Query: "The Blast Furnace Cool ing Pump (BF-CP-001) is show... (The ")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-54.png)
+
+---
+### Screenshot 22: Application View
+![Screenshot 22: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-59.png)
+
+---
+### Screenshot 23: Application View (Query: "Show details of BF-CP-001")
+![Screenshot 23: Application View (Query: "Show details of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-31.png)
+
+---
+### Screenshot 24: Application View (Query: "Show details of BF-CP-001")
+![Screenshot 24: Application View (Query: "Show details of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-41.png)
+
+---
+### Screenshot 25: AI Chat (Query: "Show details of BF-CP-001")
+![Screenshot 25: AI Chat (Query: "Show details of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-45.png)
+
+---
+### Screenshot 26: Application View (Query: "What is the health score of BF-CP-001?")
+![Screenshot 26: Application View (Query: "What is the health score of BF-CP-001?")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-10.png)
+
+---
+### Screenshot 27: Application View (Query: "What is the health score of BF-CP-001?")
+![Screenshot 27: Application View (Query: "What is the health score of BF-CP-001?")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-15.png)
+
+---
+### Screenshot 28: AI Chat (Query: "What is the health score of BF-CP-001?")
+![Screenshot 28: AI Chat (Query: "What is the health score of BF-CP-001?")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-22.png)
+
+---
+### Screenshot 29: AI Chat (Query: "List all critical assets")
+![Screenshot 29: AI Chat (Query: "List all critical assets")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-43.png)
+
+---
+### Screenshot 30: Application View (Query: "Show failure history of BF-CP-001")
+![Screenshot 30: Application View (Query: "Show failure history of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-27.png)
+
+---
+### Screenshot 31: Application View (Query: "Show failure history o f BF-CP-001")
+![Screenshot 31: Application View (Query: "Show failure history o f BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-33.png)
+
+---
+### Screenshot 32: Application View (Query: "Predict failure risk for BF-CP-001")
+![Screenshot 32: Application View (Query: "Predict failure risk for BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-53.png)
+
+---
+### Screenshot 33: Application View (Query: "SMS-CC-001 details")
+![Screenshot 33: Application View (Query: "SMS-CC-001 details")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-20-34.png)
+
+---
+### Screenshot 34: Application View (Query: "SMS-CC-001 details")
+![Screenshot 34: Application View (Query: "SMS-CC-001 details")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-20-40.png)
+
+---
+### Screenshot 35: Application View (Query: "failure of SMS-CC-001")
+![Screenshot 35: Application View (Query: "failure of SMS-CC-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-10.png)
+
+---
+### Screenshot 36: Application View (Query: "failure of SMS-CC-001")
+![Screenshot 36: Application View (Query: "failure of SMS-CC-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-14.png)
+
+---
+### Screenshot 37: AI Chat (Query: "failure of SMS-CC-001")
+![Screenshot 37: AI Chat (Query: "failure of SMS-CC-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-19.png)
+
+---
+</details>
+
+
 ## 🛠️ Technology Stack
 
 | Layer | Technology | Purpose |
