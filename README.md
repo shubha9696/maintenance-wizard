@@ -65,6 +65,38 @@ Develop an intelligent AI-powered maintenance decision-support system that helps
 
 ---
 
+## 📷 Screenshots & UI Walkthrough
+
+### 1. Interactive Digital Twin Dashboard
+Displays 25 machinery nodes across 6 plant areas (Blast Furnace, Steel Melting Shop, Rolling Mill, Coke Oven, Sinter Plant, Power Plant) with real-time health indexes and a 3D isometric blast furnace stack thermal hologram.
+![Interactive Digital Twin Dashboard](screenshots/01_dashboard_digital_twin.png)
+
+---
+
+### 2. Predictive Analytics & ROI Engine
+Tracks fleet-wide remaining useful life (RUL) projections, degradation rates, risk distribution, net financial savings, and active anomaly feeds.
+![Predictive Analytics Dashboard](screenshots/02_predictive_analytics.png)
+
+---
+
+### 3. Agentic Diagnostics Chat Console
+Features a multi-turn chat interface with a live agentic console showing the step-by-step reasoning process, routing, and RAG document sources.
+![Agentic Diagnostics Chat Console](screenshots/03_agent_diagnostics_chat.png)
+
+---
+
+### 4. Industrial Spares & Logistics Optimizer
+Automatically correlates asset health levels with inventory availability, showing production loss exposure and offering 1-Click procurement dispatch.
+![Industrial Spares & Logistics Optimizer](screenshots/04_industrial_spares_inventory.png)
+
+---
+
+### 5. Dynamic Maintenance Scheduler
+An interactive scheduler showing past logs and planned corrective/preventive actions.
+![Dynamic Maintenance Scheduler](screenshots/05_maintenance_scheduler.png)
+
+---
+
 ## 🛠️ Technology Stack
 
 | Layer | Technology | Purpose |
