@@ -67,193 +67,108 @@ Develop an intelligent AI-powered maintenance decision-support system that helps
 
 ## 📷 Screenshots & UI Walkthrough
 
-### 1. Interactive Digital Twin Dashboard
-Displays 25 machinery nodes across 6 plant areas (Blast Furnace, Steel Melting Shop, Rolling Mill, Coke Oven, Sinter Plant, Power Plant) with real-time health indexes and a 3D isometric blast furnace stack thermal hologram.
-![Interactive Digital Twin Dashboard](screenshots/01_dashboard_digital_twin.png)
+Here are 20 high-resolution original screenshots demonstrating the system's execution flows, diagnostics, remaining useful life predictions, spares optimizer matching, and executive report generation:
+
+### 1. Plant Overview Dashboard
+Displays summary statistics (healthy assets, warning assets, alerts) and circular overall plant health chart rating (82%). Includes the live Cyber Scan Stack representing the real-time thermal profile of the Blast Furnace.
+![1. Plant Overview Dashboard](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-35.png)
 
 ---
-
-### 2. Predictive Analytics & ROI Engine
-Tracks fleet-wide remaining useful life (RUL) projections, degradation rates, risk distribution, net financial savings, and active anomaly feeds.
-![Predictive Analytics Dashboard](screenshots/02_predictive_analytics.png)
-
----
-
-### 3. Agentic Diagnostics Chat Console
-Features a multi-turn chat interface with a live agentic console showing the step-by-step reasoning process, routing, and RAG document sources.
-![Agentic Diagnostics Chat Console](screenshots/03_agent_diagnostics_chat.png)
+### 2. Digital Twin Plant Floor & Critical Assets
+Overview of plant sector health (Blast Furnace 76.6%, Rolling Mill 82.2%) coupled with the 'Critical Assets Attention' list and recent maintenance log updates.
+![2. Digital Twin Plant Floor & Critical Assets](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-48.png)
 
 ---
-
-### 4. Industrial Spares & Logistics Optimizer
-Automatically correlates asset health levels with inventory availability, showing production loss exposure and offering 1-Click procurement dispatch.
-![Industrial Spares & Logistics Optimizer](screenshots/04_industrial_spares_inventory.png)
-
----
-
-### 5. Dynamic Maintenance Scheduler
-An interactive scheduler showing past logs and planned corrective/preventive actions.
-![Dynamic Maintenance Scheduler](screenshots/05_maintenance_scheduler.png)
+### 3. Equipment Fleet Sector Filter
+Active asset fleet view monitoring 25 assets across the steel plant. Allows quick category filtering by sector (Blast Furnace, Steel Melting Shop, Rolling Mill, Coke Oven, Sinter Plant, Power Plant).
+![3. Equipment Fleet Sector Filter](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-06.png)
 
 ---
-
-## 📷 Original High-Resolution Screenshots Gallery (37 Views)
-
-<details>
-<summary><b>Click to expand the 37 original high-resolution screenshots gallery</b></summary>
-
-Here is the complete gallery of 37 original, uncompressed screenshot captures demonstrating the platform's user interfaces, conversational dialogs, multi-agent console logs, and diagnostic flows.
-
-### Screenshot 1: AI Chat (Query: "Ask the AI about diagnostics, predictions, procedures, or in")
-![Screenshot 1: AI Chat (Query: "Ask the AI about diagnostics, predictions, procedures, or in")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-09-22.png)
+### 4. Equipment Asset Status & Health Cards
+Grid of asset health cards displaying criticality level, health score percentages, real-time warning indicators, and status badges (Critical, Degraded, Operational).
+![4. Equipment Asset Status & Health Cards](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-10.png)
 
 ---
-### Screenshot 2: Application View
-![Screenshot 2: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-35.png)
+### 5. Active Fleet Operations Log
+Dynamic tracking of healthy assets (e.g. BF Hydraulic System at 93.3% health, ld LD Converter Vessel #1 at 94.2%) to keep shift engineers informed of operational stability.
+![5. Active Fleet Operations Log](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-20.png)
 
 ---
-### Screenshot 3: Application View
-![Screenshot 3: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-48.png)
+### 6. Predictive Analytics & ROI Engine
+Predicts remaining operational days per machine, displays risk distribution charts, and calculates Net Financial Savings ($118k prevented failures ROI) for plant management.
+![6. Predictive Analytics & ROI Engine](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-48.png)
 
 ---
-### Screenshot 4: Application View (Query: "Not visible. The input field displays a placeholder text: As")
-![Screenshot 4: Application View (Query: "Not visible. The input field displays a placeholder text: As")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-10-55.png)
+### 7. Dynamic Gantt Scheduler & Spares Check
+AI-prioritized 7-day timeline showing planned maintenance tasks. Selecting a task displays the scope of work, assigned engineer, downtime, and live spare parts availability check (e.g., 'IN STOCK').
+![7. Dynamic Gantt Scheduler & Spares Check](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-12.png)
 
 ---
-### Screenshot 5: Application View
-![Screenshot 5: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-06.png)
+### 8. Inventory Spares Shortage & Risk Optimizer
+Flags a critical spare parts shortage risk alert and estimates production downtime risk exposure (₹2,628,000) for degraded machines missing matching spare components.
+![8. Inventory Spares Shortage & Risk Optimizer](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-27.png)
 
 ---
-### Screenshot 6: Application View
-![Screenshot 6: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-10.png)
+### 9. Logistics Spares & 1-Click Purchase Order
+Parts warehouse inventory status (in stock, low stock, out of stock) showing costs, lead times, and dispatch/expedite PO buttons to prevent supply chain bottlenecks.
+![9. Logistics Spares & 1-Click Purchase Order](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-56.png)
 
 ---
-### Screenshot 7: Application View
-![Screenshot 7: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-20.png)
+### 10. Anomaly Alerts Console Logs
+Real-time alert logger listing warnings categorized by severity (Critical, High, Medium, Low) and plant area, tracking vibration/temperature limit violations (e.g. EOT Crane vibration exceeding limits by 181%).
+![10. Anomaly Alerts Console Logs](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-13-23.png)
 
 ---
-### Screenshot 8: Application View
-![Screenshot 8: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-11-48.png)
+### 11. AI Reports Generation Console
+Generates 4 types of plant maintenance documentation: Maintenance Summary, Alert Summary, Equipment Health Card, and Failure Analysis.
+![11. AI Reports Generation Console](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-14-31.png)
 
 ---
-### Screenshot 9: Application View
-![Screenshot 9: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-01.png)
+### 12. Knowledge Center Ingestion Pipeline
+Drag-and-drop document upload interface (PDF, TXT, MD, JSON, CSV) displaying indexed chunks count, ingestion dates, and vector status.
+![12. Knowledge Center Ingestion Pipeline](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-14-58.png)
 
 ---
-### Screenshot 10: Application View
-![Screenshot 10: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-12.png)
+### 13. Platform Specifications & Multi-Agent Architecture
+Official submission credits detailing the compliance score, multi-agent brain specification, vector database features, and scikit-learn models.
+![13. Platform Specifications & Multi-Agent Architecture](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-05.png)
 
 ---
-### Screenshot 11: Application View
-![Screenshot 11: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-27.png)
+### 14. AI Chat: Real-Time Thought Logs & Diagnostic Routing
+Engine console logs showing orchestrator routing, ChromaDB vector matching, and diagnostic threshold evaluations (vibration 4.8 mm/s vs 4.5 mm/s upper limit).
+![14. AI Chat: Real-Time Thought Logs & Diagnostic Routing](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-30.png)
 
 ---
-### Screenshot 12: Application View
-![Screenshot 12: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-12-56.png)
+### 15. AI Chat: Probable Diagnoses & Root Cause Chain
+AI analysis of high vibration and temperature on the Blast Furnace Cooling Pump, detailing Bearing Failure (60% likelihood) and mapping the lubrication breakdown root cause chain.
+![15. AI Chat: Probable Diagnoses & Root Cause Chain](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-44.png)
 
 ---
-### Screenshot 13: Application View
-![Screenshot 13: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-13-23.png)
+### 16. AI Chat: Risk Assessment & Safety Actions
+Safety recommendation outputting immediate corrective actions (e.g. shutdown the pump, notify maintenance) and compiling evidence from past failures.
+![16. AI Chat: Risk Assessment & Safety Actions](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-54.png)
 
 ---
-### Screenshot 14: Application View
-![Screenshot 14: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-14-31.png)
+### 17. AI Chat: Asset Details & History Retrieval
+RAG query retrieving full asset metadata and failure logs directly into the conversational interface.
+![17. AI Chat: Asset Details & History Retrieval](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-41.png)
 
 ---
-### Screenshot 15: Application View
-![Screenshot 15: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-14-58.png)
+### 18. AI Chat: Health Score Mathematical Formula
+Explainable AI response mapping the exact mathematical formula and variables used to compute an asset's health score dynamically.
+![18. AI Chat: Health Score Mathematical Formula](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-15.png)
 
 ---
-### Screenshot 16: Application View
-![Screenshot 16: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-05.png)
+### 19. AI Chat: Failure Risk Prediction & Forecasts
+Orchestrates Isolation Forest predictions to output failure probability timelines and degradation rates.
+![19. AI Chat: Failure Risk Prediction & Forecasts](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-53.png)
 
 ---
-### Screenshot 17: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")
-![Screenshot 17: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-23.png)
+### 20. AI Chat: Continuous Caster Anomaly Diagnosis
+Diagnoses roller bearing failures for Continuous Caster #1, correlating thermal stress, and validating inventory spare parts.
+![20. AI Chat: Continuous Caster Anomaly Diagnosis](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-14.png)
 
 ---
-### Screenshot 18: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")
-![Screenshot 18: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is showing high v")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-30.png)
-
----
-### Screenshot 19: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (The q")
-![Screenshot 19: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (The q")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-44.png)
-
----
-### Screenshot 20: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (trunc")
-![Screenshot 20: Application View (Query: "The Blast Furnace Cooling Pump (BF-CP-001) is show... (trunc")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-49.png)
-
----
-### Screenshot 21: Application View (Query: "The Blast Furnace Cool ing Pump (BF-CP-001) is show... (The ")
-![Screenshot 21: Application View (Query: "The Blast Furnace Cool ing Pump (BF-CP-001) is show... (The ")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-54.png)
-
----
-### Screenshot 22: Application View
-![Screenshot 22: Application View](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-59.png)
-
----
-### Screenshot 23: Application View (Query: "Show details of BF-CP-001")
-![Screenshot 23: Application View (Query: "Show details of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-31.png)
-
----
-### Screenshot 24: Application View (Query: "Show details of BF-CP-001")
-![Screenshot 24: Application View (Query: "Show details of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-41.png)
-
----
-### Screenshot 25: AI Chat (Query: "Show details of BF-CP-001")
-![Screenshot 25: AI Chat (Query: "Show details of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-45.png)
-
----
-### Screenshot 26: Application View (Query: "What is the health score of BF-CP-001?")
-![Screenshot 26: Application View (Query: "What is the health score of BF-CP-001?")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-10.png)
-
----
-### Screenshot 27: Application View (Query: "What is the health score of BF-CP-001?")
-![Screenshot 27: Application View (Query: "What is the health score of BF-CP-001?")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-15.png)
-
----
-### Screenshot 28: AI Chat (Query: "What is the health score of BF-CP-001?")
-![Screenshot 28: AI Chat (Query: "What is the health score of BF-CP-001?")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-22.png)
-
----
-### Screenshot 29: AI Chat (Query: "List all critical assets")
-![Screenshot 29: AI Chat (Query: "List all critical assets")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-43.png)
-
----
-### Screenshot 30: Application View (Query: "Show failure history of BF-CP-001")
-![Screenshot 30: Application View (Query: "Show failure history of BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-27.png)
-
----
-### Screenshot 31: Application View (Query: "Show failure history o f BF-CP-001")
-![Screenshot 31: Application View (Query: "Show failure history o f BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-33.png)
-
----
-### Screenshot 32: Application View (Query: "Predict failure risk for BF-CP-001")
-![Screenshot 32: Application View (Query: "Predict failure risk for BF-CP-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-53.png)
-
----
-### Screenshot 33: Application View (Query: "SMS-CC-001 details")
-![Screenshot 33: Application View (Query: "SMS-CC-001 details")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-20-34.png)
-
----
-### Screenshot 34: Application View (Query: "SMS-CC-001 details")
-![Screenshot 34: Application View (Query: "SMS-CC-001 details")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-20-40.png)
-
----
-### Screenshot 35: Application View (Query: "failure of SMS-CC-001")
-![Screenshot 35: Application View (Query: "failure of SMS-CC-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-10.png)
-
----
-### Screenshot 36: Application View (Query: "failure of SMS-CC-001")
-![Screenshot 36: Application View (Query: "failure of SMS-CC-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-14.png)
-
----
-### Screenshot 37: AI Chat (Query: "failure of SMS-CC-001")
-![Screenshot 37: AI Chat (Query: "failure of SMS-CC-001")](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-19.png)
-
----
-</details>
-
 
 ## 🛠️ Technology Stack
 
