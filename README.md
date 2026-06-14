@@ -67,7 +67,7 @@ Develop an intelligent AI-powered maintenance decision-support system that helps
 
 ## 📷 Screenshots & UI Walkthrough
 
-Here are 20 high-resolution original screenshots demonstrating the system's execution flows, diagnostics, remaining useful life predictions, spares optimizer matching, and executive report generation:
+Here are 30 high-resolution original screenshots demonstrating the system's execution flows, diagnostics, remaining useful life predictions, spares optimizer matching, and executive report generation:
 
 ### 1. Plant Overview Dashboard
 Displays summary statistics (healthy assets, warning assets, alerts) and circular overall plant health chart rating (82%). Includes the live Cyber Scan Stack representing the real-time thermal profile of the Blast Furnace.
@@ -134,39 +134,89 @@ Official submission credits detailing the compliance score, multi-agent brain sp
 ![13. Platform Specifications & Multi-Agent Architecture](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-05.png)
 
 ---
-### 14. AI Chat: Real-Time Thought Logs & Diagnostic Routing
+### 14. AI Chat Welcome Console
+The initial user welcome screen of the AI Decision-Support Console showcasing quick action prompts ('Diagnose Pump Issue', 'SOP Search') and system status sidebars.
+![14. AI Chat Welcome Console](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-09-22.png)
+
+---
+### 15. AI Chat: Real-Time Thought Logs & Diagnostic Routing
 Engine console logs showing orchestrator routing, ChromaDB vector matching, and diagnostic threshold evaluations (vibration 4.8 mm/s vs 4.5 mm/s upper limit).
-![14. AI Chat: Real-Time Thought Logs & Diagnostic Routing](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-30.png)
+![15. AI Chat: Real-Time Thought Logs & Diagnostic Routing](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-30.png)
 
 ---
-### 15. AI Chat: Probable Diagnoses & Root Cause Chain
+### 16. AI Chat: Query Orchestration & Routing Flow
+Visual diagram demonstrating the routing sequence from the Orchestrator to the Knowledge RAG agent for symptom analysis of Blast Furnace Cooling Pump (BF-CP-001).
+![16. AI Chat: Query Orchestration & Routing Flow](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-23.png)
+
+---
+### 17. AI Chat: Probable Diagnoses & Root Cause Chain
 AI analysis of high vibration and temperature on the Blast Furnace Cooling Pump, detailing Bearing Failure (60% likelihood) and mapping the lubrication breakdown root cause chain.
-![15. AI Chat: Probable Diagnoses & Root Cause Chain](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-44.png)
+![17. AI Chat: Probable Diagnoses & Root Cause Chain](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-44.png)
 
 ---
-### 16. AI Chat: Risk Assessment & Safety Actions
+### 18. AI Chat: Risk Assessment & Safety Actions
 Safety recommendation outputting immediate corrective actions (e.g. shutdown the pump, notify maintenance) and compiling evidence from past failures.
-![16. AI Chat: Risk Assessment & Safety Actions](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-54.png)
+![18. AI Chat: Risk Assessment & Safety Actions](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-54.png)
 
 ---
-### 17. AI Chat: Asset Details & History Retrieval
+### 19. AI Chat: Short-Term Maintenance & Replacement Steps
+Details short-term maintenance guidelines, immediate safety isolation protocols, and technical bearing swap schedules.
+![19. AI Chat: Short-Term Maintenance & Replacement Steps](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-16-59.png)
+
+---
+### 20. AI Chat: Downtime Estimates & Scheduling Briefs
+Calculates required downtime hours (8-12 hours) and gives scheduling recommendations based on plant operation hours to minimize production impact.
+![20. AI Chat: Downtime Estimates & Scheduling Briefs](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-31.png)
+
+---
+### 21. AI Chat: Corrective Action & Inspection Procedures
+Outlines inspection lists (lube oil check, shaft alignment) and recommends installation of additional vibration sensors.
+![21. AI Chat: Corrective Action & Inspection Procedures](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-45.png)
+
+---
+### 22. AI Chat: Asset Details & History Retrieval
 RAG query retrieving full asset metadata and failure logs directly into the conversational interface.
-![17. AI Chat: Asset Details & History Retrieval](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-41.png)
+![22. AI Chat: Asset Details & History Retrieval](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-17-41.png)
 
 ---
-### 18. AI Chat: Health Score Mathematical Formula
+### 23. AI Chat: Asset Health Score Query
+User queries the platform for the health score rating of Blast Furnace Cooling Pump (BF-CP-001) to scan its dynamic telemetry parameters.
+![23. AI Chat: Asset Health Score Query](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-10.png)
+
+---
+### 24. AI Chat: Health Score Mathematical Formula
 Explainable AI response mapping the exact mathematical formula and variables used to compute an asset's health score dynamically.
-![18. AI Chat: Health Score Mathematical Formula](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-15.png)
+![24. AI Chat: Health Score Mathematical Formula](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-15.png)
 
 ---
-### 19. AI Chat: Failure Risk Prediction & Forecasts
+### 25. AI Chat: Fleet Criticality Listing
+Queries the orchestrator to list all critical assets in the fleet, returning failure logs and downtime values for active attention.
+![25. AI Chat: Fleet Criticality Listing](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-18-43.png)
+
+---
+### 26. AI Chat: Failure History Search
+AI console retrieves past breakdown details, listing specific root causes, dates, and technicians who executed repairs.
+![26. AI Chat: Failure History Search](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-27.png)
+
+---
+### 27. AI Chat: Failure Risk Prediction & Forecasts
 Orchestrates Isolation Forest predictions to output failure probability timelines and degradation rates.
-![19. AI Chat: Failure Risk Prediction & Forecasts](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-53.png)
+![27. AI Chat: Failure Risk Prediction & Forecasts](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-19-53.png)
 
 ---
-### 20. AI Chat: Continuous Caster Anomaly Diagnosis
+### 28. AI Chat: Continuous Caster Details Ingestion
+User initiates information lookup for the Steel Melting Shop Continuous Caster (SMS-CC-001) to read its digital twin metadata.
+![28. AI Chat: Continuous Caster Details Ingestion](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-20-34.png)
+
+---
+### 29. AI Chat: Continuous Caster Anomaly Diagnosis
 Diagnoses roller bearing failures for Continuous Caster #1, correlating thermal stress, and validating inventory spare parts.
-![20. AI Chat: Continuous Caster Anomaly Diagnosis](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-14.png)
+![29. AI Chat: Continuous Caster Anomaly Diagnosis](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-14.png)
+
+---
+### 30. AI Chat: Continuous Caster Diagnosis Summary
+Renders final caster diagnoses, showing bearing friction levels and immediate inspection safety warnings.
+![30. AI Chat: Continuous Caster Diagnosis Summary](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-19.png)
 
 ---
 
