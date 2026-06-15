@@ -212,11 +212,13 @@ Provide a detailed diagnostic analysis, point out abnormalities, and recommend n
                 response_text = result.get("answer", "")
 
             else:
-                # General query — use knowledge agent with broader context
-                result = await knowledge_agent.search_and_synthesize(
-                    message, equipment_id=eq_id, equipment_type=eq_type
-                )
-                response_text = result.get("answer", "")
+                # General query — reply directly using LLM
+                general_prompt = f"""You are the Maintenance Wizard, a helpful AI assistant for the Tata Steel plant.
+Answer this general conversational query from a maintenance engineer.
+
+USER QUERY: {message}"""
+                response_text = llm_client.generate_content("flash", general_prompt)
+                result = {"answer": response_text}
 
         except Exception as e:
             response_text = f"I encountered an issue while processing your query: {str(e)}. Please try rephrasing your question."

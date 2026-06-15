@@ -87,7 +87,11 @@ export default function DashboardPage() {
         setLoading(false);
       })
       .catch(e => {
-        setError('Failed to connect to backend. Make sure the API server is running.');
+        console.error('Dashboard reload error:', e);
+        const hasCached = getCachedData(cacheKeyDash);
+        if (!hasCached) {
+          setError('Failed to connect to backend. Make sure the API server is running.');
+        }
         setLoading(false);
       });
   }, []);
