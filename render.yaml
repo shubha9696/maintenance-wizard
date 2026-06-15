@@ -11,9 +11,15 @@ services:
       - key: GROQ_MODEL
         value: llama-3.3-70b-versatile
       - key: GROQ_API_KEY
-        value: REPLACE_ME
+        sync: false
+      - key: GROQ_API_KEY_2
+        sync: false
       - key: GEMINI_API_KEY
-        value: REPLACE_ME
+        sync: false
+      - key: GEMINI_API_KEY_2
+        sync: false
+      - key: GEMINI_API_KEY_3
+        sync: false
       - key: CHROMA_DB_PATH
         value: ./chroma_db
       - key: BACKEND_PORT
