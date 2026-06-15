@@ -67,7 +67,7 @@ Develop an intelligent AI-powered maintenance decision-support system that helps
 
 ## 📷 Screenshots & UI Walkthrough
 
-Here are 30 high-resolution original screenshots demonstrating the system's execution flows, diagnostics, remaining useful life predictions, spares optimizer matching, and executive report generation:
+Here are 37 high-resolution original screenshots demonstrating the system's execution flows, diagnostics, remaining useful life predictions, spares optimizer matching, and executive report generation:
 
 ### 1. Plant Overview Dashboard
 Displays summary statistics (healthy assets, warning assets, alerts) and circular overall plant health chart rating (82%). Includes the live Cyber Scan Stack representing the real-time thermal profile of the Blast Furnace.
@@ -217,6 +217,41 @@ Diagnoses roller bearing failures for Continuous Caster #1, correlating thermal 
 ### 30. AI Chat: Continuous Caster Diagnosis Summary
 Renders final caster diagnoses, showing bearing friction levels and immediate inspection safety warnings.
 ![30. AI Chat: Continuous Caster Diagnosis Summary](screenshots_raw/Screenshot%20Capture%20-%202026-06-11%20-%2001-21-19.png)
+
+---
+### 31. AI Chat: Voice Recording Active State
+Shows the voice recording mode in action with the microphone button pulsing red and the live recording duration timer rendering in the textarea placeholder.
+![31. AI Chat: Voice Recording Active State](screenshots_raw/Screenshot%202026-06-15%20150054.png)
+
+---
+### 32. AI Chat: Attachment Thumbnail Preview
+Demonstrates the attachment input showing a live image thumbnail preview above the message input bar with a remove action button.
+![32. AI Chat: Attachment Thumbnail Preview](screenshots_raw/Screenshot%202026-06-15%20150112.png)
+
+---
+### 33. AI Chat: Screenshot Upload Verification
+User uploads a screenshot of the dashboard. The image is rendered inline directly inside the user's chat bubble.
+![33. AI Chat: Screenshot Upload Verification](screenshots_raw/Screenshot%202026-06-15%20150120.png)
+
+---
+### 34. AI Chat: Llama-4 Vision Diagnostic Analysis
+Detailed response from the Llama-4-Scout-17b vision model analyzing the uploaded screenshot, identifying equipment status and generating next steps.
+![34. AI Chat: Llama-4 Vision Diagnostic Analysis](screenshots_raw/Screenshot%202026-06-15%20150136.png)
+
+---
+### 35. AI Chat: Voice Transcription via Groq Whisper
+The voice audio file is captured and transcribed using Groq's Whisper API. The resulting text is automatically populated into the input area.
+![35. AI Chat: Voice Transcription via Groq Whisper](screenshots_raw/Screenshot%202026-06-15%20150237.png)
+
+---
+### 36. AI Chat: Multi-Turn Voice & Vision Dialogue
+Demonstrates a multi-turn conversation combining voice-transcribed messages and uploaded screenshots inside the AI decision-support console.
+![36. AI Chat: Multi-Turn Voice & Vision Dialogue](screenshots_raw/Screenshot%202026-06-15%20150251.png)
+
+---
+### 37. AI Chat: Integrated Interface Overview
+Overview of the final chat panel showing both the Voice (microphone) and Screenshot (attachment) icons integrated seamlessly.
+![37. AI Chat: Integrated Interface Overview](screenshots_raw/Screenshot%202026-06-15%20150305.png)
 
 ---
 
