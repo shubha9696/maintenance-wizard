@@ -72,6 +72,9 @@ class AnomalyDetector:
 
     def _check_reading(self, equipment_id: str, reading: dict, equipment_type: str = None) -> dict:
         """Check a single reading for anomalies using multiple methods."""
+        if not self.sensor_ranges:
+            self._load_sensor_ranges()
+
         issues = []
         severity_score = 0
         sensor_values = {

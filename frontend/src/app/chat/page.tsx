@@ -968,7 +968,7 @@ export default function ChatPage() {
           </div>
 
           {/* Input Area */}
-          <div className="chat-input-area" style={{ zIndex: 10 }}>
+          <div className="chat-input-area" style={{ zIndex: 10, padding: '12px 28px 6px' }}>
             {/* Quick Actions for Selected Equipment */}
             {selectedContext !== 'Whole Plant' && selectedContext !== 'Plant-wide' && (
               <div className="animate-fadeIn" style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 12, flexWrap: 'wrap' }}>

@@ -25,6 +25,9 @@ class RULPredictor:
 
     def compute_health_index(self, readings: list, equipment_type: str) -> list:
         """Compute a 0-100 health index for each reading based on sensor deviations."""
+        if not self.sensor_ranges:
+            self._load_data()
+
         if equipment_type not in self.sensor_ranges:
             return [{"timestamp": r.get("timestamp"), "health_index": 80.0} for r in readings]
 

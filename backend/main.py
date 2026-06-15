@@ -31,6 +31,15 @@ async def lifespan(app: FastAPI):
         except Exception as e:
             print(f"  Warning: Synthetic data generation failed: {e}")
 
+    # Ensure predictors are loaded with data/ranges (especially after generation)
+    try:
+        from backend.services.rul_predictor import rul_predictor
+        rul_predictor._load_data()
+        anomaly_detector._load_sensor_ranges()
+        print("  Predictor and anomaly detector ranges loaded.")
+    except Exception as e:
+        print(f"  Warning: Failed to load predictor ranges: {e}")
+
     # Initialize vector store (ingest knowledge base)
     print("  Loading knowledge base into vector store...")
     try:
