@@ -28,6 +28,8 @@ class DiagnosticAgent:
         Perform comprehensive equipment diagnosis using multi-step reasoning.
         """
         # Step 1: Retrieve relevant knowledge
+        if not self.failure_modes:
+            self._load_failure_modes()
         kb_results = await knowledge_agent.search_and_synthesize(
             query, equipment_id=equipment_id, equipment_type=equipment_type
         )

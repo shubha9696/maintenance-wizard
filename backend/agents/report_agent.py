@@ -32,6 +32,8 @@ class ReportAgent:
     async def generate_report(self, report_type: str = "maintenance_summary",
                                equipment_id: str = None, area: str = None) -> dict:
         """Generate a structured maintenance report."""
+        if not self.equipment_data or not self.maintenance_logs or not self.failure_reports:
+            self._load_data()
         if report_type == "maintenance_summary":
             return await self._maintenance_summary_report(equipment_id, area)
         elif report_type == "alert_summary":

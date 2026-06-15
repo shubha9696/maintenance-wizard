@@ -31,6 +31,8 @@ class RecommendationAgent:
     async def generate_recommendations(self, query: str, diagnosis: dict = None,
                                          prediction: dict = None, equipment_id: str = None) -> dict:
         """Generate comprehensive maintenance recommendations."""
+        if not self.spare_parts or not self.equipment_data:
+            self._load_data()
         eq = next((e for e in self.equipment_data if e["id"] == equipment_id), {}) if equipment_id else {}
         eq_type = eq.get("type", "")
 
@@ -131,6 +133,8 @@ Be specific with part numbers, procedures, and timeframes. Reference SOPs where 
 
     async def prioritize_maintenance(self, equipment_list: list = None) -> list:
         """Prioritize maintenance actions across all equipment."""
+        if not self.equipment_data:
+            self._load_data()
         if not equipment_list:
             equipment_list = self.equipment_data
 

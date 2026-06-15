@@ -31,10 +31,14 @@ class PredictionAgent:
                 self.sensor_data = json.load(f)
 
     def _get_equipment(self, equipment_id: str) -> dict:
+        if not self.equipment_data:
+            self._load_data()
         return next((e for e in self.equipment_data if e["id"] == equipment_id), {})
 
     async def predict_equipment(self, equipment_id: str) -> dict:
         """Get full prediction for a single equipment."""
+        if not self.equipment_data or not self.sensor_data:
+            self._load_data()
         eq = self._get_equipment(equipment_id)
         readings = self.sensor_data.get(equipment_id, [])
 
@@ -68,6 +72,8 @@ class PredictionAgent:
 
     async def get_fleet_predictions(self) -> list:
         """Get predictions for all equipment, sorted by risk."""
+        if not self.equipment_data or not self.sensor_data:
+            self._load_data()
         predictions = []
         for eq in self.equipment_data:
             readings = self.sensor_data.get(eq["id"], [])

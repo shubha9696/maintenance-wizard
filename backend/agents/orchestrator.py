@@ -38,6 +38,8 @@ class Orchestrator:
 
     def _find_equipment(self, query: str) -> dict:
         """Try to identify equipment mentioned in the query."""
+        if not self.equipment_data:
+            self._load_equipment()
         query_lower = query.lower()
         for eq in self.equipment_data:
             if eq["id"].lower() in query_lower:
@@ -120,6 +122,8 @@ Return ONLY the JSON object, no explanation."""
 
         # Step 2: Identify equipment
         equipment = self._find_equipment(message)
+        if not self.equipment_data:
+            self._load_equipment()
         if not equipment and equipment_id:
             equipment = next((eq for eq in self.equipment_data if eq["id"].lower() == equipment_id.lower()), {})
             
