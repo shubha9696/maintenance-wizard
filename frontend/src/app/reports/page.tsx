@@ -23,6 +23,35 @@ const REPORT_TYPES = [
   { id: 'failure_analysis', name: 'Failure Analysis', icon: <ShieldAlert size={24} style={{ color: 'var(--accent-red)' }}  />, desc: 'Analysis of failure patterns and root causes' },
 ];
 
+const EQUIPMENT_OPTIONS = [
+  { value: '', label: 'Select Equipment...' },
+  { value: 'BF-CP-001', label: 'BF-CP-001 - Blast Furnace Cooling Pump #1' },
+  { value: 'BF-CP-002', label: 'BF-CP-002 - Blast Furnace Cooling Pump #2' },
+  { value: 'BF-BL-001', label: 'BF-BL-001 - Hot Blast Blower' },
+  { value: 'BF-HY-001', label: 'BF-HY-001 - BF Hydraulic System' },
+  { value: 'BF-CV-001', label: 'BF-CV-001 - Raw Material Conveyor Belt' },
+  { value: 'SMS-LD-001', label: 'SMS-LD-001 - LD Converter Vessel #1' },
+  { value: 'SMS-CC-001', label: 'SMS-CC-001 - Continuous Caster #1' },
+  { value: 'SMS-LF-001', label: 'SMS-LF-001 - Ladle Furnace' },
+  { value: 'SMS-CR-001', label: 'SMS-CR-001 - EOT Crane #1 (250T)' },
+  { value: 'SMS-PU-001', label: 'SMS-PU-001 - Argon Stirring Pump' },
+  { value: 'RM-DM-001', label: 'RM-DM-001 - Rolling Mill Drive Motor' },
+  { value: 'RM-GB-001', label: 'RM-GB-001 - Mill Gearbox #1' },
+  { value: 'RM-RS-001', label: 'RM-RS-001 - Roughing Stand' },
+  { value: 'RM-FS-001', label: 'RM-FS-001 - Finishing Stand #1' },
+  { value: 'RM-CL-001', label: 'RM-CL-001 - Cooling Bed System' },
+  { value: 'CO-PU-001', label: 'CO-PU-001 - Coke Oven Pusher Machine' },
+  { value: 'CO-QC-001', label: 'CO-QC-001 - Quenching Car' },
+  { value: 'CO-GC-001', label: 'CO-GC-001 - Gas Cleaning Plant' },
+  { value: 'SP-FM-001', label: 'SP-FM-001 - Sinter Fan Main Blower' },
+  { value: 'SP-IG-001', label: 'SP-IG-001 - Ignition Furnace' },
+  { value: 'SP-CV-001', label: 'SP-CV-001 - Sinter Mix Conveyor' },
+  { value: 'PP-TG-001', label: 'PP-TG-001 - Steam Turbine Generator' },
+  { value: 'PP-BL-001', label: 'PP-BL-001 - Boiler Feed Pump' },
+  { value: 'PP-CT-001', label: 'PP-CT-001 - Cooling Tower Fan' },
+  { value: 'PP-TR-001', label: 'PP-TR-001 - Main Transformer (100MVA)' },
+];
+
 export default function ReportsPage() {
   const [reports, setReports] = useState<Report[]>([]);
   const [generating, setGenerating] = useState(false);
@@ -191,17 +220,28 @@ export default function ReportsPage() {
             {/* Equipment Filter Parameter */}
             <div style={{ marginTop: 16, display: 'flex', gap: 8, alignItems: 'center' }}>
               <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>Target Equipment ID (for specific Health Card):</span>
-              <input
-                type="text"
-                placeholder="e.g., BF-CP-001"
+              <select
                 value={equipmentId}
                 onChange={e => setEquipmentId(e.target.value)}
                 style={{
-                  background: 'var(--bg-input)', border: '1px solid var(--border-color)',
-                  borderRadius: 'var(--radius-sm)', padding: '6px 12px', color: 'var(--text-primary)',
-                  fontSize: 12, width: 180, outline: 'none', fontFamily: 'inherit',
+                  background: 'var(--bg-input)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 'var(--radius-sm)',
+                  padding: '6px 12px',
+                  color: 'var(--text-primary)',
+                  fontSize: 12,
+                  width: 320,
+                  outline: 'none',
+                  fontFamily: 'inherit',
+                  cursor: 'pointer',
                 }}
-              />
+              >
+                {EQUIPMENT_OPTIONS.map(opt => (
+                  <option key={opt.value} value={opt.value} style={{ background: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
 

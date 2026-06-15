@@ -1624,7 +1624,7 @@ html, body {
   right: 0;
   bottom: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: -10;
   overflow: hidden;
 }
 
@@ -2389,7 +2389,7 @@ html, body {
   height: 520px;
   opacity: 0.06; /* Highly refined white silhouette transparency */
   pointer-events: none;
-  z-index: 0;
+  z-index: -10;
   background-image: url('/tata-logo.png');
   background-size: contain;
   background-position: center;

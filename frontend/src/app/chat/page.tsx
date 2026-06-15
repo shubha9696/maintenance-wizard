@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ReactMarkdown from 'react-markdown';
-import { Bot, Send, Trash2, Activity, Terminal, X, Mic, MicOff, Paperclip, Image, Loader2 } from 'lucide-react';
+import { Bot, Send, Trash2, Activity, Terminal, X, Mic, MicOff, Paperclip, Image, Loader2, Cpu } from 'lucide-react';
 import { API_BASE } from '@/lib/api';
 
 interface Message {
@@ -22,6 +22,74 @@ const QUICK_PROMPTS = [
   { label: '📋 Generate Plant Report', prompt: 'Generate a maintenance summary report for all plant equipment.' },
   { label: '⚙️ Rolling Mill health', prompt: 'What is the health status and remaining useful life of the Rolling Mill Drive Motor?' },
   { label: '📖 SOP Search', prompt: 'What is the procedure for replacing bearings on a centrifugal pump?' },
+];
+
+const CONTEXT_MAP: Record<string, string> = {
+  'Whole Plant': '',
+  'Plant-wide': '',
+  'BF-02': 'BF-CP-001',
+  'BF-03': 'BF-CP-002',
+  'HBB-01': 'BF-BL-001',
+  'BFC-01': 'BF-CP-001',
+  'BFH-01': 'BF-HY-001',
+  'CC-03': 'SMS-CC-001',
+  'LC-05': 'SMS-CR-001',
+  'LDC-01': 'SMS-LD-001',
+  'LF-01': 'SMS-LF-001',
+  'CCST-01': 'SMS-CC-001',
+  'HRM-01': 'RM-DM-001',
+  'HP-04': 'RM-RS-001',
+  'GB-09': 'RM-GB-001',
+  'MD-12': 'RM-DM-001',
+  'FSF-01': 'RM-FS-001',
+  'CONV-07': 'BF-CV-001',
+  'COB-04': 'CO-PU-001',
+  'PCA-01': 'CO-PU-001',
+  'DOOR-12': 'CO-QC-001',
+  'SMS-PU-001': 'SMS-PU-001',
+  'RM-CL-001': 'RM-CL-001',
+  'CO-GC-001': 'CO-GC-001',
+  'SP-FM-001': 'SP-FM-001',
+  'SP-IG-001': 'SP-IG-001',
+  'SP-CV-001': 'SP-CV-001',
+  'PP-TG-001': 'PP-TG-001',
+  'PP-BL-001': 'PP-BL-001',
+  'PP-CT-001': 'PP-CT-001',
+  'PP-TR-001': 'PP-TR-001',
+};
+
+const CONTEXT_OPTIONS = [
+  { value: 'Whole Plant', label: 'Whole Plant' },
+  { value: 'Plant-wide', label: 'Plant-wide' },
+  { value: 'BF-02', label: 'BF-02 - Blast Furnace #2' },
+  { value: 'BF-03', label: 'BF-03 - Blast Furnace #3' },
+  { value: 'HBB-01', label: 'HBB-01 - Hot Blast Blower' },
+  { value: 'BFC-01', label: 'BFC-01 - BF Cooling Pump #1' },
+  { value: 'BFH-01', label: 'BFH-01 - BF Hydraulic System' },
+  { value: 'CC-03', label: 'CC-03 - Continuous Caster Cooler CC-03' },
+  { value: 'LC-05', label: 'LC-05 - Ladle Transfer Crane LC-05' },
+  { value: 'LDC-01', label: 'LDC-01 - LD Converter Vessel #1' },
+  { value: 'LF-01', label: 'LF-01 - Ladle Furnace' },
+  { value: 'CCST-01', label: 'CCST-01 - Continuous Caster #1' },
+  { value: 'HRM-01', label: 'HRM-01 - Hot Rolling Mill #1' },
+  { value: 'HP-04', label: 'HP-04 - Hydraulic Pump HP-04' },
+  { value: 'GB-09', label: 'GB-09 - Reducer Gearbox GB-09' },
+  { value: 'MD-12', label: 'MD-12 - Main Drive Motor MD-12' },
+  { value: 'FSF-01', label: 'FSF-01 - Finishing Stand F1' },
+  { value: 'CONV-07', label: 'CONV-07 - Coke Conveyor C-07' },
+  { value: 'COB-04', label: 'COB-04 - Coke Oven Battery #4' },
+  { value: 'PCA-01', label: 'PCA-01 - Pusher Car #1' },
+  { value: 'DOOR-12', label: 'DOOR-12 - Door Cleaning Machine' },
+  { value: 'SMS-PU-001', label: 'SMS-PU-001 - Argon Stirring Pump' },
+  { value: 'RM-CL-001', label: 'RM-CL-001 - Cooling Bed System' },
+  { value: 'CO-GC-001', label: 'CO-GC-001 - Gas Cleaning Plant' },
+  { value: 'SP-FM-001', label: 'SP-FM-001 - Sinter Fan Main Blower' },
+  { value: 'SP-IG-001', label: 'SP-IG-001 - Ignition Furnace' },
+  { value: 'SP-CV-001', label: 'SP-CV-001 - Sinter Mix Conveyor' },
+  { value: 'PP-TG-001', label: 'PP-TG-001 - Steam Turbine Generator' },
+  { value: 'PP-BL-001', label: 'PP-BL-001 - Boiler Feed Pump' },
+  { value: 'PP-CT-001', label: 'PP-CT-001 - Cooling Tower Fan' },
+  { value: 'PP-TR-001', label: 'PP-TR-001 - Main Transformer' },
 ];
 
 export default function ChatPage() {
@@ -44,6 +112,8 @@ export default function ChatPage() {
   const [isRecording, setIsRecording] = useState(false);
   const [recordingSeconds, setRecordingSeconds] = useState(0);
   const [transcribing, setTranscribing] = useState(false);
+  const [selectedContext, setSelectedContext] = useState('Whole Plant');
+  const [feedbackStatus, setFeedbackStatus] = useState<Record<number, 'thumbs_up' | 'thumbs_down'>>({});
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const terminalEndRef = useRef<HTMLDivElement>(null);
@@ -269,6 +339,7 @@ export default function ChatPage() {
           session_id: sessionId,
           image_data: currentImageData,
           image_type: currentImageType,
+          equipment_id: CONTEXT_MAP[selectedContext] || undefined,
         }),
       });
 
@@ -329,7 +400,7 @@ export default function ChatPage() {
   const handleFeedback = async (index: number, type: 'thumbs_up' | 'thumbs_down') => {
     if (!sessionId) return;
     try {
-      await fetch(`${API_BASE}/api/feedback`, {
+      const res = await fetch(`${API_BASE}/api/feedback`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -338,13 +409,22 @@ export default function ChatPage() {
           feedback_type: type,
         }),
       });
-    } catch {}
+      if (res.ok) {
+        setFeedbackStatus(prev => ({ ...prev, [index]: type }));
+        logConsole(`SYSTEM: Recorded feedback: ${type === 'thumbs_up' ? 'Helpful (👍)' : 'Not helpful (👎)'} on response #${index}`);
+      } else {
+        logConsole(`WARNING: Failed to submit feedback to server (status: ${res.status})`);
+      }
+    } catch (err: any) {
+      logConsole(`ERROR: Feedback transmission failed: ${err.message}`);
+    }
   };
 
   const clearChat = () => {
     setMessages([]);
     setSessionId(null);
     setConsoleLogs([]);
+    setFeedbackStatus({});
   };
 
   return (
@@ -376,6 +456,108 @@ export default function ChatPage() {
                 </button>
               )}
             </div>
+          </div>
+
+          {/* Context Scope Dropdown Bar */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 12,
+            padding: '8px 28px',
+            borderBottom: '1px solid var(--border-color)',
+            background: 'var(--bg-secondary)',
+            zIndex: 10
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{
+                display: 'flex',
+                alignItems: 'center',
+                color: 'var(--text-muted)'
+              }}>
+                <Cpu size={14} style={{ color: 'var(--accent-blue-light)' }} />
+              </span>
+              <select
+                value={selectedContext}
+                onChange={(e) => {
+                  setSelectedContext(e.target.value);
+                  logConsole(`SYSTEM: Chat context scope changed to: ${e.target.value}`);
+                }}
+                style={{
+                  background: 'var(--bg-input)',
+                  color: 'var(--text-primary)',
+                  border: '1px solid rgba(96, 165, 250, 0.4)',
+                  borderRadius: '6px',
+                  padding: '4px 8px',
+                  fontSize: 12,
+                  fontWeight: 500,
+                  outline: 'none',
+                  cursor: 'pointer',
+                  transition: 'border-color 0.2s',
+                  boxShadow: '0 0 10px rgba(96, 165, 250, 0.1)',
+                  width: '140px',
+                  textOverflow: 'ellipsis',
+                  overflow: 'hidden',
+                  whiteSpace: 'nowrap',
+                }}
+                onFocus={(e) => {
+                  e.target.style.borderColor = 'var(--accent-blue-light)';
+                  e.target.style.boxShadow = '0 0 12px rgba(96, 165, 250, 0.25)';
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor = 'rgba(96, 165, 250, 0.4)';
+                  e.target.style.boxShadow = '0 0 10px rgba(96, 165, 250, 0.1)';
+                }}
+              >
+                {CONTEXT_OPTIONS.map((opt) => (
+                  <option key={opt.value} value={opt.value} style={{ background: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Quick Actions for Selected Equipment */}
+            {selectedContext !== 'Whole Plant' && selectedContext !== 'Plant-wide' && (
+              <div className="animate-fadeIn" style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+                <span style={{ fontSize: 10, color: 'var(--text-muted)', fontWeight: 600, marginRight: 4 }}>QUICK ACTIONS:</span>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Analyse recent symptoms and run diagnostic checks for ${selectedContext}`)}
+                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
+                >
+                  🔍 Analyse
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Generate a detailed maintenance summary report for ${selectedContext}`)}
+                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
+                >
+                  📋 Generate Report
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Predict remaining useful life (RUL) and failure risk for ${selectedContext}`)}
+                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
+                >
+                  📈 Predict Failure
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`What are the standard operating procedures (SOP) for maintenance on ${selectedContext}?`)}
+                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
+                >
+                  📖 View SOP
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Check spare parts availability and status for ${selectedContext}`)}
+                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
+                >
+                  📦 Spare Parts
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Dual Panel Body: Chat + Console */}
@@ -464,11 +646,23 @@ export default function ChatPage() {
                               {msg.risk_level}
                             </span>
                           )}
-                          <div className="chat-feedback">
+                          <div className="chat-feedback" style={{ display: 'flex', gap: 6 }}>
                             <button
                               className="feedback-btn"
                               onClick={() => handleFeedback(i, 'thumbs_up')}
-                              style={{ padding: '2px 6px' }}
+                              style={{
+                                padding: '4px 8px',
+                                borderRadius: '6px',
+                                background: feedbackStatus[i] === 'thumbs_up' ? 'rgba(52, 211, 153, 0.2)' : 'transparent',
+                                border: feedbackStatus[i] === 'thumbs_up' ? '1px solid var(--accent-green)' : '1px solid rgba(148, 163, 184, 0.1)',
+                                color: feedbackStatus[i] === 'thumbs_up' ? 'var(--accent-green)' : 'var(--text-muted)',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '13px'
+                              }}
                               title="Helpful"
                             >
                               👍
@@ -476,7 +670,19 @@ export default function ChatPage() {
                             <button
                               className="feedback-btn"
                               onClick={() => handleFeedback(i, 'thumbs_down')}
-                              style={{ padding: '2px 6px' }}
+                              style={{
+                                padding: '4px 8px',
+                                borderRadius: '6px',
+                                background: feedbackStatus[i] === 'thumbs_down' ? 'rgba(248, 113, 113, 0.2)' : 'transparent',
+                                border: feedbackStatus[i] === 'thumbs_down' ? '1px solid var(--accent-red)' : '1px solid rgba(148, 163, 184, 0.1)',
+                                color: feedbackStatus[i] === 'thumbs_down' ? 'var(--accent-red)' : 'var(--text-muted)',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '13px'
+                              }}
                               title="Not helpful"
                             >
                               👎

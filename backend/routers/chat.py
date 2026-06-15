@@ -15,7 +15,8 @@ async def chat(request: ChatRequest):
             message=request.message,
             session_id=request.session_id,
             image_data=request.image_data,
-            image_type=request.image_type
+            image_type=request.image_type,
+            equipment_id=request.equipment_id
         )
         return ChatResponse(**result)
     except Exception as e:

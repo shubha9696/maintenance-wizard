@@ -94,7 +94,7 @@ Return ONLY the JSON object, no explanation."""
                 "requires_history": False
             }
 
-    async def process_query(self, message: str, session_id: str = None, image_data: str = None, image_type: str = None) -> dict:
+    async def process_query(self, message: str, session_id: str = None, image_data: str = None, image_type: str = None, equipment_id: str = None) -> dict:
         """Process a user query through the agentic pipeline."""
         # Session management
         if not session_id:
@@ -120,6 +120,9 @@ Return ONLY the JSON object, no explanation."""
 
         # Step 2: Identify equipment
         equipment = self._find_equipment(message)
+        if not equipment and equipment_id:
+            equipment = next((eq for eq in self.equipment_data if eq["id"].lower() == equipment_id.lower()), {})
+            
         if equipment:
             session["equipment_context"] = equipment
         elif session.get("equipment_context"):
