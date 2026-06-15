@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import { Database, Upload, FileText, CheckCircle2, RefreshCw, Search, ShieldCheck, Terminal, AlertCircle } from 'lucide-react';
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 
 interface DocItem {
   id: string;
@@ -47,21 +47,34 @@ export default function KnowledgeCenterPage() {
   }, []);
 
   const fetchStats = async () => {
+    const cacheKey = '/api/knowledge/stats';
+    const cached = getCachedData(cacheKey);
+    if (cached) {
+      setDocCount(cached.documents);
+      setChunkCount(cached.chunks);
+    }
     try {
-      const res = await fetch(`${API_BASE}/api/knowledge/stats`);
+      const res = await fetch(`${API_BASE}${cacheKey}`);
       const data = await res.json();
       setDocCount(data.documents);
       setChunkCount(data.chunks);
+      setCachedData(cacheKey, data);
     } catch (e) {
       console.error("Failed to fetch knowledge stats:", e);
     }
   };
 
   const fetchDocs = async () => {
+    const cacheKey = '/api/knowledge/documents';
+    const cached = getCachedData(cacheKey);
+    if (cached) {
+      setDocs(cached);
+    }
     try {
-      const res = await fetch(`${API_BASE}/api/knowledge/documents`);
+      const res = await fetch(`${API_BASE}${cacheKey}`);
       const data = await res.json();
       setDocs(data);
+      setCachedData(cacheKey, data);
     } catch (e) {
       console.error("Failed to fetch documents list:", e);
     }

@@ -3,89 +3,125 @@ import httpx
 import google.generativeai as genai
 from backend.config import settings
 
+
 class LLMClient:
-    """Unified LLM client interface for Gemini and Groq with automatic fallback."""
+    """Unified LLM client interface for Gemini and Groq with automatic multi-key + multi-model fallback."""
 
     def __init__(self):
-        # Configure Gemini
-        genai.configure(api_key=settings.GEMINI_API_KEY)
-        
-    def generate_content(self, model_role: str, prompt: str) -> str:
-        """
-        Generate content using the active provider (Gemini or Groq).
-        model_role: 'flash' or 'pro' (determines the model tier)
-        """
-        provider = getattr(settings, "LLM_PROVIDER", "gemini").lower()
-        groq_api_key = getattr(settings, "GROQ_API_KEY", "")
+        # Configure Gemini with the primary key
+        self._current_gemini_key_index = 0
+        self._gemini_keys = settings.GEMINI_API_KEYS
+        self._groq_keys = settings.GROQ_API_KEYS
+        if self._gemini_keys:
+            genai.configure(api_key=self._gemini_keys[0])
 
-        if provider == "groq" and groq_api_key:
-            groq_model = getattr(settings, "GROQ_MODEL", "llama-3.3-70b-versatile")
-            try:
-                headers = {
-                    "Authorization": f"Bearer {groq_api_key}",
-                    "Content-Type": "application/json"
-                }
-                data = {
-                    "model": groq_model,
-                    "messages": [
-                        {"role": "user", "content": prompt}
-                    ],
-                    "temperature": 0.2
-                }
-                # Synchronous request using httpx (which is installed with FastAPI)
-                response = httpx.post(
-                    "https://api.groq.com/openai/v1/chat/completions",
-                    headers=headers,
-                    json=data,
-                    timeout=30.0
-                )
-                if response.status_code == 200:
-                    return response.json()["choices"][0]["message"]["content"]
-                else:
-                    print(f"Groq API error {response.status_code}: {response.text}. Falling back to Gemini.")
-            except Exception as e:
-                print(f"Groq API exception: {e}. Falling back to Gemini.")
+    def _rotate_gemini_key(self, key_index: int):
+        """Switch the active Gemini API key for the genai library."""
+        if key_index < len(self._gemini_keys):
+            genai.configure(api_key=self._gemini_keys[key_index])
+            self._current_gemini_key_index = key_index
+            return True
+        return False
 
-        # Default/Fallback to Gemini
-        # Map role to configured Gemini models
-        if model_role == "pro":
-            gemini_model_name = settings.GEMINI_PRO_MODEL
-        else:
-            gemini_model_name = settings.GEMINI_FLASH_MODEL
-            
+    def _try_groq(self, prompt: str, model: str = None, groq_key: str = None) -> str | None:
+        """Attempt a Groq API call with the given model and key. Returns response text or None."""
+        api_key = groq_key or (self._groq_keys[0] if self._groq_keys else "")
+        if not api_key:
+            return None
+        groq_model = model or getattr(settings, "GROQ_MODEL", "llama-3.3-70b-versatile")
         try:
-            gemini_model = genai.GenerativeModel(gemini_model_name)
+            headers = {
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            }
+            data = {
+                "model": groq_model,
+                "messages": [
+                    {"role": "user", "content": prompt}
+                ],
+                "temperature": 0.2
+            }
+            response = httpx.post(
+                "https://api.groq.com/openai/v1/chat/completions",
+                headers=headers,
+                json=data,
+                timeout=30.0
+            )
+            if response.status_code == 200:
+                return response.json()["choices"][0]["message"]["content"]
+            else:
+                print(f"Groq error ({groq_model}, key...{api_key[-6:]}): {response.status_code}")
+                return None
+        except Exception as e:
+            print(f"Groq exception ({groq_model}): {e}")
+            return None
+
+    def _try_gemini(self, prompt: str, model_name: str, key_index: int) -> str | None:
+        """Attempt a Gemini API call with the given model and key. Returns response text or None."""
+        try:
+            self._rotate_gemini_key(key_index)
+            gemini_model = genai.GenerativeModel(model_name)
             response = gemini_model.generate_content(prompt)
             return response.text
         except Exception as e:
-            print(f"Gemini API generation error on {gemini_model_name}: {e}")
-            
-            # 1. Try alternative Gemini models
-            alt_models = [
-                "models/gemini-2.5-flash",
-                "models/gemini-2.5-flash-lite",
-                "models/gemini-1.5-flash",
-                "models/gemini-1.5-pro"
-            ]
-            # Move the original model to the end or skip it
-            alt_models = [m for m in alt_models if m != gemini_model_name]
-            
-            for alt_model in alt_models:
-                try:
-                    print(f"Trying alternative Gemini model: {alt_model}...")
-                    alt_gemini_model = genai.GenerativeModel(alt_model)
-                    response = alt_gemini_model.generate_content(prompt)
-                    return response.text
-                except Exception as e2:
-                    print(f"Alternative Gemini model {alt_model} failed: {e2}")
-            
-            # 2. Local fallback: extract answer directly from RAG prompt context
-            return self._generate_offline_fallback(prompt)
+            error_str = str(e)
+            if "429" in error_str:
+                print(f"Gemini quota hit: key#{key_index+1} + {model_name}")
+            elif "404" in error_str:
+                print(f"Gemini 404: {model_name}")
+            else:
+                print(f"Gemini err: key#{key_index+1} + {model_name}: {error_str[:100]}")
+            return None
+
+    def generate_content(self, model_role: str, prompt: str) -> str:
+        """
+        Generate content with full fallback chain:
+          1. Groq primary model × all keys
+          2. Groq fallback models × all keys
+          3. Gemini primary model × all keys
+          4. Gemini fallback models × all keys
+          5. Local offline fallback
+        """
+        provider = getattr(settings, "LLM_PROVIDER", "gemini").lower()
+
+        # ── Step 1: Try Groq (all keys × primary model, then all keys × fallback models) ──
+        if provider == "groq":
+            for groq_key in self._groq_keys:
+                result = self._try_groq(prompt, groq_key=groq_key)
+                if result:
+                    return result
+
+            for fallback_model in settings.GROQ_FALLBACK_MODELS:
+                if fallback_model != settings.GROQ_MODEL:
+                    for groq_key in self._groq_keys:
+                        result = self._try_groq(prompt, model=fallback_model, groq_key=groq_key)
+                        if result:
+                            return result
+
+        # ── Step 2: Try Gemini (all keys × primary model) ──
+        primary_model = settings.GEMINI_PRO_MODEL if model_role == "pro" else settings.GEMINI_FLASH_MODEL
+
+        for key_idx in range(len(self._gemini_keys)):
+            result = self._try_gemini(prompt, primary_model, key_idx)
+            if result:
+                return result
+
+        # ── Step 3: Try Gemini fallback models × all keys ──
+        for fallback_model in settings.GEMINI_FALLBACK_MODELS:
+            if fallback_model == primary_model:
+                continue
+            for key_idx in range(len(self._gemini_keys)):
+                result = self._try_gemini(prompt, fallback_model, key_idx)
+                if result:
+                    return result
+
+        # ── Step 4: Local offline fallback ──
+        print("WARNING: All LLM providers exhausted. Using offline fallback.")
+        return self._generate_offline_fallback(prompt)
 
     def _generate_offline_fallback(self, prompt: str) -> str:
         """Constructs a high-quality fallback reply from retrieved documents if API quota is exhausted."""
         try:
-            # Try to parse query and documents
             query = ""
             if "USER QUESTION:" in prompt:
                 query = prompt.split("USER QUESTION:")[1].split("\n")[0].strip()
@@ -98,7 +134,6 @@ class LLMClient:
                 if "USER QUESTION:" in docs_block:
                     docs_block = docs_block.split("USER QUESTION:")[0]
             
-            # Extract distinct sources
             sources = []
             if docs_block:
                 parts = docs_block.split("---")
@@ -129,54 +164,39 @@ class LLMClient:
             return f"[RAG Offline Mode] Failed to synthesize response. Error: {str(e)}"
 
     def transcribe_audio(self, audio_bytes: bytes, filename: str) -> str:
-        """
-        Transcribe audio using Groq Whisper model (whisper-large-v3).
-        """
-        groq_api_key = getattr(settings, "GROQ_API_KEY", "")
-        if not groq_api_key:
-            raise ValueError("GROQ_API_KEY is not configured in settings.")
-            
-        try:
-            headers = {
-                "Authorization": f"Bearer {groq_api_key}"
-            }
-            mime_type = "audio/webm"
-            if filename.endswith(".wav"):
-                mime_type = "audio/wav"
-            elif filename.endswith(".mp3"):
-                mime_type = "audio/mp3"
-            elif filename.endswith(".m4a"):
-                mime_type = "audio/m4a"
+        """Transcribe audio using Groq Whisper model with multi-key fallback."""
+        mime_type = "audio/webm"
+        if filename.endswith(".wav"):
+            mime_type = "audio/wav"
+        elif filename.endswith(".mp3"):
+            mime_type = "audio/mp3"
+        elif filename.endswith(".m4a"):
+            mime_type = "audio/m4a"
+
+        for groq_key in self._groq_keys:
+            try:
+                headers = {"Authorization": f"Bearer {groq_key}"}
+                files = {"file": (filename, audio_bytes, mime_type)}
+                data = {"model": "whisper-large-v3"}
                 
-            files = {
-                "file": (filename, audio_bytes, mime_type)
-            }
-            data = {
-                "model": "whisper-large-v3"
-            }
-            
-            response = httpx.post(
-                "https://api.groq.com/openai/v1/audio/transcriptions",
-                headers=headers,
-                files=files,
-                data=data,
-                timeout=30.0
-            )
-            if response.status_code == 200:
-                return response.json().get("text", "")
-            else:
-                error_msg = f"Groq Whisper transcription failed ({response.status_code}): {response.text}"
-                print(error_msg)
-                raise Exception(error_msg)
-        except Exception as e:
-            print(f"Exception in transcribe_audio: {e}")
-            raise e
+                response = httpx.post(
+                    "https://api.groq.com/openai/v1/audio/transcriptions",
+                    headers=headers,
+                    files=files,
+                    data=data,
+                    timeout=30.0
+                )
+                if response.status_code == 200:
+                    return response.json().get("text", "")
+                else:
+                    print(f"Whisper failed (key...{groq_key[-6:]}): {response.status_code}")
+            except Exception as e:
+                print(f"Whisper exception (key...{groq_key[-6:]}): {e}")
+
+        raise Exception("All Groq keys exhausted for audio transcription.")
 
     def generate_vision_content(self, prompt: str, image_data: str, image_type: str = "image/png") -> str:
-        """
-        Analyze an image using Groq Llama vision models with Gemini fallback.
-        """
-        groq_api_key = getattr(settings, "GROQ_API_KEY", "")
+        """Analyze an image using Groq vision models (multi-key) with Gemini multi-key fallback."""
         if not image_type:
             image_type = "image/png"
         
@@ -187,59 +207,53 @@ class LLMClient:
             "llama-3.2-11b-vision-preview"
         ]
         
-        if groq_api_key:
+        # Try all Groq keys × vision models
+        for groq_key in self._groq_keys:
             headers = {
-                "Authorization": f"Bearer {groq_api_key}",
+                "Authorization": f"Bearer {groq_key}",
                 "Content-Type": "application/json"
             }
-            
             for model in groq_vision_models:
                 try:
-                    print(f"Trying Groq vision model: {model}...")
                     data = {
                         "model": model,
-                        "messages": [
-                            {
-                                "role": "user",
-                                "content": [
-                                    {"type": "text", "text": prompt},
-                                    {"type": "image_url", "image_url": {"url": image_url}}
-                                ]
-                            }
-                        ],
+                        "messages": [{"role": "user", "content": [
+                            {"type": "text", "text": prompt},
+                            {"type": "image_url", "image_url": {"url": image_url}}
+                        ]}],
                         "temperature": 0.2
                     }
                     response = httpx.post(
                         "https://api.groq.com/openai/v1/chat/completions",
-                        headers=headers,
-                        json=data,
-                        timeout=30.0
+                        headers=headers, json=data, timeout=30.0
                     )
                     if response.status_code == 200:
                         return response.json()["choices"][0]["message"]["content"]
                     else:
-                        print(f"Groq vision {model} failed with status {response.status_code}: {response.text}")
+                        print(f"Groq vision {model} (key...{groq_key[-6:]}): {response.status_code}")
                 except Exception as e:
-                    print(f"Exception trying Groq vision model {model}: {e}")
+                    print(f"Groq vision {model} exception: {e}")
         
-        # Fallback to Gemini
-        print("Falling back to Gemini Flash for vision analysis...")
-        try:
-            import base64
-            image_bytes = base64.b64decode(image_data)
-            gemini_model_name = settings.GEMINI_PRO_MODEL
-            
-            gemini_model = genai.GenerativeModel(gemini_model_name)
-            img_part = {
-                "mime_type": image_type,
-                "data": image_bytes
-            }
-            response = gemini_model.generate_content([img_part, prompt])
-            return response.text
-        except Exception as e:
-            print(f"Gemini Vision fallback failed: {e}")
-            return f"[Vision Fallback Error] Unable to analyze screenshot. Groq Vision and Gemini Vision both failed. Details: {str(e)}"
+        # Fallback to Gemini with multi-key × multi-model rotation
+        import base64
+        image_bytes = base64.b64decode(image_data)
+
+        vision_models = [settings.GEMINI_PRO_MODEL] + settings.GEMINI_FALLBACK_MODELS
+        seen = set()
+        unique_models = [m for m in vision_models if m not in seen and not seen.add(m)]
+
+        for model_name in unique_models:
+            for key_idx in range(len(self._gemini_keys)):
+                try:
+                    self._rotate_gemini_key(key_idx)
+                    gemini_model = genai.GenerativeModel(model_name)
+                    img_part = {"mime_type": image_type, "data": image_bytes}
+                    response = gemini_model.generate_content([img_part, prompt])
+                    return response.text
+                except Exception as e:
+                    print(f"Gemini Vision key#{key_idx+1} + {model_name}: {str(e)[:80]}")
+
+        return "[Vision Fallback Error] All providers exhausted for image analysis."
 
 # Singleton instance
 llm_client = LLMClient()
-

@@ -5,7 +5,7 @@ import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
 import { Search, SlidersHorizontal, Cpu, ShieldAlert } from 'lucide-react';
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 
 interface Equipment {
   id: string;
@@ -20,15 +20,25 @@ interface Equipment {
 }
 
 export default function EquipmentPage() {
-  const [equipment, setEquipment] = useState<Equipment[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [equipment, setEquipment] = useState<Equipment[]>(() => {
+    const cached = getCachedData('/api/equipment');
+    return cached ? (cached.equipment || []) : [];
+  });
+  const [loading, setLoading] = useState(() => {
+    return !getCachedData('/api/equipment');
+  });
   const [filter, setFilter] = useState('all');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/equipment`)
+    const cacheKey = '/api/equipment';
+    fetch(`${API_BASE}${cacheKey}`)
       .then(r => r.json())
-      .then(d => { setEquipment(d.equipment || []); setLoading(false); })
+      .then(d => {
+        setEquipment(d.equipment || []);
+        setCachedData(cacheKey, d);
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, []);
 

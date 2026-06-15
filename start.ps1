@@ -21,7 +21,7 @@ if (-not (Test-Path "backend/data/generated/equipment.json")) {
 
 # Start Backend
 Write-Host "[2/3] Starting FastAPI backend on http://localhost:8000 ..." -ForegroundColor Yellow
-$backend = Start-Process -FilePath "python" -ArgumentList "-m", "uvicorn", "backend.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000" -PassThru -NoNewWindow
+$backend = Start-Process -FilePath "python" -ArgumentList "-m", "uvicorn", "backend.main:app", "--reload", "--reload-dir", "backend", "--reload-exclude", "*generated*", "--reload-exclude", "*.json", "--host", "0.0.0.0", "--port", "8000" -PassThru -NoNewWindow
 
 Start-Sleep -Seconds 3
 

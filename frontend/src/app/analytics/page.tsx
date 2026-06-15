@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 import {
   TrendingUp, TrendingDown, AlertTriangle, Shield, Activity,
   BarChart3, PieChart, ArrowDownRight, ArrowUpRight, Minus,
@@ -35,13 +35,22 @@ interface AnalyticsData {
 }
 
 export default function AnalyticsPage() {
-  const [data, setData] = useState<AnalyticsData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<AnalyticsData | null>(() => {
+    return getCachedData('/api/equipment/analytics');
+  });
+  const [loading, setLoading] = useState(() => {
+    return !getCachedData('/api/equipment/analytics');
+  });
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/equipment/analytics`)
+    const cacheKey = '/api/equipment/analytics';
+    fetch(`${API_BASE}${cacheKey}`)
       .then(r => r.json())
-      .then(d => { setData(d); setLoading(false); })
+      .then(d => {
+        setData(d);
+        setCachedData(cacheKey, d);
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, []);
 

@@ -10,12 +10,13 @@ from chromadb.api.types import EmbeddingFunction, Documents, Embeddings
 import google.generativeai as genai
 from backend.config import settings
 
-# Configure Gemini
-genai.configure(api_key=settings.GEMINI_API_KEY)
+# Configure Gemini with the primary key
+_gemini_keys = settings.GEMINI_API_KEYS
+genai.configure(api_key=_gemini_keys[0] if _gemini_keys else settings.GEMINI_API_KEY)
 
 
 class GeminiEmbeddingFunction(EmbeddingFunction):
-    """Custom embedding function using Gemini's embed_content API."""
+    """Custom embedding function using Gemini's embed_content API with multi-key rotation."""
 
     def __call__(self, input: Documents) -> Embeddings:
         import time
@@ -23,37 +24,40 @@ class GeminiEmbeddingFunction(EmbeddingFunction):
         # Process in batches of 20 to avoid rate limits
         for i in range(0, len(input), 20):
             batch = input[i:i+20]
-            # Add a small delay between batches to stay under rate limits
             if i > 0:
                 time.sleep(0.3)
-                
-            for attempt in range(5):
-                try:
-                    result = genai.embed_content(
-                        model=settings.EMBEDDING_MODEL,
-                        content=batch,
-                        task_type="retrieval_document"
-                    )
-                    results.extend(result['embedding'])
+
+            embedded = False
+            # Try each API key before giving up on this batch
+            for key_idx, api_key in enumerate(_gemini_keys):
+                if embedded:
                     break
-                except Exception as e:
-                    error_msg = str(e).lower()
-                    if "429" in error_msg or "quota" in error_msg or "resource_exhausted" in error_msg:
-                        if "limit: 1000" in error_msg or "quota exceeded" in error_msg or "exceeded your current quota" in error_msg:
-                            print(f"Daily quota limit reached for embeddings. Aborting retries immediately.")
-                            results.extend([[0.0] * 3072] * len(batch))
-                            break
-                        sleep_time = (2 ** attempt) + 1
-                        print(f"Rate limit hit. Retrying batch {i//20 + 1} in {sleep_time}s... (Error: {e})")
-                        time.sleep(sleep_time)
-                    else:
-                        print(f"Error in batch embedding: {e}")
-                        # Fallback to zero vectors for the batch
-                        results.extend([[0.0] * 3072] * len(batch))
+                genai.configure(api_key=api_key)
+                for attempt in range(3):
+                    try:
+                        result = genai.embed_content(
+                            model=settings.EMBEDDING_MODEL,
+                            content=batch,
+                            task_type="retrieval_document"
+                        )
+                        results.extend(result['embedding'])
+                        embedded = True
                         break
-            else:
-                # Exhausted all retries
-                print(f"Failed to embed batch {i//20 + 1} after 5 attempts.")
+                    except Exception as e:
+                        error_msg = str(e).lower()
+                        if "429" in error_msg or "quota" in error_msg or "resource_exhausted" in error_msg:
+                            if "limit: 1000" in error_msg or "exceeded your current quota" in error_msg:
+                                print(f"Embedding quota exhausted on key#{key_idx+1}. Trying next key...")
+                                break  # Move to next key
+                            sleep_time = (2 ** attempt) + 0.5
+                            print(f"Embedding rate limit hit (key#{key_idx+1}). Retry in {sleep_time}s...")
+                            time.sleep(sleep_time)
+                        else:
+                            print(f"Embedding error (key#{key_idx+1}): {e}")
+                            break  # Move to next key
+
+            if not embedded:
+                print(f"All keys exhausted for embedding batch {i//20 + 1}. Using zero vectors.")
                 results.extend([[0.0] * 3072] * len(batch))
         return results
 
@@ -397,21 +401,26 @@ class VectorStoreService:
         return self._format_results(results)
 
     def embed_query(self, query: str) -> list:
-        """Embed a single search query using task_type='retrieval_query'."""
-        try:
-            result = genai.embed_content(
-                model=settings.EMBEDDING_MODEL,
-                content=query,
-                task_type="retrieval_query"
-            )
-            return [result['embedding']]
-        except Exception as e:
-            print(f"Error embedding query: {e}. Falling back to default embedding function.")
-            error_msg = str(e).lower()
-            if "limit: 1000" in error_msg or "quota exceeded" in error_msg or "exceeded your current quota" in error_msg:
-                print("Daily quota exceeded. Returning dummy zero vector immediately to prevent response lag.")
-                return [[0.0] * 3072]
-            return self.embed_fn([query])
+        """Embed a single search query using task_type='retrieval_query' with multi-key rotation."""
+        for key_idx, api_key in enumerate(_gemini_keys):
+            try:
+                genai.configure(api_key=api_key)
+                result = genai.embed_content(
+                    model=settings.EMBEDDING_MODEL,
+                    content=query,
+                    task_type="retrieval_query"
+                )
+                return [result['embedding']]
+            except Exception as e:
+                error_msg = str(e).lower()
+                if "429" in error_msg or "quota" in error_msg or "exceeded" in error_msg:
+                    print(f"Embed query quota hit on key#{key_idx+1}. Trying next key...")
+                    continue
+                print(f"Embed query error (key#{key_idx+1}): {e}")
+                continue
+        
+        print("All keys exhausted for embed_query. Using zero vector fallback.")
+        return [[0.0] * 3072]
 
     def keyword_search_fallback(self, query: str, collection_name: str, n_results: int = 5, equipment_id: str = None, equipment_type: str = None):
         """Perform simple keyword fallback matching over a ChromaDB collection when embeddings are rate-limited."""

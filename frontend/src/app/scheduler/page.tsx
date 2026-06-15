@@ -5,7 +5,7 @@ import Sidebar from '@/components/Sidebar';
 import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
 import { Calendar, User, Wrench, ShieldCheck, Clock, CheckCircle, AlertTriangle } from 'lucide-react';
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 
 interface Equipment {
   id: string;
@@ -34,95 +34,119 @@ interface MaintenanceTask {
 
 const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
+function generateTasksList(assets: Equipment[]): MaintenanceTask[] {
+  const list: MaintenanceTask[] = [];
+  
+  // Sort assets by health score ascending (worst first)
+  const sorted = [...assets].sort((a, b) => a.health_score - b.health_score);
+
+  sorted.forEach((eq) => {
+    let priority: 'critical' | 'high' | 'medium' | 'low' = 'low';
+    let startDay = 5; 
+    let duration = 1;
+    let action = 'Routine Lubrication & Clean';
+    let technician = 'R. Kumar';
+    let durationHours = 2;
+    let sparesStatus: 'In Stock' | 'Out of Stock' = 'In Stock';
+
+    if (eq.health_score < 50 || eq.risk_level === 'critical') {
+      priority = 'critical';
+      startDay = 0; // Monday
+      duration = 2; // Spans 2 days
+      action = 'Emergency Bearings Swap & Shaft Realignment';
+      technician = 'H. Prasad (Senior Lead Specialist)';
+      durationHours = 8;
+      sparesStatus = 'In Stock';
+    } else if (eq.health_score < 70 || eq.risk_level === 'high') {
+      priority = 'high';
+      startDay = 2; // Wednesday
+      duration = 1;
+      action = 'Thermal Overload Sweep & Coil Re-winding';
+      technician = 'M. Singh';
+      durationHours = 4;
+      sparesStatus = 'In Stock';
+    } else if (eq.health_score < 80 || eq.risk_level === 'medium') {
+      priority = 'medium';
+      startDay = 3; // Thursday
+      duration = 1;
+      action = 'Filter Core Flush & Hydraulic Seal Check';
+      technician = 'S. Chawla';
+      durationHours = 3;
+      sparesStatus = 'Out of Stock';
+    } else if (eq.criticality === 'critical') {
+      priority = 'low';
+      startDay = 4; // Friday
+      duration = 1;
+      action = 'Vibration Drift Check & Coupling Calibration';
+      technician = 'A. Sengupta';
+      durationHours = 2;
+      sparesStatus = 'In Stock';
+    } else {
+      return; // Skip normal healthy items to keep Gantt clean
+    }
+
+    list.push({
+      id: `task-${eq.id}`,
+      equipmentId: eq.id,
+      equipmentName: eq.name,
+      area: eq.area,
+      action,
+      technician,
+      priority,
+      startDay,
+      duration,
+      sparesStatus,
+      durationHours
+    });
+  });
+
+  return list;
+}
+
 export default function SchedulerPage() {
-  const [equipment, setEquipment] = useState<Equipment[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedTask, setSelectedTask] = useState<MaintenanceTask | null>(null);
-  const [tasks, setTasks] = useState<MaintenanceTask[]>([]);
+  const [equipment, setEquipment] = useState<Equipment[]>(() => {
+    const cached = getCachedData('/api/equipment');
+    return cached ? (cached.equipment || []) : [];
+  });
+  const [loading, setLoading] = useState(() => {
+    return !getCachedData('/api/equipment');
+  });
+  
+  const [tasks, setTasks] = useState<MaintenanceTask[]>(() => {
+    const cached = getCachedData('/api/equipment');
+    return cached ? generateTasksList(cached.equipment || []) : [];
+  });
+  
+  const [selectedTask, setSelectedTask] = useState<MaintenanceTask | null>(() => {
+    const cached = getCachedData('/api/equipment');
+    const list = cached ? generateTasksList(cached.equipment || []) : [];
+    return list.length > 0 ? list[0] : null;
+  });
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/equipment`)
+    const cacheKey = '/api/equipment';
+    fetch(`${API_BASE}${cacheKey}`)
       .then(r => r.json())
       .then(d => {
         const list = d.equipment || [];
         setEquipment(list);
-        generateTasks(list);
+        
+        const generated = generateTasksList(list);
+        setTasks(generated);
+        setSelectedTask(prev => {
+          if (prev) {
+            // Keep selection if it exists in the new list
+            const found = generated.find(t => t.id === prev.id);
+            return found || (generated.length > 0 ? generated[0] : null);
+          }
+          return generated.length > 0 ? generated[0] : null;
+        });
+        
+        setCachedData(cacheKey, d);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
-
-  const generateTasks = (assets: Equipment[]) => {
-    const list: MaintenanceTask[] = [];
-    
-    // Sort assets by health score ascending (worst first)
-    const sorted = [...assets].sort((a, b) => a.health_score - b.health_score);
-
-    sorted.forEach((eq, idx) => {
-      let priority: 'critical' | 'high' | 'medium' | 'low' = 'low';
-      let startDay = 5; 
-      let duration = 1;
-      let action = 'Routine Lubrication & Clean';
-      let technician = 'R. Kumar';
-      let durationHours = 2;
-      let sparesStatus: 'In Stock' | 'Out of Stock' = 'In Stock';
-
-      if (eq.health_score < 50 || eq.risk_level === 'critical') {
-        priority = 'critical';
-        startDay = 0; // Monday
-        duration = 2; // Spans 2 days
-        action = 'Emergency Bearings Swap & Shaft Realignment';
-        technician = 'H. Prasad (Senior Lead Specialist)';
-        durationHours = 8;
-        sparesStatus = 'In Stock';
-      } else if (eq.health_score < 70 || eq.risk_level === 'high') {
-        priority = 'high';
-        startDay = 2; // Wednesday
-        duration = 1;
-        action = 'Thermal Overload Sweep & Coil Re-winding';
-        technician = 'M. Singh';
-        durationHours = 4;
-        sparesStatus = 'In Stock';
-      } else if (eq.health_score < 80 || eq.risk_level === 'medium') {
-        priority = 'medium';
-        startDay = 3; // Thursday
-        duration = 1;
-        action = 'Filter Core Flush & Hydraulic Seal Check';
-        technician = 'S. Chawla';
-        durationHours = 3;
-        sparesStatus = 'Out of Stock';
-      } else if (eq.criticality === 'critical') {
-        priority = 'low';
-        startDay = 4; // Friday
-        duration = 1;
-        action = 'Vibration Drift Check & Coupling Calibration';
-        technician = 'A. Sengupta';
-        durationHours = 2;
-        sparesStatus = 'In Stock';
-      } else {
-        return; // Skip normal healthy items to keep Gantt clean
-      }
-
-      list.push({
-        id: `task-${eq.id}`,
-        equipmentId: eq.id,
-        equipmentName: eq.name,
-        area: eq.area,
-        action,
-        technician,
-        priority,
-        startDay,
-        duration,
-        sparesStatus,
-        durationHours
-      });
-    });
-
-    setTasks(list);
-    if (list.length > 0) {
-      setSelectedTask(list[0]);
-    }
-  };
 
   return (
     <div className="app-layout">

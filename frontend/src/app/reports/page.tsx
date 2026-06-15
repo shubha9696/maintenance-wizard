@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ReactMarkdown from 'react-markdown';
 import { Printer, FileText, BarChart2, Bell, ShieldAlert, Sparkles, Download, ChevronDown } from 'lucide-react';
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 
 interface Report {
   id: string;
@@ -60,9 +60,17 @@ export default function ReportsPage() {
   const [showDownloadMenu, setShowDownloadMenu] = useState(false);
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/reports`)
+    const cacheKey = '/api/reports';
+    const cached = getCachedData(cacheKey);
+    if (cached) {
+      setReports(cached.reports || []);
+    }
+    fetch(`${API_BASE}${cacheKey}`)
       .then(r => r.json())
-      .then(d => setReports(d.reports || []))
+      .then(d => {
+        setReports(d.reports || []);
+        setCachedData(cacheKey, d);
+      })
       .catch(() => {});
   }, []);
 

@@ -6,7 +6,7 @@ import ThreeDCard from '@/components/ThreeDCard';
 import Link from 'next/link';
 import { Cpu, CheckCircle2, AlertTriangle, AlertCircle, TrendingUp, Activity, ArrowRight, Zap, Shield } from 'lucide-react';
 
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 
 interface DashboardData {
   total_equipment: number;
@@ -56,20 +56,34 @@ const ZONE_LAYOUT: Array<{
 ];
 
 export default function DashboardPage() {
-  const [dashboard, setDashboard] = useState<DashboardData | null>(null);
-  const [equipment, setEquipment] = useState<Equipment[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [dashboard, setDashboard] = useState<DashboardData | null>(() => {
+    return getCachedData('/api/equipment/dashboard');
+  });
+  const [equipment, setEquipment] = useState<Equipment[]>(() => {
+    const cached = getCachedData('/api/equipment');
+    return cached ? (cached.equipment || []) : [];
+  });
+  const [loading, setLoading] = useState(() => {
+    const cachedDash = getCachedData('/api/equipment/dashboard');
+    const cachedEq = getCachedData('/api/equipment');
+    return !(cachedDash && cachedEq);
+  });
   const [error, setError] = useState('');
   const [hoveredNode, setHoveredNode] = useState<Equipment | null>(null);
 
   useEffect(() => {
+    const cacheKeyDash = '/api/equipment/dashboard';
+    const cacheKeyEq = '/api/equipment';
+
     Promise.all([
-      fetch(`${API_BASE}/api/equipment/dashboard`).then(r => r.json()),
-      fetch(`${API_BASE}/api/equipment`).then(r => r.json()),
+      fetch(`${API_BASE}${cacheKeyDash}`).then(r => r.json()),
+      fetch(`${API_BASE}${cacheKeyEq}`).then(r => r.json()),
     ])
       .then(([dash, eq]) => {
         setDashboard(dash);
         setEquipment(eq.equipment || []);
+        setCachedData(cacheKeyDash, dash);
+        setCachedData(cacheKeyEq, eq);
         setLoading(false);
       })
       .catch(e => {

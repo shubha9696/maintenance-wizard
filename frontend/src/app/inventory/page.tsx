@@ -19,7 +19,7 @@ import {
   AlertOctagon,
   X
 } from 'lucide-react';
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 
 
 interface Equipment {
@@ -62,9 +62,18 @@ interface ToastMessage {
 }
 
 export default function InventoryPage() {
-  const [equipment, setEquipment] = useState<Equipment[]>([]);
-  const [parts, setParts] = useState<GroupedParts>({});
-  const [loading, setLoading] = useState(true);
+  const [equipment, setEquipment] = useState<Equipment[]>(() => {
+    const cachedEq = getCachedData('/api/equipment');
+    return cachedEq ? (cachedEq.equipment || []) : [];
+  });
+  const [parts, setParts] = useState<GroupedParts>(() => {
+    return getCachedData('/api/equipment/spare-parts/all') || {};
+  });
+  const [loading, setLoading] = useState(() => {
+    const cachedEq = getCachedData('/api/equipment');
+    const cachedParts = getCachedData('/api/equipment/spare-parts/all');
+    return !(cachedEq && cachedParts);
+  });
   const [searchTerm, setSearchTerm] = useState('');
   const [stockFilter, setStockFilter] = useState<'all' | 'out' | 'low'>('all');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -80,11 +89,14 @@ export default function InventoryPage() {
 
   // Load backend data
   useEffect(() => {
+    const cacheKeyEq = '/api/equipment';
+    const cacheKeyParts = '/api/equipment/spare-parts/all';
+
     const fetchData = async () => {
       try {
         const [eqRes, partsRes] = await Promise.all([
-          fetch(`${API_BASE}/api/equipment`),
-          fetch(`${API_BASE}/api/equipment/spare-parts/all`)
+          fetch(`${API_BASE}${cacheKeyEq}`),
+          fetch(`${API_BASE}${cacheKeyParts}`)
         ]);
         
         const eqData = await eqRes.json();
@@ -92,6 +104,8 @@ export default function InventoryPage() {
         
         setEquipment(eqData.equipment || []);
         setParts(partsData || {});
+        setCachedData(cacheKeyEq, eqData);
+        setCachedData(cacheKeyParts, partsData);
       } catch (err) {
         console.error('Error loading inventory data:', err);
         showToast('Failed to connect to backend server API.', 'warning');

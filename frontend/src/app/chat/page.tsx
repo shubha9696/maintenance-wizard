@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ReactMarkdown from 'react-markdown';
-import { Bot, Send, Trash2, Activity, Terminal, X, Mic, MicOff, Paperclip, Image, Loader2, Cpu } from 'lucide-react';
+import { Bot, Send, Trash2, Activity, Terminal, X, Mic, MicOff, Paperclip, Image, Loader2, Cpu, History, Plus, ChevronDown, ChevronUp } from 'lucide-react';
 import { API_BASE } from '@/lib/api';
 
 interface Message {
@@ -13,6 +13,13 @@ interface Message {
   sources?: Array<{ document: string; section: string; relevance_score: number; content?: string }>;
   risk_level?: string;
   timestamp: string;
+}
+
+interface ChatSession {
+  id: string;
+  title: string;
+  timestamp: string;
+  messages: Message[];
 }
 
 const QUICK_PROMPTS = [
@@ -26,28 +33,23 @@ const QUICK_PROMPTS = [
 
 const CONTEXT_MAP: Record<string, string> = {
   'Whole Plant': '',
-  'Plant-wide': '',
-  'BF-02': 'BF-CP-001',
-  'BF-03': 'BF-CP-002',
-  'HBB-01': 'BF-BL-001',
-  'BFC-01': 'BF-CP-001',
-  'BFH-01': 'BF-HY-001',
-  'CC-03': 'SMS-CC-001',
-  'LC-05': 'SMS-CR-001',
-  'LDC-01': 'SMS-LD-001',
-  'LF-01': 'SMS-LF-001',
-  'CCST-01': 'SMS-CC-001',
-  'HRM-01': 'RM-DM-001',
-  'HP-04': 'RM-RS-001',
-  'GB-09': 'RM-GB-001',
-  'MD-12': 'RM-DM-001',
-  'FSF-01': 'RM-FS-001',
-  'CONV-07': 'BF-CV-001',
-  'COB-04': 'CO-PU-001',
-  'PCA-01': 'CO-PU-001',
-  'DOOR-12': 'CO-QC-001',
+  'BF-CP-001': 'BF-CP-001',
+  'BF-CP-002': 'BF-CP-002',
+  'BF-BL-001': 'BF-BL-001',
+  'BF-HY-001': 'BF-HY-001',
+  'BF-CV-001': 'BF-CV-001',
+  'SMS-LD-001': 'SMS-LD-001',
+  'SMS-CC-001': 'SMS-CC-001',
+  'SMS-LF-001': 'SMS-LF-001',
+  'SMS-CR-001': 'SMS-CR-001',
   'SMS-PU-001': 'SMS-PU-001',
+  'RM-DM-001': 'RM-DM-001',
+  'RM-GB-001': 'RM-GB-001',
+  'RM-RS-001': 'RM-RS-001',
+  'RM-FS-001': 'RM-FS-001',
   'RM-CL-001': 'RM-CL-001',
+  'CO-PU-001': 'CO-PU-001',
+  'CO-QC-001': 'CO-QC-001',
   'CO-GC-001': 'CO-GC-001',
   'SP-FM-001': 'SP-FM-001',
   'SP-IG-001': 'SP-IG-001',
@@ -60,36 +62,31 @@ const CONTEXT_MAP: Record<string, string> = {
 
 const CONTEXT_OPTIONS = [
   { value: 'Whole Plant', label: 'Whole Plant' },
-  { value: 'Plant-wide', label: 'Plant-wide' },
-  { value: 'BF-02', label: 'BF-02 - Blast Furnace #2' },
-  { value: 'BF-03', label: 'BF-03 - Blast Furnace #3' },
-  { value: 'HBB-01', label: 'HBB-01 - Hot Blast Blower' },
-  { value: 'BFC-01', label: 'BFC-01 - BF Cooling Pump #1' },
-  { value: 'BFH-01', label: 'BFH-01 - BF Hydraulic System' },
-  { value: 'CC-03', label: 'CC-03 - Continuous Caster Cooler CC-03' },
-  { value: 'LC-05', label: 'LC-05 - Ladle Transfer Crane LC-05' },
-  { value: 'LDC-01', label: 'LDC-01 - LD Converter Vessel #1' },
-  { value: 'LF-01', label: 'LF-01 - Ladle Furnace' },
-  { value: 'CCST-01', label: 'CCST-01 - Continuous Caster #1' },
-  { value: 'HRM-01', label: 'HRM-01 - Hot Rolling Mill #1' },
-  { value: 'HP-04', label: 'HP-04 - Hydraulic Pump HP-04' },
-  { value: 'GB-09', label: 'GB-09 - Reducer Gearbox GB-09' },
-  { value: 'MD-12', label: 'MD-12 - Main Drive Motor MD-12' },
-  { value: 'FSF-01', label: 'FSF-01 - Finishing Stand F1' },
-  { value: 'CONV-07', label: 'CONV-07 - Coke Conveyor C-07' },
-  { value: 'COB-04', label: 'COB-04 - Coke Oven Battery #4' },
-  { value: 'PCA-01', label: 'PCA-01 - Pusher Car #1' },
-  { value: 'DOOR-12', label: 'DOOR-12 - Door Cleaning Machine' },
-  { value: 'SMS-PU-001', label: 'SMS-PU-001 - Argon Stirring Pump' },
-  { value: 'RM-CL-001', label: 'RM-CL-001 - Cooling Bed System' },
-  { value: 'CO-GC-001', label: 'CO-GC-001 - Gas Cleaning Plant' },
-  { value: 'SP-FM-001', label: 'SP-FM-001 - Sinter Fan Main Blower' },
-  { value: 'SP-IG-001', label: 'SP-IG-001 - Ignition Furnace' },
-  { value: 'SP-CV-001', label: 'SP-CV-001 - Sinter Mix Conveyor' },
-  { value: 'PP-TG-001', label: 'PP-TG-001 - Steam Turbine Generator' },
-  { value: 'PP-BL-001', label: 'PP-BL-001 - Boiler Feed Pump' },
-  { value: 'PP-CT-001', label: 'PP-CT-001 - Cooling Tower Fan' },
-  { value: 'PP-TR-001', label: 'PP-TR-001 - Main Transformer' },
+  { value: 'BF-CP-001', label: 'BF Cooling Pump #1' },
+  { value: 'BF-CP-002', label: 'BF Cooling Pump #2' },
+  { value: 'BF-BL-001', label: 'Hot Blast Blower' },
+  { value: 'BF-HY-001', label: 'BF Hydraulic System' },
+  { value: 'BF-CV-001', label: 'Raw Material Conveyor' },
+  { value: 'SMS-LD-001', label: 'LD Converter #1' },
+  { value: 'SMS-CC-001', label: 'Continuous Caster #1' },
+  { value: 'SMS-LF-001', label: 'Ladle Furnace' },
+  { value: 'SMS-CR-001', label: 'EOT Crane 250T' },
+  { value: 'SMS-PU-001', label: 'Argon Stirring Pump' },
+  { value: 'RM-DM-001', label: 'Mill Drive Motor' },
+  { value: 'RM-GB-001', label: 'Mill Gearbox #1' },
+  { value: 'RM-RS-001', label: 'Roughing Stand' },
+  { value: 'RM-FS-001', label: 'Finishing Stand #1' },
+  { value: 'RM-CL-001', label: 'Cooling Bed System' },
+  { value: 'CO-PU-001', label: 'Coke Oven Pusher' },
+  { value: 'CO-QC-001', label: 'Quenching Car' },
+  { value: 'CO-GC-001', label: 'Gas Cleaning Plant' },
+  { value: 'SP-FM-001', label: 'Sinter Fan Blower' },
+  { value: 'SP-IG-001', label: 'Ignition Furnace' },
+  { value: 'SP-CV-001', label: 'Sinter Mix Conveyor' },
+  { value: 'PP-TG-001', label: 'Steam Turbine Gen.' },
+  { value: 'PP-BL-001', label: 'Boiler Feed Pump' },
+  { value: 'PP-CT-001', label: 'Cooling Tower Fan' },
+  { value: 'PP-TR-001', label: 'Main Transformer' },
 ];
 
 export default function ChatPage() {
@@ -114,6 +111,83 @@ export default function ChatPage() {
   const [transcribing, setTranscribing] = useState(false);
   const [selectedContext, setSelectedContext] = useState('Whole Plant');
   const [feedbackStatus, setFeedbackStatus] = useState<Record<number, 'thumbs_up' | 'thumbs_down'>>({});
+  const [pastSessions, setPastSessions] = useState<ChatSession[]>([]);
+  const [showHistory, setShowHistory] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('tata_steel_chat_sessions');
+    if (saved) {
+      try {
+        setPastSessions(JSON.parse(saved));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }, []);
+
+  const updateSessionHistory = (sid: string, newMsgs: Message[]) => {
+    if (!sid) return;
+    setPastSessions(prev => {
+      const existingIdx = prev.findIndex(s => s.id === sid);
+      let updated: ChatSession[];
+      if (existingIdx > -1) {
+        updated = [...prev];
+        updated[existingIdx] = {
+          ...updated[existingIdx],
+          messages: newMsgs,
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        const firstUserMsg = newMsgs.find(m => m.role === 'user');
+        const title = firstUserMsg ? (firstUserMsg.content.length > 30 ? firstUserMsg.content.substring(0, 30) + '...' : firstUserMsg.content) : `Session ${sid}`;
+        updated = [
+          {
+            id: sid,
+            title,
+            timestamp: new Date().toISOString(),
+            messages: newMsgs
+          },
+          ...prev
+        ];
+      }
+      localStorage.setItem('tata_steel_chat_sessions', JSON.stringify(updated));
+      return updated;
+    });
+  };
+
+  const handleSelectSession = async (session: ChatSession) => {
+    setSessionId(session.id);
+    setMessages(session.messages || []);
+    setConsoleLogs([]);
+    logConsole(`SYSTEM: Loaded session ${session.id} from local storage.`);
+    
+    try {
+      const res = await fetch(`${API_BASE}/api/chat/history/${session.id}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.messages && data.messages.length > 0) {
+          setMessages(data.messages);
+          logConsole(`SYSTEM: Synced session history with backend.`);
+          setPastSessions(prev => {
+            const idx = prev.findIndex(s => s.id === session.id);
+            if (idx > -1) {
+              const updated = [...prev];
+              updated[idx] = {
+                ...updated[idx],
+                messages: data.messages,
+                timestamp: new Date().toISOString()
+              };
+              localStorage.setItem('tata_steel_chat_sessions', JSON.stringify(updated));
+              return updated;
+            }
+            return prev;
+          });
+        }
+      }
+    } catch (err) {
+      logConsole(`WARNING: Could not connect to backend to sync history. Using cached copy.`);
+    }
+  };
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const terminalEndRef = useRef<HTMLDivElement>(null);
@@ -281,7 +355,13 @@ export default function ChatPage() {
       (userMessage as any).image_type = currentImageType;
     }
 
-    setMessages(prev => [...prev, userMessage]);
+    setMessages(prev => {
+      const updated = [...prev, userMessage];
+      if (sessionId) {
+        updateSessionHistory(sessionId, updated);
+      }
+      return updated;
+    });
     setInput('');
     setLoading(true);
     setActiveAgentNode(0); 
@@ -345,6 +425,7 @@ export default function ChatPage() {
 
       const data = await res.json();
 
+      let activeSid = sessionId || data.session_id;
       if (data.session_id && !sessionId) {
         setSessionId(data.session_id);
       }
@@ -364,18 +445,28 @@ export default function ChatPage() {
       logConsole(`ORCHESTRATOR: Multi-agent chain successfully executed in ${executionTime}s.`);
       logConsole("SYSTEM: Response rendered to console UI.");
 
-      setMessages(prev => [...prev, assistantMessage]);
+      setMessages(prev => {
+        const updated = [...prev, assistantMessage];
+        if (activeSid) {
+          updateSessionHistory(activeSid, updated);
+        }
+        return updated;
+      });
     } catch (error) {
       logIntervalsRef.current.forEach(clearTimeout);
       logConsole("ERROR: Connection to LLM orchestrator failed. Route offline.");
-      setMessages(prev => [
-        ...prev,
-        {
+      setMessages(prev => {
+        const errorMsg: Message = {
           role: 'assistant',
           content: '⚠️ Unable to connect to the AI agent. Please ensure the backend server is running on port 8000.',
           timestamp: new Date().toISOString(),
-        },
-      ]);
+        };
+        const updated = [...prev, errorMsg];
+        if (sessionId) {
+          updateSessionHistory(sessionId, updated);
+        }
+        return updated;
+      });
     } finally {
       clearInterval(nodeTimer);
       setLoading(false);
@@ -750,30 +841,170 @@ export default function ChatPage() {
             </div>
 
             {/* Retro Agent Terminal Console Panel */}
-            <div className={`terminal-window ${showConsole ? '' : 'collapsed'}`}>
-              <div className="terminal-titlebar">
-                <div className="terminal-dots">
-                  <div className="terminal-dot red"></div>
-                  <div className="terminal-dot yellow"></div>
-                  <div className="terminal-dot green"></div>
-                </div>
-                <span style={{ fontSize: 10, color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  Agent Console Thought Logs
-                </span>
-              </div>
-              <div className="terminal-content">
-                {consoleLogs.length === 0 ? (
-                  <div style={{ color: '#64748b', fontStyle: 'italic' }}>
-                    console: awaiting transactions. submit a query in AI Console to scan logs.
+            <div className={`terminal-window ${showConsole ? '' : 'collapsed'}`} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+              {/* Top Section: Console Logs */}
+              <div style={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, borderBottom: '1px solid var(--border-color)' }}>
+                <div className="terminal-titlebar">
+                  <div className="terminal-dots">
+                    <div className="terminal-dot red"></div>
+                    <div className="terminal-dot yellow"></div>
+                    <div className="terminal-dot green"></div>
                   </div>
-                ) : (
-                  consoleLogs.map((log, index) => (
-                    <div key={index} className="terminal-line">
-                      <span className="terminal-prompt">$</span> {log}
+                  <span style={{ fontSize: 10, color: 'var(--text-muted)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Agent Console Thought Logs
+                  </span>
+                </div>
+                <div className="terminal-content" style={{ flex: 1, overflowY: 'auto' }}>
+                  {consoleLogs.length === 0 ? (
+                    <div style={{ color: '#64748b', fontStyle: 'italic' }}>
+                      console: awaiting transactions. submit a query in AI Console to scan logs.
                     </div>
-                  ))
+                  ) : (
+                    consoleLogs.map((log, index) => (
+                      <div key={index} className="terminal-line">
+                        <span className="terminal-prompt">$</span> {log}
+                      </div>
+                    ))
+                  )}
+                  <div ref={terminalEndRef} />
+                </div>
+              </div>
+
+              {/* Bottom Section: Chat History */}
+              <div style={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                height: showHistory ? '220px' : '36px', 
+                minHeight: showHistory ? '150px' : '36px', 
+                background: '#090d16', 
+                borderTop: '1px solid var(--border-color)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                overflow: 'hidden'
+              }}>
+                <div 
+                  onClick={() => setShowHistory(!showHistory)}
+                  style={{ 
+                    background: '#0c1220', 
+                    borderBottom: showHistory ? '1px solid var(--border-color)' : 'none', 
+                    padding: '8px 16px', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'space-between',
+                    cursor: 'pointer',
+                    userSelect: 'none'
+                  }}
+                >
+                  <span style={{ fontSize: 10, color: 'var(--text-secondary)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <History size={12} style={{ color: 'var(--accent-blue-light)' }} />
+                    Chat History
+                    {showHistory ? <ChevronDown size={12} style={{ color: 'var(--text-muted)' }} /> : <ChevronUp size={12} style={{ color: 'var(--text-muted)' }} />}
+                  </span>
+                  <div style={{ display: 'flex', gap: 10, alignItems: 'center' }} onClick={(e) => e.stopPropagation()}>
+                    <button 
+                      onClick={clearChat}
+                      style={{ 
+                        background: 'transparent', 
+                        border: 'none', 
+                        color: 'var(--accent-blue-light)', 
+                        fontSize: 9, 
+                        cursor: 'pointer',
+                        fontWeight: 600,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 2,
+                        opacity: 0.8
+                      }}
+                      onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                      onMouseLeave={(e) => e.currentTarget.style.opacity = '0.8'}
+                      title="Start New Chat"
+                    >
+                      <Plus size={10} /> New
+                    </button>
+                    {pastSessions.length > 0 && (
+                      <button 
+                        onClick={() => {
+                          const code = prompt('Enter access code to clear all history:');
+                          if (code === '9696') {
+                            setPastSessions([]);
+                            localStorage.removeItem('tata_steel_chat_sessions');
+                            clearChat();
+                          } else if (code !== null) {
+                            alert('Incorrect access code. Action denied.');
+                          }
+                        }}
+                        style={{ 
+                          background: 'transparent', 
+                          border: 'none', 
+                          color: 'var(--accent-red)', 
+                          fontSize: 9, 
+                          cursor: 'pointer',
+                          opacity: 0.8
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                        onMouseLeave={(e) => e.currentTarget.style.opacity = '0.8'}
+                      >
+                        Clear All
+                      </button>
+                    )}
+                  </div>
+                </div>
+                {showHistory && (
+                  <div style={{ flex: 1, overflowY: 'auto', padding: '10px 14px', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {pastSessions.length === 0 ? (
+                      <div style={{ color: 'var(--text-muted)', fontSize: 10, fontStyle: 'italic', textAlign: 'center', marginTop: 24 }}>
+                        No past chats saved.
+                      </div>
+                    ) : (
+                      pastSessions.map((session) => {
+                        const isActive = sessionId === session.id;
+                        return (
+                          <div 
+                            key={session.id} 
+                            onClick={() => handleSelectSession(session)}
+                            style={{
+                              background: isActive ? 'rgba(59, 130, 246, 0.15)' : 'rgba(30, 41, 59, 0.25)',
+                              border: isActive ? '1px solid rgba(96, 165, 250, 0.4)' : '1px solid rgba(255, 255, 255, 0.02)',
+                              borderRadius: '6px',
+                              padding: '8px 10px',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s',
+                              display: 'flex',
+                              flexDirection: 'column',
+                              gap: 4
+                            }}
+                            onMouseEnter={(e) => {
+                              if (!isActive) {
+                                e.currentTarget.style.background = 'rgba(30, 41, 59, 0.5)';
+                                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              if (!isActive) {
+                                e.currentTarget.style.background = 'rgba(30, 41, 59, 0.25)';
+                                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.02)';
+                              }
+                            }}
+                          >
+                            <div style={{ 
+                              fontSize: 11, 
+                              fontWeight: isActive ? 600 : 500, 
+                              color: isActive ? 'var(--accent-blue-light)' : 'var(--text-primary)',
+                              textOverflow: 'ellipsis',
+                              overflow: 'hidden',
+                              whiteSpace: 'nowrap'
+                            }}>
+                              {session.title}
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 8, color: 'var(--text-muted)' }}>
+                              <span>ID: {session.id}</span>
+                              <span>{new Date(session.timestamp).toLocaleDateString()} {new Date(session.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+                  </div>
                 )}
-                <div ref={terminalEndRef} />
               </div>
             </div>
           </div>

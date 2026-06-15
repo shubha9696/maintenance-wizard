@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import Link from 'next/link';
-import { API_BASE } from '@/lib/api';
+import { API_BASE, getCachedData, setCachedData } from '@/lib/api';
 
 interface Alert {
   id: string;
@@ -29,14 +29,23 @@ interface AlertSummary {
 }
 
 export default function AlertsPage() {
-  const [summary, setSummary] = useState<AlertSummary | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [summary, setSummary] = useState<AlertSummary | null>(() => {
+    return getCachedData('/api/alerts/summary');
+  });
+  const [loading, setLoading] = useState(() => {
+    return !getCachedData('/api/alerts/summary');
+  });
   const [severityFilter, setSeverityFilter] = useState('all');
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/alerts/summary`)
+    const cacheKey = '/api/alerts/summary';
+    fetch(`${API_BASE}${cacheKey}`)
       .then(r => r.json())
-      .then(d => { setSummary(d); setLoading(false); })
+      .then(d => {
+        setSummary(d);
+        setCachedData(cacheKey, d);
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, []);
 
