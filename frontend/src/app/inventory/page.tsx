@@ -90,21 +90,26 @@ export default function InventoryPage() {
     if (cachedEq) setEquipment(cachedEq.equipment || []);
     if (cachedParts) setParts(cachedParts);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4200);
+
     const fetchData = async () => {
       try {
         const [eqRes, partsRes] = await Promise.all([
-          fetch(`${API_BASE}${cacheKeyEq}`),
-          fetch(`${API_BASE}${cacheKeyParts}`)
+          fetch(`${API_BASE}${cacheKeyEq}`, { signal: controller.signal }),
+          fetch(`${API_BASE}${cacheKeyParts}`, { signal: controller.signal })
         ]);
         
         const eqData = await eqRes.json();
         const partsData = await partsRes.json();
         
+        clearTimeout(timeoutId);
         setEquipment(eqData.equipment || []);
         setParts(partsData || {});
         setCachedData(cacheKeyEq, eqData);
         setCachedData(cacheKeyParts, partsData);
       } catch (err) {
+        clearTimeout(timeoutId);
         console.error('Error loading inventory data:', err);
         showToast('Failed to connect to backend server API.', 'warning');
       } finally {
@@ -117,6 +122,11 @@ export default function InventoryPage() {
     };
     
     fetchData();
+
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
   }, []);
 
   // Handle count-downs for active orders

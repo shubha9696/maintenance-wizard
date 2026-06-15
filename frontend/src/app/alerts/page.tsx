@@ -43,9 +43,13 @@ export default function AlertsPage() {
       setSummary(cached);
     }
 
-    fetch(`${API_BASE}${cacheKey}`)
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4200);
+
+    fetch(`${API_BASE}${cacheKey}`, { signal: controller.signal })
       .then(r => r.json())
       .then(d => {
+        clearTimeout(timeoutId);
         setSummary(d);
         setCachedData(cacheKey, d);
         const elapsed = Date.now() - startTime;
@@ -55,12 +59,18 @@ export default function AlertsPage() {
         }, delay);
       })
       .catch(() => {
+        clearTimeout(timeoutId);
         const elapsed = Date.now() - startTime;
         const delay = Math.max(0, 3500 - elapsed);
         setTimeout(() => {
           setLoading(false);
         }, delay);
       });
+
+    return () => {
+      clearTimeout(timeoutId);
+      controller.abort();
+    };
   }, []);
 
   const filtered = summary?.alerts?.filter(a =>

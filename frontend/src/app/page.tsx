@@ -196,28 +196,28 @@ export default function DashboardPage() {
 
           {/* Stats Grid with 3D hover effects & glassmorphism */}
           <div className="stats-grid stagger-enter">
-            <Link href="/equipment" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <Link href="/chat" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
               <ThreeDCard className="stat-card blue card-glass-ultra neon-glow-blue" style={{ cursor: 'pointer' }}>
                 <div className="stat-icon"><Cpu size={20} /></div>
                 <div className="stat-value stat-value-animated">{dashboard?.total_equipment}</div>
                 <div className="stat-label">Total Assets</div>
               </ThreeDCard>
             </Link>
-            <Link href="/equipment" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <Link href="/chat" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
               <ThreeDCard className="stat-card green card-glass-ultra neon-glow-green" style={{ cursor: 'pointer' }}>
                 <div className="stat-icon"><CheckCircle2 size={20} style={{ color: 'var(--accent-green)' }} /></div>
                 <div className="stat-value stat-value-animated">{dashboard?.healthy_count}</div>
                 <div className="stat-label">Healthy Assets</div>
               </ThreeDCard>
             </Link>
-            <Link href="/equipment" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <Link href="/chat" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
               <ThreeDCard className="stat-card orange card-glass-ultra" style={{ cursor: 'pointer' }}>
                 <div className="stat-icon"><AlertTriangle size={20} style={{ color: 'var(--accent-orange)' }} /></div>
                 <div className="stat-value stat-value-animated">{dashboard?.warning_count}</div>
                 <div className="stat-label">Warning Status</div>
               </ThreeDCard>
             </Link>
-            <Link href="/alerts" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+            <Link href="/chat" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
               <ThreeDCard className="stat-card red card-glass-ultra neon-glow-red" style={{ cursor: 'pointer' }}>
                 <div className="stat-icon"><AlertCircle size={20} style={{ color: 'var(--accent-red)' }} /></div>
                 <div className="stat-value stat-value-animated">{dashboard?.active_alerts}</div>
