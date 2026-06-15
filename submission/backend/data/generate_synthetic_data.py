@@ -214,7 +214,7 @@ def generate_sensor_data(equipment_list, days=90):
 
     # Select equipment for degradation / anomalies
     degrading_ids = {"BF-CP-001", "RM-GB-001", "SMS-CC-001", "PP-TG-001", "SP-FM-001", "BF-BL-001"}
-    anomaly_ids = {"RM-DM-001", "CO-PU-001", "SMS-CR-001", "PP-BL-001"}
+    anomaly_ids = {"RM-DM-001", "CO-PU-001", "RM-GB-001", "PP-BL-001"}
 
     for eq in equipment_list:
         eid = eq["id"]
