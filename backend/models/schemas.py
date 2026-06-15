@@ -62,6 +62,8 @@ class ChatRequest(BaseModel):
     message: str
     session_id: Optional[str] = None
     equipment_id: Optional[str] = None
+    image_data: Optional[str] = None
+    image_type: Optional[str] = None
 
 class SourceReference(BaseModel):
     document: str

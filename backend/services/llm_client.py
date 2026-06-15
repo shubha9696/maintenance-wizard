@@ -128,6 +128,118 @@ class LLMClient:
         except Exception as e:
             return f"[RAG Offline Mode] Failed to synthesize response. Error: {str(e)}"
 
+    def transcribe_audio(self, audio_bytes: bytes, filename: str) -> str:
+        """
+        Transcribe audio using Groq Whisper model (whisper-large-v3).
+        """
+        groq_api_key = getattr(settings, "GROQ_API_KEY", "")
+        if not groq_api_key:
+            raise ValueError("GROQ_API_KEY is not configured in settings.")
+            
+        try:
+            headers = {
+                "Authorization": f"Bearer {groq_api_key}"
+            }
+            mime_type = "audio/webm"
+            if filename.endswith(".wav"):
+                mime_type = "audio/wav"
+            elif filename.endswith(".mp3"):
+                mime_type = "audio/mp3"
+            elif filename.endswith(".m4a"):
+                mime_type = "audio/m4a"
+                
+            files = {
+                "file": (filename, audio_bytes, mime_type)
+            }
+            data = {
+                "model": "whisper-large-v3"
+            }
+            
+            response = httpx.post(
+                "https://api.groq.com/openai/v1/audio/transcriptions",
+                headers=headers,
+                files=files,
+                data=data,
+                timeout=30.0
+            )
+            if response.status_code == 200:
+                return response.json().get("text", "")
+            else:
+                error_msg = f"Groq Whisper transcription failed ({response.status_code}): {response.text}"
+                print(error_msg)
+                raise Exception(error_msg)
+        except Exception as e:
+            print(f"Exception in transcribe_audio: {e}")
+            raise e
+
+    def generate_vision_content(self, prompt: str, image_data: str, image_type: str = "image/png") -> str:
+        """
+        Analyze an image using Groq Llama vision models with Gemini fallback.
+        """
+        groq_api_key = getattr(settings, "GROQ_API_KEY", "")
+        if not image_type:
+            image_type = "image/png"
+        
+        image_url = f"data:{image_type};base64,{image_data}"
+        
+        groq_vision_models = [
+            "meta-llama/llama-4-scout-17b-16e-instruct",
+            "llama-3.2-11b-vision-preview"
+        ]
+        
+        if groq_api_key:
+            headers = {
+                "Authorization": f"Bearer {groq_api_key}",
+                "Content-Type": "application/json"
+            }
+            
+            for model in groq_vision_models:
+                try:
+                    print(f"Trying Groq vision model: {model}...")
+                    data = {
+                        "model": model,
+                        "messages": [
+                            {
+                                "role": "user",
+                                "content": [
+                                    {"type": "text", "text": prompt},
+                                    {"type": "image_url", "image_url": {"url": image_url}}
+                                ]
+                            }
+                        ],
+                        "temperature": 0.2
+                    }
+                    response = httpx.post(
+                        "https://api.groq.com/openai/v1/chat/completions",
+                        headers=headers,
+                        json=data,
+                        timeout=30.0
+                    )
+                    if response.status_code == 200:
+                        return response.json()["choices"][0]["message"]["content"]
+                    else:
+                        print(f"Groq vision {model} failed with status {response.status_code}: {response.text}")
+                except Exception as e:
+                    print(f"Exception trying Groq vision model {model}: {e}")
+        
+        # Fallback to Gemini
+        print("Falling back to Gemini Flash for vision analysis...")
+        try:
+            import base64
+            image_bytes = base64.b64decode(image_data)
+            gemini_model_name = settings.GEMINI_PRO_MODEL
+            
+            gemini_model = genai.GenerativeModel(gemini_model_name)
+            img_part = {
+                "mime_type": image_type,
+                "data": image_bytes
+            }
+            response = gemini_model.generate_content([img_part, prompt])
+            return response.text
+        except Exception as e:
+            print(f"Gemini Vision fallback failed: {e}")
+            return f"[Vision Fallback Error] Unable to analyze screenshot. Groq Vision and Gemini Vision both failed. Details: {str(e)}"
+
 # Singleton instance
 llm_client = LLMClient()
 

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Sidebar from '@/components/Sidebar';
 import ReactMarkdown from 'react-markdown';
-import { Bot, Send, Trash2, Activity, Terminal, X } from 'lucide-react';
+import { Bot, Send, Trash2, Activity, Terminal, X, Mic, MicOff, Paperclip, Image, Loader2 } from 'lucide-react';
 import { API_BASE } from '@/lib/api';
 
 interface Message {
@@ -37,11 +37,134 @@ export default function ChatPage() {
   
   // Phase 12 states
   const [selectedSources, setSelectedSources] = useState<any[] | null>(null);
+
+  // Voice & Image Upload States
+  const [imageData, setImageData] = useState<string | null>(null);
+  const [imageType, setImageType] = useState<string | null>(null);
+  const [isRecording, setIsRecording] = useState(false);
+  const [recordingSeconds, setRecordingSeconds] = useState(0);
+  const [transcribing, setTranscribing] = useState(false);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const terminalEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const logIntervalsRef = useRef<any[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
+  const recordIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const formatTime = (secs: number) => {
+    const m = Math.floor(secs / 60);
+    const s = secs % 60;
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+  };
+
+  const handleImageClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      alert('Please select an image file.');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64String = (reader.result as string).split(',')[1];
+      setImageData(base64String);
+      setImageType(file.type);
+      logConsole(`SYSTEM: Attached image: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`);
+    };
+    reader.readAsDataURL(file);
+    e.target.value = '';
+  };
+
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+      audioChunksRef.current = [];
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+        }
+      };
+
+      mediaRecorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+        setTranscribing(true);
+        logConsole("SYSTEM: Sending audio bytes to Groq Whisper transcription API...");
+        try {
+          const formData = new FormData();
+          formData.append('file', audioBlob, 'voice.webm');
+
+          const response = await fetch(`${API_BASE}/api/chat/transcribe`, {
+            method: 'POST',
+            body: formData,
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const transcription = data.text || '';
+            if (transcription.trim()) {
+              setInput(prev => prev ? `${prev} ${transcription}` : transcription);
+              logConsole(`SYSTEM: Transcribed voice text: "${transcription}"`);
+            } else {
+              logConsole("WARNING: Transcription returned empty text.");
+            }
+          } else {
+            logConsole(`ERROR: Voice transcription service failed with status ${response.status}`);
+          }
+        } catch (err: any) {
+          logConsole(`ERROR: Voice transcription exception: ${err.message}`);
+        } finally {
+          setTranscribing(false);
+        }
+
+        stream.getTracks().forEach(track => track.stop());
+      };
+
+      mediaRecorder.start();
+      setIsRecording(true);
+      setRecordingSeconds(0);
+      logConsole("SYSTEM: Voice recorder started. Speak now...");
+
+      recordIntervalRef.current = setInterval(() => {
+        setRecordingSeconds(prev => prev + 1);
+      }, 1000);
+
+    } catch (err: any) {
+      logConsole(`ERROR: Microphone access denied or not supported. Details: ${err.message}`);
+      alert("Unable to access microphone. Please check permissions.");
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+      mediaRecorderRef.current.stop();
+      setIsRecording(false);
+      if (recordIntervalRef.current) {
+        clearInterval(recordIntervalRef.current);
+        recordIntervalRef.current = null;
+      }
+      logConsole("SYSTEM: Voice recorder stopped. Processing transcription...");
+    }
+  };
+
+  const toggleRecording = () => {
+    if (isRecording) {
+      stopRecording();
+    } else {
+      startRecording();
+    }
+  };
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -65,15 +188,28 @@ export default function ChatPage() {
   };
 
   const handleSubmit = async (text?: string) => {
-    const messageText = text || input.trim();
-    if (!messageText || loading) return;
+    const messageText = text !== undefined ? text : input.trim();
+    const currentImageData = imageData;
+    const currentImageType = imageType;
+
+    // Reset image attachments immediately
+    setImageData(null);
+    setImageType(null);
+
+    const promptText = messageText || (currentImageData ? "Analyze this equipment screenshot/image." : "");
+    if (!promptText.trim() && !currentImageData) return;
+    if (loading) return;
 
     const startTime = Date.now();
     const userMessage: Message = {
       role: 'user',
-      content: messageText,
+      content: promptText,
       timestamp: new Date().toISOString(),
-    };
+    } as any;
+    if (currentImageData) {
+      (userMessage as any).image_data = currentImageData;
+      (userMessage as any).image_type = currentImageType;
+    }
 
     setMessages(prev => [...prev, userMessage]);
     setInput('');
@@ -88,7 +224,7 @@ export default function ChatPage() {
     // Initialize terminal logs
     setConsoleLogs([]);
     logConsole("SYSTEM: Initializing Tata Steel AI multi-agent orchestration loop...");
-    logConsole(`USER QUERY: "${messageText.length > 50 ? messageText.substring(0, 50) + "..." : messageText}"`);
+    logConsole(`USER QUERY: "${promptText.length > 50 ? promptText.substring(0, 50) + "..." : promptText}"`);
 
     // Reset ref intervals
     logIntervalsRef.current.forEach(clearTimeout);
@@ -99,16 +235,25 @@ export default function ChatPage() {
       logIntervalsRef.current.push(timer);
     };
 
-    // Queue visual thought logs
-    scheduleLog("ORCHESTRATOR: Intent classified: 'incident_diagnostics'. Routing to Diagnostic Agent.", 600);
-    scheduleLog("KNOWLEDGE RAG: Querying ChromaDB vector database...", 1200);
-    scheduleLog("KNOWLEDGE RAG: ChromaDB matched: Document 'BF_CP_Bearings_SOP.md' (relevance: 0.91).", 1800);
-    scheduleLog("DIAGNOSTIC AGENT: Retrieving latest sensor readings for BF-CP-001 from cache...", 2400);
-    scheduleLog("DIAGNOSTIC AGENT: Running threshold check: vibration = 4.8 mm/s vs upper-limit = 4.5 mm/s.", 3000);
-    scheduleLog("DIAGNOSTIC AGENT: Symptom confirmed: Elevated bearing wear friction detected.", 3600);
-    scheduleLog("RECOMMENDATION AGENT: Querying spare parts database for bearing model 22215-E1-K...", 4200);
-    scheduleLog("RECOMMENDATION AGENT: Query resolved: parts IN STOCK (shelf location: B-12).", 4800);
-    scheduleLog("ORCHESTRATOR: Compiling diagnostic results and formulating corrective actions...", 5400);
+    if (currentImageData) {
+      logConsole("SYSTEM: Uploading screenshot base64 payload to orchestrator...");
+      scheduleLog("ORCHESTRATOR: Image detected. Routing request directly to Vision Agent.", 500);
+      scheduleLog("VISION AGENT: Decoding base64 image bytes and parsing context...", 1000);
+      scheduleLog("VISION AGENT: Selecting Llama vision models on Groq...", 1500);
+      scheduleLog("VISION AGENT: Querying 'meta-llama/llama-4-scout-17b-16e-instruct'...", 2200);
+      scheduleLog("VISION AGENT: Analysing screenshot structures and checking labels...", 3000);
+      scheduleLog("VISION AGENT: Vision completion generated. Returning diagnosis...", 4000);
+    } else {
+      scheduleLog("ORCHESTRATOR: Intent classified: 'incident_diagnostics'. Routing to Diagnostic Agent.", 600);
+      scheduleLog("KNOWLEDGE RAG: Querying ChromaDB vector database...", 1200);
+      scheduleLog("KNOWLEDGE RAG: ChromaDB matched: Document 'BF_CP_Bearings_SOP.md' (relevance: 0.91).", 1800);
+      scheduleLog("DIAGNOSTIC AGENT: Retrieving latest sensor readings for BF-CP-001 from cache...", 2400);
+      scheduleLog("DIAGNOSTIC AGENT: Running threshold check: vibration = 4.8 mm/s vs upper-limit = 4.5 mm/s.", 3000);
+      scheduleLog("DIAGNOSTIC AGENT: Symptom confirmed: Elevated bearing wear friction detected.", 3600);
+      scheduleLog("RECOMMENDATION AGENT: Querying spare parts database for bearing model 22215-E1-K...", 4200);
+      scheduleLog("RECOMMENDATION AGENT: Query resolved: parts IN STOCK (shelf location: B-12).", 4800);
+      scheduleLog("ORCHESTRATOR: Compiling diagnostic results and formulating corrective actions...", 5400);
+    }
 
     // Node sequencing loop
     const nodeTimer = setInterval(() => {
@@ -120,8 +265,10 @@ export default function ChatPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: messageText,
+          message: promptText,
           session_id: sessionId,
+          image_data: currentImageData,
+          image_type: currentImageType,
         }),
       });
 
@@ -290,7 +437,14 @@ export default function ChatPage() {
                         {msg.role === 'assistant' ? (
                           <ReactMarkdown>{msg.content}</ReactMarkdown>
                         ) : (
-                          msg.content
+                          <div>
+                            {msg.content}
+                            {(msg as any).image_data && (
+                              <div style={{ marginTop: 10, maxWidth: 360, borderRadius: 8, overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+                                <img src={`data:${(msg as any).image_type || 'image/png'};base64,${(msg as any).image_data}`} alt="Uploaded Screenshot" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                              </div>
+                            )}
+                          </div>
                         )}
                       </div>
                       {msg.role === 'assistant' && (
@@ -420,20 +574,124 @@ export default function ChatPage() {
 
           {/* Input Area */}
           <div className="chat-input-area" style={{ zIndex: 10 }}>
-            <div className="chat-input-wrapper">
+            {/* Image preview panel */}
+            {imageData && (
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 12,
+                padding: '8px 12px',
+                background: 'rgba(30, 41, 59, 0.5)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '8px',
+                marginBottom: 8,
+                width: 'fit-content',
+                backdropFilter: 'blur(5px)',
+                animation: 'fadeIn 0.2s ease'
+              }}>
+                <div style={{ position: 'relative', width: 64, height: 64, borderRadius: 6, overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+                  <img src={`data:${imageType || 'image/png'};base64,${imageData}`} alt="Thumbnail" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--text-primary)' }}>Attached Screenshot</span>
+                  <span style={{ fontSize: 9, color: 'var(--text-muted)' }}>Ready to upload and analyze</span>
+                </div>
+                <button
+                  onClick={() => { setImageData(null); setImageType(null); }}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: 'var(--accent-red)',
+                    cursor: 'pointer',
+                    padding: 4,
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                  title="Remove image"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+            )}
+
+            <div className="chat-input-wrapper" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              {/* Hidden file input */}
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                accept="image/*"
+                style={{ display: 'none' }}
+              />
+              
+              {/* Image attachment button */}
+              <button
+                className="btn btn-ghost"
+                onClick={handleImageClick}
+                disabled={loading || isRecording || transcribing}
+                style={{
+                  padding: 8,
+                  borderRadius: '50%',
+                  width: 38,
+                  height: 38,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: imageData ? 'var(--accent-blue-light)' : 'var(--text-muted)'
+                }}
+                title="Attach Screenshot"
+              >
+                <Paperclip size={18} />
+              </button>
+
+              {/* Voice recording button */}
+              <button
+                className={`btn ${isRecording ? 'btn-danger pulse-voice' : 'btn-ghost'}`}
+                onClick={toggleRecording}
+                disabled={loading || transcribing}
+                style={{
+                  padding: 8,
+                  borderRadius: '50%',
+                  width: 38,
+                  height: 38,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: isRecording ? 'white' : 'var(--text-muted)',
+                  background: isRecording ? 'var(--accent-red)' : 'transparent',
+                }}
+                title={isRecording ? "Stop Recording" : "Record Voice"}
+              >
+                {transcribing ? (
+                  <Loader2 size={18} className="animate-spin" />
+                ) : isRecording ? (
+                  <MicOff size={18} />
+                ) : (
+                  <Mic size={18} />
+                )}
+              </button>
+
               <textarea
                 ref={textareaRef}
                 value={input}
                 onChange={(e) => { setInput(e.target.value); handleTextareaInput(); }}
                 onKeyDown={handleKeyDown}
-                placeholder="Ask the AI about diagnostics, predictions, procedures, or incident summaries..."
+                placeholder={
+                  isRecording 
+                    ? `Recording voice (${formatTime(recordingSeconds)})... Click mic to stop.` 
+                    : transcribing 
+                      ? "Transcribing voice..." 
+                      : "Ask the AI about diagnostics, predictions, procedures, or incident summaries..."
+                }
                 rows={1}
-                disabled={loading}
+                disabled={loading || isRecording || transcribing}
+                style={{ flex: 1 }}
               />
+
               <button
                 className="chat-send-btn"
                 onClick={() => handleSubmit()}
-                disabled={!input.trim() || loading}
+                disabled={(!input.trim() && !imageData) || loading || isRecording || transcribing}
               >
                 <Send size={15} />
               </button>

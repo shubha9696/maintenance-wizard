@@ -94,7 +94,7 @@ Return ONLY the JSON object, no explanation."""
                 "requires_history": False
             }
 
-    async def process_query(self, message: str, session_id: str = None) -> dict:
+    async def process_query(self, message: str, session_id: str = None, image_data: str = None, image_type: str = None) -> dict:
         """Process a user query through the agentic pipeline."""
         # Session management
         if not session_id:
@@ -109,7 +109,11 @@ Return ONLY the JSON object, no explanation."""
             }
 
         session = self.sessions[session_id]
-        session["messages"].append({"role": "user", "content": message, "timestamp": datetime.now().isoformat()})
+        user_msg = {"role": "user", "content": message, "timestamp": datetime.now().isoformat()}
+        if image_data:
+            user_msg["image_data"] = image_data
+            user_msg["image_type"] = image_type
+        session["messages"].append(user_msg)
 
         # Step 1: Classify intent
         intent = await self.classify_intent(message, session["messages"])
@@ -139,7 +143,18 @@ Return ONLY the JSON object, no explanation."""
         agent_used = primary
 
         try:
-            if primary == "diagnostic":
+            if image_data:
+                agent_used = "vision_agent"
+                eq_context_str = f"Equipment: {equipment.get('name')} (ID: {eq_id}, Type: {eq_type})" if equipment else "No specific equipment selected."
+                vision_prompt = f"""You are the Maintenance Wizard's Vision Diagnostic Agent.
+Analyze this steel plant equipment screenshot/image in detail.
+Context: {eq_context_str}
+User Question: {message}
+
+Provide a detailed diagnostic analysis, point out abnormalities, and recommend next actions. Use Markdown formatting."""
+                response_text = llm_client.generate_vision_content(vision_prompt, image_data, image_type)
+                result = {"answer": response_text, "sources": []}
+            elif primary == "diagnostic":
                 result = await diagnostic_agent.diagnose(
                     message, equipment_id=eq_id, equipment_type=eq_type, sensor_data=sensor_data
                 )

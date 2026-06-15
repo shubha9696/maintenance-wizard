@@ -1,0 +1,29 @@
+[
+  {
+    "id": "FB-0001",
+    "session_id": "bf1139a8",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-11T00:48:46.200132"
+  },
+  {
+    "id": "FB-0002",
+    "session_id": "bf1139a8",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-11T00:48:48.474214"
+  },
+  {
+    "id": "FB-0003",
+    "session_id": "545c0847",
+    "message_index": 9,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-11T02:18:36.973337"
+  }
+]
