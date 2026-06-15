@@ -381,7 +381,7 @@ The application is fully prepared for zero-configuration production cloud deploy
 
 ### 1. Frontend (Vercel)
 The Next.js frontend has been compiled and is deployed live on Vercel:
-- **Live Frontend URL**: [https://frontend-five-self-57.vercel.app](https://frontend-five-self-57.vercel.app)
+- **Live Frontend URL**: [https://frontend-five-self-57.vercel.app](https://ai-maintainance-wizard.vercel.app/)
 - Framework configuration is set up in [vercel.json](file:///c:/Users/shubh/Desktop/hackathon/frontend/vercel.json).
 
 ### 2. Backend (Render Blueprint)
