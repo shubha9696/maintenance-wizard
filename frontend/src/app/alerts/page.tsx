@@ -29,24 +29,38 @@ interface AlertSummary {
 }
 
 export default function AlertsPage() {
-  const [summary, setSummary] = useState<AlertSummary | null>(() => {
-    return getCachedData('/api/alerts/summary');
-  });
-  const [loading, setLoading] = useState(() => {
-    return !getCachedData('/api/alerts/summary');
-  });
+  const [summary, setSummary] = useState<AlertSummary | null>(null);
+  const [loading, setLoading] = useState(true);
   const [severityFilter, setSeverityFilter] = useState('all');
 
   useEffect(() => {
+    const startTime = Date.now();
     const cacheKey = '/api/alerts/summary';
+
+    // Attempt to hydrate immediately for a smoother transition, but keep loading true
+    const cached = getCachedData(cacheKey);
+    if (cached) {
+      setSummary(cached);
+    }
+
     fetch(`${API_BASE}${cacheKey}`)
       .then(r => r.json())
       .then(d => {
         setSummary(d);
         setCachedData(cacheKey, d);
-        setLoading(false);
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, 3500 - elapsed);
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, 3500 - elapsed);
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
+      });
   }, []);
 
   const filtered = summary?.alerts?.filter(a =>

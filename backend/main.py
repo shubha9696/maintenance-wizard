@@ -54,6 +54,14 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         print(f"  Warning: Anomaly model training failed: {e}")
 
+    # Warm up analytics cache
+    print("  Warming up analytics cache...")
+    try:
+        await equipment.warm_analytics_cache()
+        print("  Analytics cache warmed.")
+    except Exception as e:
+        print(f"  Warning: Analytics cache warming failed: {e}")
+
     print("Maintenance Wizard is ready!")
     yield
     print("Shutting down Maintenance Wizard...")

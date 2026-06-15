@@ -566,7 +566,7 @@ export default function ChatPage() {
                 alignItems: 'center',
                 color: 'var(--text-muted)'
               }}>
-                <Cpu size={14} style={{ color: 'var(--accent-blue-light)' }} />
+                <Cpu size={15} style={{ color: 'var(--accent-blue-light)' }} />
               </span>
               <select
                 value={selectedContext}
@@ -579,14 +579,14 @@ export default function ChatPage() {
                   color: 'var(--text-primary)',
                   border: '1px solid rgba(96, 165, 250, 0.4)',
                   borderRadius: '6px',
-                  padding: '4px 8px',
-                  fontSize: 12,
+                  padding: '5px 10px',
+                  fontSize: 13,
                   fontWeight: 500,
                   outline: 'none',
                   cursor: 'pointer',
                   transition: 'border-color 0.2s',
                   boxShadow: '0 0 10px rgba(96, 165, 250, 0.1)',
-                  width: '140px',
+                  width: '160px',
                   textOverflow: 'ellipsis',
                   overflow: 'hidden',
                   whiteSpace: 'nowrap',
@@ -607,48 +607,6 @@ export default function ChatPage() {
                 ))}
               </select>
             </div>
-
-            {/* Quick Actions for Selected Equipment */}
-            {selectedContext !== 'Whole Plant' && selectedContext !== 'Plant-wide' && (
-              <div className="animate-fadeIn" style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-                <span style={{ fontSize: 10, color: 'var(--text-muted)', fontWeight: 600, marginRight: 4 }}>QUICK ACTIONS:</span>
-                <button
-                  className="btn btn-ghost"
-                  onClick={() => handleSubmit(`Analyse recent symptoms and run diagnostic checks for ${selectedContext}`)}
-                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
-                >
-                  🔍 Analyse
-                </button>
-                <button
-                  className="btn btn-ghost"
-                  onClick={() => handleSubmit(`Generate a detailed maintenance summary report for ${selectedContext}`)}
-                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
-                >
-                  📋 Generate Report
-                </button>
-                <button
-                  className="btn btn-ghost"
-                  onClick={() => handleSubmit(`Predict remaining useful life (RUL) and failure risk for ${selectedContext}`)}
-                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
-                >
-                  📈 Predict Failure
-                </button>
-                <button
-                  className="btn btn-ghost"
-                  onClick={() => handleSubmit(`What are the standard operating procedures (SOP) for maintenance on ${selectedContext}?`)}
-                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
-                >
-                  📖 View SOP
-                </button>
-                <button
-                  className="btn btn-ghost"
-                  onClick={() => handleSubmit(`Check spare parts availability and status for ${selectedContext}`)}
-                  style={{ fontSize: 11, padding: '3px 8px', borderRadius: '4px', border: '1px solid rgba(96, 165, 250, 0.2)', color: 'var(--text-primary)' }}
-                >
-                  📦 Spare Parts
-                </button>
-              </div>
-            )}
           </div>
 
           {/* Dual Panel Body: Chat + Console */}
@@ -1011,6 +969,47 @@ export default function ChatPage() {
 
           {/* Input Area */}
           <div className="chat-input-area" style={{ zIndex: 10 }}>
+            {/* Quick Actions for Selected Equipment */}
+            {selectedContext !== 'Whole Plant' && selectedContext !== 'Plant-wide' && (
+              <div className="animate-fadeIn" style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 12, flexWrap: 'wrap' }}>
+                <span style={{ fontSize: 11.5, color: 'var(--text-muted)', fontWeight: 600, marginRight: 6 }}>QUICK ACTIONS:</span>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Analyse recent symptoms and run diagnostic checks for ${selectedContext}`)}
+                  style={{ fontSize: 12.5, padding: '5px 12px', borderRadius: '6px', border: '1px solid rgba(96, 165, 250, 0.3)', color: 'var(--text-primary)' }}
+                >
+                  🔍 Analyse
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Generate a detailed maintenance summary report for ${selectedContext}`)}
+                  style={{ fontSize: 12.5, padding: '5px 12px', borderRadius: '6px', border: '1px solid rgba(96, 165, 250, 0.3)', color: 'var(--text-primary)' }}
+                >
+                  📋 Generate Report
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Predict remaining useful life (RUL) and failure risk for ${selectedContext}`)}
+                  style={{ fontSize: 12.5, padding: '5px 12px', borderRadius: '6px', border: '1px solid rgba(96, 165, 250, 0.3)', color: 'var(--text-primary)' }}
+                >
+                  📈 Predict Failure
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`What are the standard operating procedures (SOP) for maintenance on ${selectedContext}?`)}
+                  style={{ fontSize: 12.5, padding: '5px 12px', borderRadius: '6px', border: '1px solid rgba(96, 165, 250, 0.3)', color: 'var(--text-primary)' }}
+                >
+                  📖 View SOP
+                </button>
+                <button
+                  className="btn btn-ghost"
+                  onClick={() => handleSubmit(`Check spare parts availability and status for ${selectedContext}`)}
+                  style={{ fontSize: 12.5, padding: '5px 12px', borderRadius: '6px', border: '1px solid rgba(96, 165, 250, 0.3)', color: 'var(--text-primary)' }}
+                >
+                  📦 Spare Parts
+                </button>
+              </div>
+            )}
             {/* Image preview panel */}
             {imageData && (
               <div style={{

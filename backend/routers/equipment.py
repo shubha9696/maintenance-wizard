@@ -95,9 +95,23 @@ async def dashboard_stats():
     }
 
 
+_analytics_cache = None
+
+
+async def warm_analytics_cache():
+    """Warm up the analytics cache on startup."""
+    global _analytics_cache
+    if _analytics_cache is None:
+        await fleet_analytics()
+
+
 @router.get("/analytics")
 async def fleet_analytics():
     """Aggregated predictive analytics for the entire fleet."""
+    global _analytics_cache
+    if _analytics_cache is not None:
+        return _analytics_cache
+
     equipment = _load_json("equipment.json")
     full_sensor = _load_json("sensor_data_full.json")
 
@@ -172,7 +186,7 @@ async def fleet_analytics():
         "net_savings": (total_prevented_downtime_hrs * 10000) - total_maintenance_cost,
     }
 
-    return {
+    _analytics_cache = {
         "risk_distribution": risk_counts,
         "failure_timeline": failure_timeline[:25],
         "degradation_leaderboard": degradation_board[:15],
@@ -180,6 +194,9 @@ async def fleet_analytics():
         "roi": roi,
         "total_equipment": len(equipment),
     }
+
+    return _analytics_cache
+
 
 
 @router.get("/spare-parts/all")

@@ -62,18 +62,9 @@ interface ToastMessage {
 }
 
 export default function InventoryPage() {
-  const [equipment, setEquipment] = useState<Equipment[]>(() => {
-    const cachedEq = getCachedData('/api/equipment');
-    return cachedEq ? (cachedEq.equipment || []) : [];
-  });
-  const [parts, setParts] = useState<GroupedParts>(() => {
-    return getCachedData('/api/equipment/spare-parts/all') || {};
-  });
-  const [loading, setLoading] = useState(() => {
-    const cachedEq = getCachedData('/api/equipment');
-    const cachedParts = getCachedData('/api/equipment/spare-parts/all');
-    return !(cachedEq && cachedParts);
-  });
+  const [equipment, setEquipment] = useState<Equipment[]>([]);
+  const [parts, setParts] = useState<GroupedParts>({});
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [stockFilter, setStockFilter] = useState<'all' | 'out' | 'low'>('all');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -89,8 +80,15 @@ export default function InventoryPage() {
 
   // Load backend data
   useEffect(() => {
+    const startTime = Date.now();
     const cacheKeyEq = '/api/equipment';
     const cacheKeyParts = '/api/equipment/spare-parts/all';
+
+    // Attempt to hydrate immediately for a smoother transition, but keep loading true
+    const cachedEq = getCachedData(cacheKeyEq);
+    const cachedParts = getCachedData(cacheKeyParts);
+    if (cachedEq) setEquipment(cachedEq.equipment || []);
+    if (cachedParts) setParts(cachedParts);
 
     const fetchData = async () => {
       try {
@@ -110,7 +108,11 @@ export default function InventoryPage() {
         console.error('Error loading inventory data:', err);
         showToast('Failed to connect to backend server API.', 'warning');
       } finally {
-        setLoading(false);
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, 3500 - elapsed);
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
       }
     };
     

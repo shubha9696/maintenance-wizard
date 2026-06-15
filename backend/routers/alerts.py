@@ -69,9 +69,23 @@ async def get_alerts():
     return {"alerts": alerts, "total": len(alerts)}
 
 
+_alerts_summary_cache = None
+
+
+async def warm_alerts_cache():
+    """Warm up the alerts summary cache on startup."""
+    global _alerts_summary_cache
+    if _alerts_summary_cache is None:
+        await alert_summary()
+
+
 @router.get("/summary")
 async def alert_summary():
     """Get alert dashboard summary."""
+    global _alerts_summary_cache
+    if _alerts_summary_cache is not None:
+        return _alerts_summary_cache
+
     result = await get_alerts()
     alerts = result["alerts"]
 
@@ -86,7 +100,7 @@ async def alert_summary():
         area = a.get("area", "Unknown")
         by_area[area] = by_area.get(area, 0) + 1
 
-    return {
+    _alerts_summary_cache = {
         "total": len(alerts),
         "critical": critical,
         "high": high,
@@ -95,6 +109,7 @@ async def alert_summary():
         "by_area": by_area,
         "alerts": alerts[:20]  # Top 20 alerts
     }
+    return _alerts_summary_cache
 
 
 @router.post("/{alert_id}/acknowledge")

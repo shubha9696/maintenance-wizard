@@ -35,23 +35,37 @@ interface AnalyticsData {
 }
 
 export default function AnalyticsPage() {
-  const [data, setData] = useState<AnalyticsData | null>(() => {
-    return getCachedData('/api/equipment/analytics');
-  });
-  const [loading, setLoading] = useState(() => {
-    return !getCachedData('/api/equipment/analytics');
-  });
+  const [data, setData] = useState<AnalyticsData | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const startTime = Date.now();
     const cacheKey = '/api/equipment/analytics';
+    
+    // Attempt to hydrate immediately for a smoother transition, but keep loading true
+    const cached = getCachedData(cacheKey);
+    if (cached) {
+      setData(cached);
+    }
+
     fetch(`${API_BASE}${cacheKey}`)
       .then(r => r.json())
       .then(d => {
         setData(d);
         setCachedData(cacheKey, d);
-        setLoading(false);
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, 3500 - elapsed);
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
       })
-      .catch(() => setLoading(false));
+      .catch(() => {
+        const elapsed = Date.now() - startTime;
+        const delay = Math.max(0, 3500 - elapsed);
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
+      });
   }, []);
 
   const getRulBand = (days: number) => {
