@@ -1,4 +1,4 @@
-"""Configuration management for the Maintenance Wizard backend."""
+"""Configuration management for the Maintenance Wizard backend services."""
 import os
 from dotenv import load_dotenv
 
