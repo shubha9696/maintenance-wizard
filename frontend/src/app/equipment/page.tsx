@@ -18,7 +18,6 @@ interface Equipment {
   risk_level?: string;
   last_maintenance?: string;
 }
-
 export default function EquipmentPage() {
   const [equipment, setEquipment] = useState<Equipment[]>(() => {
     const cached = getCachedData('/api/equipment');
@@ -28,6 +27,7 @@ export default function EquipmentPage() {
     return !getCachedData('/api/equipment');
   });
   const [filter, setFilter] = useState('all');
+  const [statusFilter, setStatusFilter] = useState('all');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -42,10 +42,26 @@ export default function EquipmentPage() {
       .catch(() => setLoading(false));
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const status = params.get('status');
+      if (status) {
+        setStatusFilter(status);
+      }
+    }
+  }, []);
+
   const areas = [...new Set(equipment.map(e => e.area))];
 
   const filtered = equipment.filter(e => {
     if (filter !== 'all' && e.area !== filter) return false;
+    
+    // Status/health filter
+    if (statusFilter === 'healthy' && e.health_score < 80) return false;
+    if (statusFilter === 'warning' && (e.health_score >= 80 || e.health_score < 50)) return false;
+    if (statusFilter === 'critical' && e.health_score >= 50) return false;
+    
     if (search && !e.name.toLowerCase().includes(search.toLowerCase()) &&
         !e.id.toLowerCase().includes(search.toLowerCase()) &&
         !e.type.toLowerCase().includes(search.toLowerCase())) return false;
@@ -101,6 +117,31 @@ export default function EquipmentPage() {
                   {area} ({equipment.filter(e => e.area === area).length})
                 </button>
               ))}
+            </div>
+
+            <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+              <span style={{ fontSize: 12, color: 'var(--text-muted)', marginLeft: 10, marginRight: 4 }}>Health:</span>
+              <button
+                className={`btn ${statusFilter === 'all' ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() => setStatusFilter('all')}
+                style={{ fontSize: 12, padding: '6px 12px' }}
+              >
+                All
+              </button>
+              <button
+                className={`btn ${statusFilter === 'healthy' ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() => setStatusFilter('healthy')}
+                style={{ fontSize: 12, padding: '6px 12px', color: statusFilter === 'healthy' ? 'white' : 'var(--accent-green)' }}
+              >
+                Healthy (≥80)
+              </button>
+              <button
+                className={`btn ${statusFilter === 'warning' ? 'btn-primary' : 'btn-ghost'}`}
+                onClick={() => setStatusFilter('warning')}
+                style={{ fontSize: 12, padding: '6px 12px', color: statusFilter === 'warning' ? 'white' : 'var(--accent-orange)' }}
+              >
+                Warning (50-79)
+              </button>
             </div>
           </div>
 
