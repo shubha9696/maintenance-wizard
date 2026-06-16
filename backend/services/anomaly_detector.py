@@ -19,6 +19,43 @@ class AnomalyDetector:
         self.scalers = {}
         self.sensor_ranges = {}
         self._load_sensor_ranges()
+        self.load_models()
+
+    def load_models(self) -> bool:
+        """Load trained models from disk if they exist."""
+        import pickle
+        import gzip
+        models_path = os.path.join(settings.DATA_DIR, "anomaly_models_and_scalers.gz")
+        if os.path.exists(models_path):
+            try:
+                with open(models_path, "rb") as f:
+                    compressed_data = f.read()
+                data = pickle.loads(gzip.decompress(compressed_data))
+                self.models = data.get("models", {})
+                self.scalers = data.get("scalers", {})
+                print(f"Loaded {len(self.models)} pre-trained anomaly models from {models_path}")
+                return True
+            except Exception as e:
+                print(f"Error loading anomaly models from {models_path}: {e}")
+        return False
+
+    def save_models(self):
+        """Save trained models to disk."""
+        import pickle
+        import gzip
+        os.makedirs(settings.DATA_DIR, exist_ok=True)
+        models_path = os.path.join(settings.DATA_DIR, "anomaly_models_and_scalers.gz")
+        try:
+            data = {
+                "models": self.models,
+                "scalers": self.scalers
+            }
+            compressed_data = gzip.compress(pickle.dumps(data))
+            with open(models_path, "wb") as f:
+                f.write(compressed_data)
+            print(f"Saved {len(self.models)} anomaly models to {models_path}")
+        except Exception as e:
+            print(f"Error saving anomaly models: {e}")
 
     def _load_sensor_ranges(self):
         ranges_path = os.path.join(settings.DATA_DIR, "sensor_ranges.json")
@@ -58,6 +95,8 @@ class AnomalyDetector:
 
             self.models[eq_id] = {"model": model, "valid_cols": valid_cols}
             self.scalers[eq_id] = scaler
+
+        self.save_models()
 
     def detect_anomalies(self, equipment_id: str, readings: list, equipment_type: str = None) -> list:
         """Detect anomalies in recent sensor readings for an equipment."""

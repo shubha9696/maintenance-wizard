@@ -28,19 +28,22 @@ async def initialize_services_in_background():
         print(f"  [Background] Warning: Vector store initialization failed: {e}")
 
     # 2. Train anomaly detection models
-    print("  [Background] Training anomaly detection models...")
-    try:
-        eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
-        sensor_path = os.path.join(settings.DATA_DIR, "sensor_data_full.json")
-        if os.path.exists(eq_path) and os.path.exists(sensor_path):
-            with open(eq_path, "r") as f:
-                equipment_list = json.load(f)
-            with open(sensor_path, "r") as f:
-                sensor_data = json.load(f)
-            await asyncio.to_thread(anomaly_detector.train_models, sensor_data, equipment_list)
-            print(f"  [Background] Trained models for {len(anomaly_detector.models)} equipment items.")
-    except Exception as e:
-        print(f"  [Background] Warning: Anomaly model training failed: {e}")
+    if anomaly_detector.models:
+        print("  [Background] Pre-trained anomaly detection models loaded successfully. Skipping training.")
+    else:
+        print("  [Background] Pre-trained models not found. Training anomaly detection models from scratch...")
+        try:
+            eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
+            sensor_path = os.path.join(settings.DATA_DIR, "sensor_data_full.json")
+            if os.path.exists(eq_path) and os.path.exists(sensor_path):
+                with open(eq_path, "r") as f:
+                    equipment_list = json.load(f)
+                with open(sensor_path, "r") as f:
+                    sensor_data = json.load(f)
+                await asyncio.to_thread(anomaly_detector.train_models, sensor_data, equipment_list)
+                print(f"  [Background] Trained models for {len(anomaly_detector.models)} equipment items.")
+        except Exception as e:
+            print(f"  [Background] Warning: Anomaly model training failed: {e}")
 
     # 3. Warm up analytics cache
     print("  [Background] Warming up analytics cache...")
