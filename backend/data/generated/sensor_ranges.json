@@ -1,0 +1,398 @@
+{
+  "Centrifugal Pump": {
+    "vibration": [
+      1.5,
+      4.5
+    ],
+    "temperature": [
+      40,
+      65
+    ],
+    "pressure": [
+      4.0,
+      8.0
+    ],
+    "current": [
+      80,
+      120
+    ]
+  },
+  "Turbo Blower": {
+    "vibration": [
+      2.0,
+      6.0
+    ],
+    "temperature": [
+      50,
+      80
+    ],
+    "pressure": [
+      1.5,
+      3.5
+    ],
+    "current": [
+      200,
+      350
+    ]
+  },
+  "Hydraulic Power Unit": {
+    "vibration": [
+      1.0,
+      3.5
+    ],
+    "temperature": [
+      35,
+      55
+    ],
+    "pressure": [
+      150,
+      250
+    ],
+    "current": [
+      40,
+      80
+    ]
+  },
+  "Belt Conveyor": {
+    "vibration": [
+      1.0,
+      3.0
+    ],
+    "temperature": [
+      25,
+      50
+    ],
+    "pressure": [
+      0,
+      0
+    ],
+    "current": [
+      50,
+      100
+    ]
+  },
+  "BOF Converter": {
+    "vibration": [
+      3.0,
+      8.0
+    ],
+    "temperature": [
+      60,
+      120
+    ],
+    "pressure": [
+      2.0,
+      5.0
+    ],
+    "current": [
+      150,
+      300
+    ]
+  },
+  "Continuous Casting Machine": {
+    "vibration": [
+      2.0,
+      5.0
+    ],
+    "temperature": [
+      45,
+      75
+    ],
+    "pressure": [
+      3.0,
+      7.0
+    ],
+    "current": [
+      100,
+      200
+    ]
+  },
+  "Electric Arc Furnace": {
+    "vibration": [
+      3.0,
+      7.0
+    ],
+    "temperature": [
+      55,
+      95
+    ],
+    "pressure": [
+      1.0,
+      3.0
+    ],
+    "current": [
+      500,
+      1200
+    ]
+  },
+  "Overhead Crane": {
+    "vibration": [
+      1.5,
+      4.0
+    ],
+    "temperature": [
+      30,
+      60
+    ],
+    "pressure": [
+      0,
+      0
+    ],
+    "current": [
+      100,
+      250
+    ]
+  },
+  "Gas Compressor": {
+    "vibration": [
+      2.0,
+      5.0
+    ],
+    "temperature": [
+      50,
+      85
+    ],
+    "pressure": [
+      5.0,
+      12.0
+    ],
+    "current": [
+      60,
+      120
+    ]
+  },
+  "AC Motor (2000kW)": {
+    "vibration": [
+      2.0,
+      5.5
+    ],
+    "temperature": [
+      45,
+      75
+    ],
+    "pressure": [
+      0,
+      0
+    ],
+    "current": [
+      180,
+      280
+    ]
+  },
+  "Helical Gearbox": {
+    "vibration": [
+      2.5,
+      6.0
+    ],
+    "temperature": [
+      45,
+      70
+    ],
+    "pressure": [
+      0,
+      0
+    ],
+    "current": [
+      0,
+      0
+    ]
+  },
+  "Rolling Stand": {
+    "vibration": [
+      3.0,
+      7.0
+    ],
+    "temperature": [
+      40,
+      70
+    ],
+    "pressure": [
+      100,
+      200
+    ],
+    "current": [
+      150,
+      300
+    ]
+  },
+  "Cooling System": {
+    "vibration": [
+      1.0,
+      3.0
+    ],
+    "temperature": [
+      25,
+      45
+    ],
+    "pressure": [
+      2.0,
+      6.0
+    ],
+    "current": [
+      30,
+      60
+    ]
+  },
+  "Pusher Machine": {
+    "vibration": [
+      3.0,
+      8.0
+    ],
+    "temperature": [
+      35,
+      65
+    ],
+    "pressure": [
+      100,
+      200
+    ],
+    "current": [
+      100,
+      200
+    ]
+  },
+  "Quenching Car": {
+    "vibration": [
+      2.0,
+      5.0
+    ],
+    "temperature": [
+      30,
+      55
+    ],
+    "pressure": [
+      0,
+      0
+    ],
+    "current": [
+      60,
+      120
+    ]
+  },
+  "Gas Treatment System": {
+    "vibration": [
+      1.5,
+      4.0
+    ],
+    "temperature": [
+      35,
+      60
+    ],
+    "pressure": [
+      0.5,
+      2.0
+    ],
+    "current": [
+      80,
+      150
+    ]
+  },
+  "Centrifugal Fan": {
+    "vibration": [
+      2.0,
+      5.5
+    ],
+    "temperature": [
+      40,
+      65
+    ],
+    "pressure": [
+      0.8,
+      2.5
+    ],
+    "current": [
+      120,
+      220
+    ]
+  },
+  "Gas Furnace": {
+    "vibration": [
+      1.0,
+      3.0
+    ],
+    "temperature": [
+      800,
+      1200
+    ],
+    "pressure": [
+      0.5,
+      1.5
+    ],
+    "current": [
+      20,
+      50
+    ]
+  },
+  "Steam Turbine": {
+    "vibration": [
+      1.5,
+      4.5
+    ],
+    "temperature": [
+      50,
+      80
+    ],
+    "pressure": [
+      30,
+      60
+    ],
+    "current": [
+      300,
+      600
+    ]
+  },
+  "Multi-stage Pump": {
+    "vibration": [
+      1.5,
+      4.0
+    ],
+    "temperature": [
+      40,
+      65
+    ],
+    "pressure": [
+      20,
+      50
+    ],
+    "current": [
+      60,
+      120
+    ]
+  },
+  "Axial Fan": {
+    "vibration": [
+      2.0,
+      5.0
+    ],
+    "temperature": [
+      35,
+      55
+    ],
+    "pressure": [
+      0.3,
+      1.0
+    ],
+    "current": [
+      80,
+      160
+    ]
+  },
+  "Power Transformer": {
+    "vibration": [
+      0.5,
+      2.0
+    ],
+    "temperature": [
+      45,
+      75
+    ],
+    "pressure": [
+      0,
+      0
+    ],
+    "current": [
+      200,
+      500
+    ]
+  }
+}

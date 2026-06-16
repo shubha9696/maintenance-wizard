@@ -1,0 +1,382 @@
+{
+  "Centrifugal Pump": [
+    {
+      "mode": "Bearing failure",
+      "cause": "Lubrication breakdown / contamination",
+      "symptom": "High vibration, elevated temperature at bearing housing",
+      "mtbf_hours": 15000
+    },
+    {
+      "mode": "Seal leakage",
+      "cause": "Mechanical seal wear / thermal shock",
+      "symptom": "Visible leakage, pressure drop",
+      "mtbf_hours": 12000
+    },
+    {
+      "mode": "Impeller erosion",
+      "cause": "Cavitation / abrasive particles in fluid",
+      "symptom": "Reduced flow rate, increased noise",
+      "mtbf_hours": 20000
+    },
+    {
+      "mode": "Motor winding failure",
+      "cause": "Insulation degradation due to overheating",
+      "symptom": "Current spikes, overheating",
+      "mtbf_hours": 25000
+    }
+  ],
+  "Turbo Blower": [
+    {
+      "mode": "Blade fatigue crack",
+      "cause": "High-cycle fatigue / foreign object damage",
+      "symptom": "Unusual vibration pattern, noise",
+      "mtbf_hours": 30000
+    },
+    {
+      "mode": "Bearing degradation",
+      "cause": "Oil contamination / misalignment",
+      "symptom": "High vibration, temperature rise",
+      "mtbf_hours": 18000
+    },
+    {
+      "mode": "Surge condition",
+      "cause": "Operating below minimum flow",
+      "symptom": "Pressure fluctuations, vibration spikes",
+      "mtbf_hours": 10000
+    }
+  ],
+  "Hydraulic Power Unit": [
+    {
+      "mode": "Hydraulic oil contamination",
+      "cause": "Filter bypass / seal degradation",
+      "symptom": "Erratic actuator movement, pressure drops",
+      "mtbf_hours": 8000
+    },
+    {
+      "mode": "Pump wear",
+      "cause": "Abrasive particles / cavitation",
+      "symptom": "Reduced pressure, increased noise",
+      "mtbf_hours": 15000
+    },
+    {
+      "mode": "Valve malfunction",
+      "cause": "Spool sticking / solenoid failure",
+      "symptom": "Inconsistent pressure, slow response",
+      "mtbf_hours": 12000
+    }
+  ],
+  "Belt Conveyor": [
+    {
+      "mode": "Belt misalignment",
+      "cause": "Uneven loading / roller wear",
+      "symptom": "Belt tracking issues, material spillage",
+      "mtbf_hours": 5000
+    },
+    {
+      "mode": "Roller bearing failure",
+      "cause": "Dust ingress / lubrication failure",
+      "symptom": "Squealing noise, belt drag",
+      "mtbf_hours": 10000
+    },
+    {
+      "mode": "Belt splice failure",
+      "cause": "Material fatigue / impact damage",
+      "symptom": "Belt separation, stoppage",
+      "mtbf_hours": 15000
+    }
+  ],
+  "BOF Converter": [
+    {
+      "mode": "Refractory lining erosion",
+      "cause": "Thermal cycling / chemical attack",
+      "symptom": "Shell temperature rise, reduced campaign life",
+      "mtbf_hours": 2000
+    },
+    {
+      "mode": "Trunnion bearing wear",
+      "cause": "High load cycling",
+      "symptom": "Vibration during tilting, noise",
+      "mtbf_hours": 25000
+    },
+    {
+      "mode": "Lance tip erosion",
+      "cause": "High-temperature oxidation",
+      "symptom": "Inconsistent blowing, temperature variation",
+      "mtbf_hours": 1500
+    }
+  ],
+  "Continuous Casting Machine": [
+    {
+      "mode": "Mould oscillation fault",
+      "cause": "Hydraulic system degradation",
+      "symptom": "Surface defects on slab, breakout risk",
+      "mtbf_hours": 8000
+    },
+    {
+      "mode": "Roller bearing failure",
+      "cause": "Thermal stress / scale buildup",
+      "symptom": "Slab surface marks, roller seizure",
+      "mtbf_hours": 12000
+    },
+    {
+      "mode": "Spray nozzle blockage",
+      "cause": "Scale / debris accumulation",
+      "symptom": "Uneven cooling, surface cracks",
+      "mtbf_hours": 5000
+    }
+  ],
+  "Electric Arc Furnace": [
+    {
+      "mode": "Electrode breakage",
+      "cause": "Thermal shock / scrap impact",
+      "symptom": "Production interruption, electrode consumption increase",
+      "mtbf_hours": 3000
+    },
+    {
+      "mode": "Refractory wear",
+      "cause": "Slag attack / thermal cycling",
+      "symptom": "Shell hot spots, increased energy consumption",
+      "mtbf_hours": 4000
+    }
+  ],
+  "Overhead Crane": [
+    {
+      "mode": "Wire rope fatigue",
+      "cause": "Cyclic loading / corrosion",
+      "symptom": "Visible wire breaks, elongation",
+      "mtbf_hours": 20000
+    },
+    {
+      "mode": "Brake system wear",
+      "cause": "Frequent operation / heat",
+      "symptom": "Increased stopping distance, slippage",
+      "mtbf_hours": 15000
+    },
+    {
+      "mode": "Gearbox failure",
+      "cause": "Gear tooth fatigue / oil degradation",
+      "symptom": "Noise, vibration, slow operation",
+      "mtbf_hours": 25000
+    }
+  ],
+  "Gas Compressor": [
+    {
+      "mode": "Valve plate failure",
+      "cause": "Fatigue / contamination",
+      "symptom": "Reduced discharge pressure, overheating",
+      "mtbf_hours": 10000
+    },
+    {
+      "mode": "Piston ring wear",
+      "cause": "Normal wear / contamination",
+      "symptom": "Reduced efficiency, oil carryover",
+      "mtbf_hours": 12000
+    }
+  ],
+  "AC Motor (2000kW)": [
+    {
+      "mode": "Stator winding insulation failure",
+      "cause": "Thermal aging / voltage spikes",
+      "symptom": "Partial discharge, current imbalance",
+      "mtbf_hours": 30000
+    },
+    {
+      "mode": "Bearing failure",
+      "cause": "Lubrication issues / misalignment",
+      "symptom": "High vibration, temperature rise",
+      "mtbf_hours": 20000
+    },
+    {
+      "mode": "Rotor bar cracking",
+      "cause": "Thermal stress / starting cycles",
+      "symptom": "Speed fluctuation, current harmonics",
+      "mtbf_hours": 35000
+    }
+  ],
+  "Helical Gearbox": [
+    {
+      "mode": "Gear tooth pitting",
+      "cause": "Surface fatigue / oil contamination",
+      "symptom": "Increasing vibration, metallic particles in oil",
+      "mtbf_hours": 18000
+    },
+    {
+      "mode": "Shaft misalignment",
+      "cause": "Foundation settling / thermal expansion",
+      "symptom": "Coupling wear, vibration",
+      "mtbf_hours": 15000
+    },
+    {
+      "mode": "Oil seal failure",
+      "cause": "Seal aging / shaft wear",
+      "symptom": "Oil leakage, contamination",
+      "mtbf_hours": 10000
+    }
+  ],
+  "Rolling Stand": [
+    {
+      "mode": "Roll bearing failure",
+      "cause": "Overloading / contamination",
+      "symptom": "Surface defects on product, vibration",
+      "mtbf_hours": 12000
+    },
+    {
+      "mode": "Chock wear",
+      "cause": "Roll changing cycles",
+      "symptom": "Roll misalignment, product dimension variation",
+      "mtbf_hours": 15000
+    }
+  ],
+  "Cooling System": [
+    {
+      "mode": "Nozzle blockage",
+      "cause": "Scale / debris",
+      "symptom": "Uneven cooling, product quality issues",
+      "mtbf_hours": 5000
+    },
+    {
+      "mode": "Pump cavitation",
+      "cause": "Low NPSH / air ingress",
+      "symptom": "Noise, reduced flow, vibration",
+      "mtbf_hours": 10000
+    }
+  ],
+  "Pusher Machine": [
+    {
+      "mode": "Ram head wear",
+      "cause": "Abrasion / impact",
+      "symptom": "Incomplete pushing, coke oven door damage",
+      "mtbf_hours": 15000
+    },
+    {
+      "mode": "Drive chain elongation",
+      "cause": "Wear / overload",
+      "symptom": "Positioning errors, jerky movement",
+      "mtbf_hours": 12000
+    }
+  ],
+  "Quenching Car": [
+    {
+      "mode": "Wheel bearing failure",
+      "cause": "Water ingress / thermal cycling",
+      "symptom": "Difficult movement, noise",
+      "mtbf_hours": 10000
+    },
+    {
+      "mode": "Structure deformation",
+      "cause": "Thermal stress",
+      "symptom": "Uneven quenching, alignment issues",
+      "mtbf_hours": 20000
+    }
+  ],
+  "Gas Treatment System": [
+    {
+      "mode": "Scrubber nozzle blockage",
+      "cause": "Tar / dust buildup",
+      "symptom": "Reduced gas cleaning efficiency, emissions",
+      "mtbf_hours": 8000
+    },
+    {
+      "mode": "Fan bearing failure",
+      "cause": "Corrosive gas exposure",
+      "symptom": "Vibration, temperature rise",
+      "mtbf_hours": 15000
+    }
+  ],
+  "Centrifugal Fan": [
+    {
+      "mode": "Impeller imbalance",
+      "cause": "Dust buildup / erosion",
+      "symptom": "High vibration, noise",
+      "mtbf_hours": 12000
+    },
+    {
+      "mode": "Bearing failure",
+      "cause": "Misalignment / lubrication",
+      "symptom": "Temperature rise, vibration",
+      "mtbf_hours": 18000
+    }
+  ],
+  "Gas Furnace": [
+    {
+      "mode": "Burner nozzle blockage",
+      "cause": "Carbon buildup",
+      "symptom": "Uneven heating, flame instability",
+      "mtbf_hours": 6000
+    },
+    {
+      "mode": "Refractory cracking",
+      "cause": "Thermal shock",
+      "symptom": "Heat loss, shell temperature rise",
+      "mtbf_hours": 10000
+    }
+  ],
+  "Steam Turbine": [
+    {
+      "mode": "Blade erosion",
+      "cause": "Wet steam / foreign particles",
+      "symptom": "Efficiency drop, vibration change",
+      "mtbf_hours": 30000
+    },
+    {
+      "mode": "Journal bearing wear",
+      "cause": "Oil contamination / misalignment",
+      "symptom": "Vibration, temperature increase",
+      "mtbf_hours": 25000
+    },
+    {
+      "mode": "Governor malfunction",
+      "cause": "Actuator wear / signal drift",
+      "symptom": "Speed fluctuation, load swings",
+      "mtbf_hours": 20000
+    }
+  ],
+  "Multi-stage Pump": [
+    {
+      "mode": "Impeller wear",
+      "cause": "Cavitation / erosion",
+      "symptom": "Reduced head, increased power consumption",
+      "mtbf_hours": 15000
+    },
+    {
+      "mode": "Mechanical seal failure",
+      "cause": "Thermal cycling / dry running",
+      "symptom": "Leakage, vibration",
+      "mtbf_hours": 12000
+    }
+  ],
+  "Axial Fan": [
+    {
+      "mode": "Blade pitch mechanism failure",
+      "cause": "Actuator wear / linkage issues",
+      "symptom": "Reduced airflow, current fluctuation",
+      "mtbf_hours": 15000
+    },
+    {
+      "mode": "Motor bearing failure",
+      "cause": "Environmental exposure",
+      "symptom": "Vibration, noise",
+      "mtbf_hours": 18000
+    }
+  ],
+  "Power Transformer": [
+    {
+      "mode": "Winding insulation degradation",
+      "cause": "Thermal aging / moisture ingress",
+      "symptom": "Dissolved gas in oil, partial discharge",
+      "mtbf_hours": 50000
+    },
+    {
+      "mode": "Tap changer failure",
+      "cause": "Contact erosion / mechanism wear",
+      "symptom": "Voltage regulation issues",
+      "mtbf_hours": 30000
+    },
+    {
+      "mode": "Bushing leakage",
+      "cause": "Seal degradation / porcelain cracking",
+      "symptom": "Oil leakage, partial discharge",
+      "mtbf_hours": 40000
+    }
+  ]
+}

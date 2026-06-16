@@ -1,0 +1,7402 @@
+{
+  "BF-CP-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 4.93,
+      "temperature": 65.8,
+      "pressure": 5.98,
+      "current": 107.8
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 4.88,
+      "temperature": 62.7,
+      "pressure": 5.93,
+      "current": 113.6
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 5.39,
+      "temperature": 65.7,
+      "pressure": 6.03,
+      "current": 113.8
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 5.58,
+      "temperature": 64.5,
+      "pressure": 6.32,
+      "current": 106.0
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 4.73,
+      "temperature": 61.1,
+      "pressure": 5.46,
+      "current": 109.1
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 5.25,
+      "temperature": 61.5,
+      "pressure": 6.04,
+      "current": 106.5
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 4.97,
+      "temperature": 63.8,
+      "pressure": 5.76,
+      "current": 113.7
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 4.76,
+      "temperature": 64.7,
+      "pressure": 5.9,
+      "current": 115.9
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.4,
+      "temperature": 61.1,
+      "pressure": 5.52,
+      "current": 108.9
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 4.97,
+      "temperature": 63.1,
+      "pressure": 6.01,
+      "current": 112.3
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 4.63,
+      "temperature": 59.8,
+      "pressure": 6.05,
+      "current": 108.1
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 4.94,
+      "temperature": 61.6,
+      "pressure": 5.97,
+      "current": 113.3
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 4.75,
+      "temperature": 61.8,
+      "pressure": 6.13,
+      "current": 115.1
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 5.22,
+      "temperature": 62.6,
+      "pressure": 5.6,
+      "current": 112.7
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 4.97,
+      "temperature": 67.8,
+      "pressure": 6.47,
+      "current": 112.6
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 5.26,
+      "temperature": 63.5,
+      "pressure": 6.23,
+      "current": 110.7
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 5.03,
+      "temperature": 64.8,
+      "pressure": 6.13,
+      "current": 115.4
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 4.62,
+      "temperature": 62.0,
+      "pressure": 5.82,
+      "current": 111.8
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 5.07,
+      "temperature": 64.8,
+      "pressure": 5.77,
+      "current": 110.7
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 5.87,
+      "temperature": 67.2,
+      "pressure": 5.62,
+      "current": 113.3
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 5.52,
+      "temperature": 64.0,
+      "pressure": 5.78,
+      "current": 114.1
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 5.22,
+      "temperature": 64.7,
+      "pressure": 5.97,
+      "current": 117.5
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 4.84,
+      "temperature": 62.3,
+      "pressure": 6.1,
+      "current": 111.7
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 4.73,
+      "temperature": 65.0,
+      "pressure": 5.71,
+      "current": 109.7
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 5.17,
+      "temperature": 63.1,
+      "pressure": 6.23,
+      "current": 104.6
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 5.2,
+      "temperature": 63.7,
+      "pressure": 6.17,
+      "current": 116.9
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.56,
+      "temperature": 67.1,
+      "pressure": 5.56,
+      "current": 113.0
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 4.91,
+      "temperature": 63.6,
+      "pressure": 6.05,
+      "current": 111.5
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 5.44,
+      "temperature": 60.3,
+      "pressure": 5.83,
+      "current": 105.8
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 4.72,
+      "temperature": 64.8,
+      "pressure": 6.04,
+      "current": 114.3
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 5.58,
+      "temperature": 64.6,
+      "pressure": 5.81,
+      "current": 114.2
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 5.26,
+      "temperature": 63.5,
+      "pressure": 5.77,
+      "current": 113.1
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 5.73,
+      "temperature": 65.4,
+      "pressure": 6.24,
+      "current": 113.0
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 5.19,
+      "temperature": 68.5,
+      "pressure": 6.36,
+      "current": 112.0
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 4.96,
+      "temperature": 61.2,
+      "pressure": 6.08,
+      "current": 109.5
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 5.28,
+      "temperature": 64.1,
+      "pressure": 6.09,
+      "current": 113.4
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 5.42,
+      "temperature": 63.6,
+      "pressure": 5.85,
+      "current": 113.4
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 5.22,
+      "temperature": 66.7,
+      "pressure": 6.14,
+      "current": 112.9
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.29,
+      "temperature": 62.9,
+      "pressure": 5.78,
+      "current": 108.5
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 5.35,
+      "temperature": 64.1,
+      "pressure": 5.82,
+      "current": 114.2
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 5.25,
+      "temperature": 63.9,
+      "pressure": 6.11,
+      "current": 113.3
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 4.83,
+      "temperature": 64.9,
+      "pressure": 5.64,
+      "current": 108.2
+    }
+  ],
+  "BF-CP-002": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 3.45,
+      "temperature": 52.7,
+      "pressure": 6.0,
+      "current": 101.2
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.92,
+      "temperature": 50.9,
+      "pressure": 6.41,
+      "current": 104.3
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.91,
+      "temperature": 53.6,
+      "pressure": 6.12,
+      "current": 99.9
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 3.34,
+      "temperature": 51.8,
+      "pressure": 6.2,
+      "current": 98.2
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 2.99,
+      "temperature": 54.0,
+      "pressure": 6.09,
+      "current": 97.3
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 2.92,
+      "temperature": 52.7,
+      "pressure": 5.91,
+      "current": 97.6
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 3.42,
+      "temperature": 54.6,
+      "pressure": 5.87,
+      "current": 96.3
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.82,
+      "temperature": 51.7,
+      "pressure": 5.94,
+      "current": 101.1
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.8,
+      "temperature": 53.6,
+      "pressure": 5.42,
+      "current": 101.7
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 3.39,
+      "temperature": 50.7,
+      "pressure": 5.42,
+      "current": 100.5
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 3.04,
+      "temperature": 51.0,
+      "pressure": 6.05,
+      "current": 102.3
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 3.28,
+      "temperature": 52.5,
+      "pressure": 5.75,
+      "current": 99.2
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 2.76,
+      "temperature": 52.5,
+      "pressure": 5.95,
+      "current": 98.4
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 3.5,
+      "temperature": 53.0,
+      "pressure": 5.7,
+      "current": 102.4
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 3.29,
+      "temperature": 53.4,
+      "pressure": 5.85,
+      "current": 100.1
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 2.86,
+      "temperature": 51.7,
+      "pressure": 5.86,
+      "current": 99.4
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 2.54,
+      "temperature": 52.0,
+      "pressure": 5.84,
+      "current": 101.2
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 2.96,
+      "temperature": 53.9,
+      "pressure": 5.73,
+      "current": 102.7
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 2.97,
+      "temperature": 53.4,
+      "pressure": 6.18,
+      "current": 102.7
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 3.14,
+      "temperature": 54.0,
+      "pressure": 5.98,
+      "current": 103.3
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.92,
+      "temperature": 54.0,
+      "pressure": 6.31,
+      "current": 106.9
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 3.26,
+      "temperature": 54.7,
+      "pressure": 6.1,
+      "current": 103.0
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 3.34,
+      "temperature": 51.6,
+      "pressure": 5.68,
+      "current": 98.2
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 2.91,
+      "temperature": 50.4,
+      "pressure": 5.76,
+      "current": 97.3
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 2.7,
+      "temperature": 53.9,
+      "pressure": 6.34,
+      "current": 101.9
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.8,
+      "temperature": 53.7,
+      "pressure": 5.83,
+      "current": 102.1
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 2.93,
+      "temperature": 54.8,
+      "pressure": 6.14,
+      "current": 100.4
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 3.12,
+      "temperature": 52.6,
+      "pressure": 6.35,
+      "current": 94.7
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 2.97,
+      "temperature": 53.5,
+      "pressure": 5.93,
+      "current": 97.3
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 2.91,
+      "temperature": 50.3,
+      "pressure": 5.89,
+      "current": 95.8
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 2.96,
+      "temperature": 49.4,
+      "pressure": 5.88,
+      "current": 101.6
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 3.04,
+      "temperature": 52.7,
+      "pressure": 6.18,
+      "current": 105.7
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.95,
+      "temperature": 55.2,
+      "pressure": 5.65,
+      "current": 98.9
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 3.13,
+      "temperature": 52.9,
+      "pressure": 6.02,
+      "current": 102.4
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 2.82,
+      "temperature": 52.8,
+      "pressure": 5.9,
+      "current": 96.9
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 2.42,
+      "temperature": 52.6,
+      "pressure": 5.83,
+      "current": 101.5
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 3.24,
+      "temperature": 52.2,
+      "pressure": 6.02,
+      "current": 100.6
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 3.08,
+      "temperature": 51.2,
+      "pressure": 6.29,
+      "current": 99.7
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 3.26,
+      "temperature": 53.8,
+      "pressure": 6.06,
+      "current": 101.9
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 3.22,
+      "temperature": 51.2,
+      "pressure": 6.2,
+      "current": 100.5
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 2.88,
+      "temperature": 51.0,
+      "pressure": 5.99,
+      "current": 100.3
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 2.59,
+      "temperature": 49.1,
+      "pressure": 5.95,
+      "current": 100.7
+    }
+  ],
+  "BF-BL-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 7.09,
+      "temperature": 76.9,
+      "pressure": 2.37,
+      "current": 301.4
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 6.47,
+      "temperature": 79.6,
+      "pressure": 2.42,
+      "current": 305.4
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 6.73,
+      "temperature": 79.4,
+      "pressure": 2.59,
+      "current": 327.5
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 6.62,
+      "temperature": 79.6,
+      "pressure": 2.42,
+      "current": 331.2
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 6.79,
+      "temperature": 77.4,
+      "pressure": 2.34,
+      "current": 322.2
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 6.44,
+      "temperature": 75.8,
+      "pressure": 2.42,
+      "current": 305.6
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 6.95,
+      "temperature": 78.8,
+      "pressure": 2.51,
+      "current": 333.9
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 6.52,
+      "temperature": 79.4,
+      "pressure": 2.37,
+      "current": 321.4
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 7.1,
+      "temperature": 79.2,
+      "pressure": 2.55,
+      "current": 321.6
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 6.94,
+      "temperature": 75.6,
+      "pressure": 2.59,
+      "current": 332.6
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 7.02,
+      "temperature": 76.7,
+      "pressure": 2.7,
+      "current": 315.5
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 7.03,
+      "temperature": 78.4,
+      "pressure": 2.64,
+      "current": 296.2
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 6.6,
+      "temperature": 79.3,
+      "pressure": 2.48,
+      "current": 311.3
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 7.47,
+      "temperature": 78.2,
+      "pressure": 2.53,
+      "current": 320.4
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 6.91,
+      "temperature": 75.1,
+      "pressure": 2.31,
+      "current": 313.7
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 7.56,
+      "temperature": 77.1,
+      "pressure": 2.5,
+      "current": 337.0
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 6.74,
+      "temperature": 78.4,
+      "pressure": 2.53,
+      "current": 305.0
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 6.45,
+      "temperature": 76.6,
+      "pressure": 2.5,
+      "current": 306.1
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 6.76,
+      "temperature": 79.2,
+      "pressure": 2.62,
+      "current": 340.9
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 6.82,
+      "temperature": 80.1,
+      "pressure": 2.4,
+      "current": 310.9
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 6.5,
+      "temperature": 82.7,
+      "pressure": 2.46,
+      "current": 327.5
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 6.58,
+      "temperature": 74.5,
+      "pressure": 2.67,
+      "current": 299.1
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 6.46,
+      "temperature": 80.0,
+      "pressure": 2.51,
+      "current": 312.8
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 7.22,
+      "temperature": 77.3,
+      "pressure": 2.58,
+      "current": 301.8
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 7.45,
+      "temperature": 78.0,
+      "pressure": 2.52,
+      "current": 309.5
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 6.86,
+      "temperature": 79.4,
+      "pressure": 2.59,
+      "current": 315.8
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 7.18,
+      "temperature": 79.0,
+      "pressure": 2.63,
+      "current": 303.0
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 6.45,
+      "temperature": 81.6,
+      "pressure": 2.28,
+      "current": 335.1
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 6.86,
+      "temperature": 78.9,
+      "pressure": 2.53,
+      "current": 308.8
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 7.03,
+      "temperature": 81.8,
+      "pressure": 2.62,
+      "current": 308.3
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 7.46,
+      "temperature": 77.2,
+      "pressure": 2.48,
+      "current": 319.6
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 7.59,
+      "temperature": 77.7,
+      "pressure": 2.61,
+      "current": 315.0
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 6.66,
+      "temperature": 82.0,
+      "pressure": 2.46,
+      "current": 298.3
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 7.31,
+      "temperature": 76.3,
+      "pressure": 2.46,
+      "current": 306.2
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 6.67,
+      "temperature": 80.4,
+      "pressure": 2.56,
+      "current": 300.9
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 6.86,
+      "temperature": 78.6,
+      "pressure": 2.64,
+      "current": 321.6
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 6.74,
+      "temperature": 77.3,
+      "pressure": 2.57,
+      "current": 327.0
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 7.07,
+      "temperature": 79.4,
+      "pressure": 2.55,
+      "current": 323.3
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 6.42,
+      "temperature": 80.0,
+      "pressure": 2.58,
+      "current": 304.7
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 7.41,
+      "temperature": 77.4,
+      "pressure": 2.52,
+      "current": 310.1
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 6.48,
+      "temperature": 79.2,
+      "pressure": 2.49,
+      "current": 333.7
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 7.27,
+      "temperature": 75.9,
+      "pressure": 2.53,
+      "current": 328.0
+    }
+  ],
+  "BF-HY-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 2.38,
+      "temperature": 44.5,
+      "pressure": 191.73,
+      "current": 58.8
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.5,
+      "temperature": 46.5,
+      "pressure": 199.06,
+      "current": 63.2
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.36,
+      "temperature": 44.3,
+      "pressure": 200.87,
+      "current": 63.6
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 2.51,
+      "temperature": 44.3,
+      "pressure": 200.62,
+      "current": 59.3
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 1.85,
+      "temperature": 44.5,
+      "pressure": 195.32,
+      "current": 58.9
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 1.99,
+      "temperature": 43.4,
+      "pressure": 199.69,
+      "current": 58.9
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 2.35,
+      "temperature": 44.5,
+      "pressure": 198.59,
+      "current": 61.0
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.3,
+      "temperature": 45.9,
+      "pressure": 197.12,
+      "current": 61.2
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.54,
+      "temperature": 46.8,
+      "pressure": 204.09,
+      "current": 64.7
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 2.28,
+      "temperature": 46.2,
+      "pressure": 198.39,
+      "current": 62.8
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 2.27,
+      "temperature": 46.1,
+      "pressure": 204.17,
+      "current": 60.6
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 2.18,
+      "temperature": 43.5,
+      "pressure": 196.76,
+      "current": 61.1
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 1.99,
+      "temperature": 46.9,
+      "pressure": 201.03,
+      "current": 61.7
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 2.57,
+      "temperature": 46.2,
+      "pressure": 199.59,
+      "current": 55.3
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 2.45,
+      "temperature": 46.5,
+      "pressure": 192.67,
+      "current": 61.8
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 2.23,
+      "temperature": 46.2,
+      "pressure": 191.47,
+      "current": 58.4
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 2.08,
+      "temperature": 43.1,
+      "pressure": 200.93,
+      "current": 52.9
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 1.67,
+      "temperature": 44.1,
+      "pressure": 202.74,
+      "current": 56.4
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 2.32,
+      "temperature": 45.4,
+      "pressure": 202.88,
+      "current": 60.2
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.04,
+      "temperature": 45.9,
+      "pressure": 200.64,
+      "current": 65.5
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.08,
+      "temperature": 48.6,
+      "pressure": 199.58,
+      "current": 58.3
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 2.19,
+      "temperature": 46.3,
+      "pressure": 200.26,
+      "current": 57.9
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 2.26,
+      "temperature": 45.3,
+      "pressure": 200.03,
+      "current": 63.5
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 2.54,
+      "temperature": 41.2,
+      "pressure": 200.15,
+      "current": 63.9
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 2.35,
+      "temperature": 46.8,
+      "pressure": 202.86,
+      "current": 56.0
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.25,
+      "temperature": 45.9,
+      "pressure": 206.68,
+      "current": 61.1
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 2.28,
+      "temperature": 45.2,
+      "pressure": 200.94,
+      "current": 61.9
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 2.71,
+      "temperature": 44.8,
+      "pressure": 193.81,
+      "current": 61.7
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 2.17,
+      "temperature": 44.3,
+      "pressure": 196.43,
+      "current": 60.0
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 2.02,
+      "temperature": 43.5,
+      "pressure": 197.06,
+      "current": 61.4
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 1.96,
+      "temperature": 44.9,
+      "pressure": 198.68,
+      "current": 62.1
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.34,
+      "temperature": 47.0,
+      "pressure": 196.18,
+      "current": 62.5
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.44,
+      "temperature": 46.0,
+      "pressure": 207.82,
+      "current": 62.8
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 2.3,
+      "temperature": 46.3,
+      "pressure": 201.93,
+      "current": 59.3
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 2.31,
+      "temperature": 46.8,
+      "pressure": 197.21,
+      "current": 60.5
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 2.15,
+      "temperature": 44.2,
+      "pressure": 190.57,
+      "current": 56.9
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 2.09,
+      "temperature": 46.7,
+      "pressure": 194.41,
+      "current": 63.7
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 2.19,
+      "temperature": 45.7,
+      "pressure": 197.99,
+      "current": 59.7
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 2.07,
+      "temperature": 47.5,
+      "pressure": 205.62,
+      "current": 64.7
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 2.44,
+      "temperature": 46.1,
+      "pressure": 206.21,
+      "current": 57.9
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 2.23,
+      "temperature": 45.9,
+      "pressure": 201.76,
+      "current": 58.2
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 1.94,
+      "temperature": 43.8,
+      "pressure": 197.67,
+      "current": 50.3
+    }
+  ],
+  "BF-CV-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 1.95,
+      "temperature": 36.1,
+      "pressure": 0.0,
+      "current": 72.9
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.13,
+      "temperature": 37.5,
+      "pressure": 0,
+      "current": 79.9
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.29,
+      "temperature": 38.7,
+      "pressure": 0.01,
+      "current": 81.8
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 1.73,
+      "temperature": 37.7,
+      "pressure": 0,
+      "current": 74.0
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 1.82,
+      "temperature": 38.2,
+      "pressure": 0,
+      "current": 81.3
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 1.78,
+      "temperature": 35.0,
+      "pressure": 0,
+      "current": 71.5
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 1.95,
+      "temperature": 36.8,
+      "pressure": 0,
+      "current": 74.7
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 1.94,
+      "temperature": 36.8,
+      "pressure": 0,
+      "current": 76.0
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 1.76,
+      "temperature": 39.2,
+      "pressure": 0.01,
+      "current": 73.8
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 2.05,
+      "temperature": 36.9,
+      "pressure": 0,
+      "current": 74.0
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 2.04,
+      "temperature": 36.7,
+      "pressure": 0.0,
+      "current": 74.8
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 2.01,
+      "temperature": 36.4,
+      "pressure": 0.01,
+      "current": 78.7
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 1.86,
+      "temperature": 37.2,
+      "pressure": 0.01,
+      "current": 76.5
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 2.21,
+      "temperature": 39.5,
+      "pressure": 0,
+      "current": 75.4
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 1.88,
+      "temperature": 35.9,
+      "pressure": 0,
+      "current": 82.7
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 2.14,
+      "temperature": 36.0,
+      "pressure": 0,
+      "current": 79.6
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 1.77,
+      "temperature": 37.3,
+      "pressure": 0,
+      "current": 72.4
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 1.95,
+      "temperature": 37.0,
+      "pressure": 0,
+      "current": 70.9
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 1.99,
+      "temperature": 38.2,
+      "pressure": 0.0,
+      "current": 70.5
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.14,
+      "temperature": 37.0,
+      "pressure": 0.0,
+      "current": 71.7
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.08,
+      "temperature": 41.0,
+      "pressure": 0.01,
+      "current": 72.5
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 1.9,
+      "temperature": 37.7,
+      "pressure": 0.01,
+      "current": 64.7
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 2.11,
+      "temperature": 38.1,
+      "pressure": 0.0,
+      "current": 75.4
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 1.97,
+      "temperature": 35.7,
+      "pressure": 0.0,
+      "current": 73.0
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 1.83,
+      "temperature": 37.4,
+      "pressure": 0,
+      "current": 72.3
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.05,
+      "temperature": 38.4,
+      "pressure": 0,
+      "current": 75.0
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 1.99,
+      "temperature": 39.5,
+      "pressure": 0,
+      "current": 80.2
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 1.67,
+      "temperature": 36.9,
+      "pressure": 0.01,
+      "current": 67.7
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 2.16,
+      "temperature": 35.7,
+      "pressure": 0,
+      "current": 67.2
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 1.7,
+      "temperature": 36.0,
+      "pressure": 0.0,
+      "current": 68.5
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 1.84,
+      "temperature": 36.9,
+      "pressure": 0,
+      "current": 75.6
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.01,
+      "temperature": 39.6,
+      "pressure": 0,
+      "current": 71.3
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.18,
+      "temperature": 40.2,
+      "pressure": 0.02,
+      "current": 76.2
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 1.93,
+      "temperature": 38.1,
+      "pressure": 0,
+      "current": 74.5
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 1.69,
+      "temperature": 37.3,
+      "pressure": 0.01,
+      "current": 73.8
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 2.0,
+      "temperature": 37.4,
+      "pressure": 0,
+      "current": 81.6
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 1.97,
+      "temperature": 37.3,
+      "pressure": 0,
+      "current": 78.9
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 2.37,
+      "temperature": 39.0,
+      "pressure": 0,
+      "current": 81.2
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 2.42,
+      "temperature": 37.9,
+      "pressure": 0.01,
+      "current": 70.2
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 2.23,
+      "temperature": 37.5,
+      "pressure": 0,
+      "current": 75.2
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 2.06,
+      "temperature": 34.9,
+      "pressure": 0.0,
+      "current": 72.8
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 2.2,
+      "temperature": 37.2,
+      "pressure": 0.01,
+      "current": 78.4
+    }
+  ],
+  "SMS-LD-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 5.85,
+      "temperature": 87.7,
+      "pressure": 3.66,
+      "current": 238.6
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.55,
+      "temperature": 91.3,
+      "pressure": 3.58,
+      "current": 233.3
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 6.19,
+      "temperature": 90.5,
+      "pressure": 3.48,
+      "current": 227.3
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 5.65,
+      "temperature": 84.9,
+      "pressure": 3.59,
+      "current": 237.5
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 5.44,
+      "temperature": 90.6,
+      "pressure": 3.43,
+      "current": 227.5
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 5.33,
+      "temperature": 89.8,
+      "pressure": 3.4,
+      "current": 229.3
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 5.99,
+      "temperature": 88.7,
+      "pressure": 3.52,
+      "current": 237.0
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 5.56,
+      "temperature": 87.1,
+      "pressure": 3.58,
+      "current": 224.3
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.77,
+      "temperature": 90.6,
+      "pressure": 3.55,
+      "current": 225.4
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 5.3,
+      "temperature": 93.7,
+      "pressure": 3.47,
+      "current": 232.5
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 6.05,
+      "temperature": 86.9,
+      "pressure": 3.48,
+      "current": 224.6
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 5.29,
+      "temperature": 91.1,
+      "pressure": 3.34,
+      "current": 212.1
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 5.32,
+      "temperature": 90.8,
+      "pressure": 3.58,
+      "current": 231.2
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 5.52,
+      "temperature": 84.4,
+      "pressure": 3.59,
+      "current": 218.7
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 5.77,
+      "temperature": 90.6,
+      "pressure": 3.35,
+      "current": 229.9
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 5.59,
+      "temperature": 93.1,
+      "pressure": 3.53,
+      "current": 246.2
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 5.03,
+      "temperature": 96.5,
+      "pressure": 3.76,
+      "current": 220.5
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 4.88,
+      "temperature": 87.5,
+      "pressure": 3.45,
+      "current": 229.7
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 5.75,
+      "temperature": 92.3,
+      "pressure": 3.23,
+      "current": 204.3
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 5.7,
+      "temperature": 95.6,
+      "pressure": 3.52,
+      "current": 245.7
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 5.18,
+      "temperature": 91.2,
+      "pressure": 3.68,
+      "current": 227.8
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 6.05,
+      "temperature": 93.4,
+      "pressure": 3.46,
+      "current": 222.0
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 4.83,
+      "temperature": 89.4,
+      "pressure": 3.79,
+      "current": 206.9
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 5.33,
+      "temperature": 93.0,
+      "pressure": 3.55,
+      "current": 205.4
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 5.46,
+      "temperature": 92.0,
+      "pressure": 3.53,
+      "current": 222.0
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 5.64,
+      "temperature": 96.0,
+      "pressure": 3.37,
+      "current": 243.6
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.41,
+      "temperature": 91.1,
+      "pressure": 3.48,
+      "current": 235.4
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 6.04,
+      "temperature": 89.5,
+      "pressure": 3.23,
+      "current": 220.6
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 4.76,
+      "temperature": 81.9,
+      "pressure": 3.44,
+      "current": 220.6
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 5.3,
+      "temperature": 83.3,
+      "pressure": 3.59,
+      "current": 241.4
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 5.36,
+      "temperature": 96.2,
+      "pressure": 3.25,
+      "current": 234.0
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 5.94,
+      "temperature": 91.1,
+      "pressure": 3.52,
+      "current": 228.2
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 5.24,
+      "temperature": 85.9,
+      "pressure": 3.65,
+      "current": 231.9
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 5.69,
+      "temperature": 88.9,
+      "pressure": 3.37,
+      "current": 215.5
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 4.81,
+      "temperature": 85.8,
+      "pressure": 3.59,
+      "current": 229.0
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 5.27,
+      "temperature": 94.7,
+      "pressure": 3.41,
+      "current": 225.5
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 6.19,
+      "temperature": 96.5,
+      "pressure": 3.71,
+      "current": 239.8
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 5.27,
+      "temperature": 89.7,
+      "pressure": 3.4,
+      "current": 241.7
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.09,
+      "temperature": 89.3,
+      "pressure": 3.41,
+      "current": 217.9
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 5.15,
+      "temperature": 96.1,
+      "pressure": 3.62,
+      "current": 226.8
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 4.89,
+      "temperature": 87.3,
+      "pressure": 3.54,
+      "current": 221.3
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 5.33,
+      "temperature": 87.3,
+      "pressure": 3.55,
+      "current": 225.2
+    }
+  ],
+  "SMS-CC-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 5.71,
+      "temperature": 69.4,
+      "pressure": 4.79,
+      "current": 164.5
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.42,
+      "temperature": 71.3,
+      "pressure": 4.99,
+      "current": 166.3
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 5.7,
+      "temperature": 70.1,
+      "pressure": 5.21,
+      "current": 181.4
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 5.8,
+      "temperature": 75.2,
+      "pressure": 4.75,
+      "current": 170.8
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 5.29,
+      "temperature": 71.5,
+      "pressure": 4.85,
+      "current": 171.9
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 5.48,
+      "temperature": 68.2,
+      "pressure": 4.68,
+      "current": 169.0
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 5.96,
+      "temperature": 69.6,
+      "pressure": 5.07,
+      "current": 174.0
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 5.95,
+      "temperature": 71.2,
+      "pressure": 5.06,
+      "current": 189.4
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.76,
+      "temperature": 72.1,
+      "pressure": 4.53,
+      "current": 170.5
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 5.91,
+      "temperature": 73.9,
+      "pressure": 5.25,
+      "current": 177.4
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 5.65,
+      "temperature": 74.3,
+      "pressure": 4.8,
+      "current": 176.8
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 5.73,
+      "temperature": 70.6,
+      "pressure": 5.06,
+      "current": 179.2
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 4.92,
+      "temperature": 71.2,
+      "pressure": 5.04,
+      "current": 186.2
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 5.61,
+      "temperature": 76.6,
+      "pressure": 5.24,
+      "current": 172.5
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 6.0,
+      "temperature": 72.9,
+      "pressure": 4.86,
+      "current": 170.6
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 6.08,
+      "temperature": 73.7,
+      "pressure": 5.0,
+      "current": 177.3
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 5.37,
+      "temperature": 74.0,
+      "pressure": 4.71,
+      "current": 158.5
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 5.76,
+      "temperature": 71.2,
+      "pressure": 4.95,
+      "current": 176.2
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 5.83,
+      "temperature": 70.7,
+      "pressure": 4.72,
+      "current": 184.0
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 5.69,
+      "temperature": 74.3,
+      "pressure": 4.95,
+      "current": 176.1
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 5.52,
+      "temperature": 73.8,
+      "pressure": 4.84,
+      "current": 186.9
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 5.84,
+      "temperature": 73.1,
+      "pressure": 4.66,
+      "current": 172.6
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 5.93,
+      "temperature": 74.8,
+      "pressure": 5.25,
+      "current": 168.0
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 5.63,
+      "temperature": 71.4,
+      "pressure": 4.76,
+      "current": 189.7
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 6.08,
+      "temperature": 76.4,
+      "pressure": 5.03,
+      "current": 171.1
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 6.06,
+      "temperature": 76.8,
+      "pressure": 5.06,
+      "current": 165.8
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.8,
+      "temperature": 78.7,
+      "pressure": 5.23,
+      "current": 168.9
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 5.95,
+      "temperature": 76.6,
+      "pressure": 5.3,
+      "current": 178.1
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 5.29,
+      "temperature": 72.9,
+      "pressure": 5.17,
+      "current": 172.9
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 5.73,
+      "temperature": 73.1,
+      "pressure": 5.2,
+      "current": 175.9
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 5.82,
+      "temperature": 75.0,
+      "pressure": 5.1,
+      "current": 187.7
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 6.12,
+      "temperature": 72.2,
+      "pressure": 5.48,
+      "current": 182.7
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 5.87,
+      "temperature": 75.6,
+      "pressure": 4.95,
+      "current": 177.7
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 5.73,
+      "temperature": 73.8,
+      "pressure": 4.99,
+      "current": 176.3
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 5.54,
+      "temperature": 74.1,
+      "pressure": 4.91,
+      "current": 174.0
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 5.44,
+      "temperature": 72.5,
+      "pressure": 4.91,
+      "current": 179.4
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 5.83,
+      "temperature": 73.4,
+      "pressure": 4.99,
+      "current": 180.6
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 5.72,
+      "temperature": 75.6,
+      "pressure": 4.98,
+      "current": 184.7
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.92,
+      "temperature": 73.6,
+      "pressure": 5.13,
+      "current": 186.1
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 6.08,
+      "temperature": 72.6,
+      "pressure": 4.85,
+      "current": 175.7
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 5.62,
+      "temperature": 73.5,
+      "pressure": 5.22,
+      "current": 170.0
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 5.97,
+      "temperature": 70.2,
+      "pressure": 5.5,
+      "current": 168.8
+    }
+  ],
+  "SMS-LF-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 4.58,
+      "temperature": 76.7,
+      "pressure": 1.99,
+      "current": 854.1
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.17,
+      "temperature": 72.9,
+      "pressure": 2.1,
+      "current": 821.0
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 5.14,
+      "temperature": 77.2,
+      "pressure": 2.04,
+      "current": 839.2
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 4.82,
+      "temperature": 76.1,
+      "pressure": 2.15,
+      "current": 934.7
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 4.78,
+      "temperature": 77.7,
+      "pressure": 2.22,
+      "current": 819.5
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 4.35,
+      "temperature": 75.2,
+      "pressure": 2.13,
+      "current": 847.1
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 5.35,
+      "temperature": 74.7,
+      "pressure": 2.12,
+      "current": 774.0
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 5.5,
+      "temperature": 77.6,
+      "pressure": 1.91,
+      "current": 822.8
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.18,
+      "temperature": 76.5,
+      "pressure": 2.07,
+      "current": 840.8
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 4.68,
+      "temperature": 70.6,
+      "pressure": 2.06,
+      "current": 752.6
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 5.06,
+      "temperature": 75.9,
+      "pressure": 1.96,
+      "current": 846.1
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 4.52,
+      "temperature": 74.8,
+      "pressure": 2.13,
+      "current": 858.9
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 5.35,
+      "temperature": 75.0,
+      "pressure": 2.08,
+      "current": 874.3
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 5.4,
+      "temperature": 79.1,
+      "pressure": 1.94,
+      "current": 841.6
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 4.4,
+      "temperature": 78.4,
+      "pressure": 2.14,
+      "current": 902.1
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 4.97,
+      "temperature": 73.5,
+      "pressure": 1.87,
+      "current": 936.0
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 4.96,
+      "temperature": 71.3,
+      "pressure": 2.14,
+      "current": 806.6
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 4.71,
+      "temperature": 71.3,
+      "pressure": 1.84,
+      "current": 882.8
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 4.78,
+      "temperature": 75.0,
+      "pressure": 1.91,
+      "current": 894.8
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 5.5,
+      "temperature": 77.4,
+      "pressure": 1.94,
+      "current": 926.5
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 5.0,
+      "temperature": 73.3,
+      "pressure": 1.99,
+      "current": 830.4
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 4.91,
+      "temperature": 74.8,
+      "pressure": 2.3,
+      "current": 897.6
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 4.74,
+      "temperature": 75.6,
+      "pressure": 1.82,
+      "current": 829.3
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 4.69,
+      "temperature": 73.1,
+      "pressure": 1.91,
+      "current": 834.7
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 5.36,
+      "temperature": 74.0,
+      "pressure": 1.81,
+      "current": 798.3
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 5.22,
+      "temperature": 74.0,
+      "pressure": 2.08,
+      "current": 841.2
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.27,
+      "temperature": 76.2,
+      "pressure": 1.94,
+      "current": 848.7
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 5.0,
+      "temperature": 73.6,
+      "pressure": 2.12,
+      "current": 870.6
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 4.57,
+      "temperature": 72.2,
+      "pressure": 1.87,
+      "current": 782.4
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 4.93,
+      "temperature": 77.6,
+      "pressure": 2.04,
+      "current": 879.6
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 4.94,
+      "temperature": 77.7,
+      "pressure": 1.99,
+      "current": 883.2
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 5.49,
+      "temperature": 78.8,
+      "pressure": 1.95,
+      "current": 847.6
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 4.43,
+      "temperature": 78.7,
+      "pressure": 1.91,
+      "current": 902.6
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 5.02,
+      "temperature": 75.3,
+      "pressure": 2.1,
+      "current": 899.1
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 4.96,
+      "temperature": 74.2,
+      "pressure": 2.01,
+      "current": 864.0
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 5.33,
+      "temperature": 72.7,
+      "pressure": 2.01,
+      "current": 874.2
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 4.92,
+      "temperature": 72.2,
+      "pressure": 2.03,
+      "current": 829.4
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 5.3,
+      "temperature": 74.6,
+      "pressure": 1.99,
+      "current": 837.3
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.16,
+      "temperature": 74.6,
+      "pressure": 2.08,
+      "current": 875.9
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 5.23,
+      "temperature": 75.5,
+      "pressure": 2.05,
+      "current": 920.1
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 5.0,
+      "temperature": 72.2,
+      "pressure": 2.02,
+      "current": 814.5
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 5.04,
+      "temperature": 71.8,
+      "pressure": 1.87,
+      "current": 932.0
+    }
+  ],
+  "SMS-CR-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 2.63,
+      "temperature": 43.7,
+      "pressure": 0.02,
+      "current": 188.3
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.8,
+      "temperature": 46.0,
+      "pressure": 0,
+      "current": 180.5
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.87,
+      "temperature": 45.5,
+      "pressure": 0.01,
+      "current": 175.3
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 3.1,
+      "temperature": 43.9,
+      "pressure": 0,
+      "current": 185.1
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 2.66,
+      "temperature": 44.5,
+      "pressure": 0.01,
+      "current": 182.2
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 3.0,
+      "temperature": 47.0,
+      "pressure": 0,
+      "current": 168.2
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 3.05,
+      "temperature": 46.8,
+      "pressure": 0,
+      "current": 172.3
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.89,
+      "temperature": 44.4,
+      "pressure": 0,
+      "current": 168.2
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.68,
+      "temperature": 46.9,
+      "pressure": 0,
+      "current": 185.7
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 3.05,
+      "temperature": 44.7,
+      "pressure": 0.01,
+      "current": 183.4
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 3.06,
+      "temperature": 44.1,
+      "pressure": 0,
+      "current": 173.7
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 2.58,
+      "temperature": 44.2,
+      "pressure": 0,
+      "current": 162.4
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 2.45,
+      "temperature": 40.9,
+      "pressure": 0.0,
+      "current": 174.3
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 3.04,
+      "temperature": 46.2,
+      "pressure": 0.0,
+      "current": 171.7
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 2.82,
+      "temperature": 46.1,
+      "pressure": 0,
+      "current": 186.1
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 2.79,
+      "temperature": 40.8,
+      "pressure": 0.0,
+      "current": 150.1
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 2.7,
+      "temperature": 46.5,
+      "pressure": 0,
+      "current": 168.3
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 2.68,
+      "temperature": 45.6,
+      "pressure": 0.0,
+      "current": 186.7
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 2.59,
+      "temperature": 44.9,
+      "pressure": 0.0,
+      "current": 174.0
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.96,
+      "temperature": 46.9,
+      "pressure": 0.01,
+      "current": 174.0
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.86,
+      "temperature": 47.0,
+      "pressure": 0,
+      "current": 174.9
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 2.86,
+      "temperature": 45.4,
+      "pressure": 0,
+      "current": 162.8
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 2.73,
+      "temperature": 43.8,
+      "pressure": 0.02,
+      "current": 175.8
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 2.76,
+      "temperature": 44.1,
+      "pressure": 0.0,
+      "current": 177.3
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 2.99,
+      "temperature": 45.2,
+      "pressure": 0.0,
+      "current": 183.7
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.83,
+      "temperature": 44.1,
+      "pressure": 0.0,
+      "current": 181.4
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 3.12,
+      "temperature": 45.9,
+      "pressure": 0,
+      "current": 168.4
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 2.85,
+      "temperature": 45.0,
+      "pressure": 0.01,
+      "current": 187.8
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 3.11,
+      "temperature": 44.8,
+      "pressure": 0.01,
+      "current": 165.3
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 2.63,
+      "temperature": 41.6,
+      "pressure": 0.0,
+      "current": 168.5
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 2.28,
+      "temperature": 45.1,
+      "pressure": 0,
+      "current": 161.1
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.54,
+      "temperature": 45.2,
+      "pressure": 0,
+      "current": 159.2
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.73,
+      "temperature": 44.7,
+      "pressure": 0,
+      "current": 171.9
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 2.56,
+      "temperature": 50.1,
+      "pressure": 0.02,
+      "current": 167.4
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 2.79,
+      "temperature": 42.4,
+      "pressure": 0,
+      "current": 174.7
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 2.62,
+      "temperature": 44.7,
+      "pressure": 0.02,
+      "current": 164.5
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 2.99,
+      "temperature": 44.6,
+      "pressure": 0,
+      "current": 167.7
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 2.95,
+      "temperature": 46.4,
+      "pressure": 0.01,
+      "current": 153.9
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 2.96,
+      "temperature": 46.3,
+      "pressure": 0.01,
+      "current": 170.1
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 2.62,
+      "temperature": 43.0,
+      "pressure": 0,
+      "current": 180.9
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 2.28,
+      "temperature": 44.1,
+      "pressure": 0.01,
+      "current": 171.6
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 2.75,
+      "temperature": 43.9,
+      "pressure": 0,
+      "current": 194.0
+    }
+  ],
+  "SMS-PU-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 3.08,
+      "temperature": 68.0,
+      "pressure": 8.8,
+      "current": 94.0
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 3.76,
+      "temperature": 67.0,
+      "pressure": 9.18,
+      "current": 93.4
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 3.82,
+      "temperature": 67.5,
+      "pressure": 8.55,
+      "current": 83.6
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 3.97,
+      "temperature": 65.7,
+      "pressure": 8.03,
+      "current": 91.4
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 3.24,
+      "temperature": 65.9,
+      "pressure": 8.7,
+      "current": 92.8
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 3.42,
+      "temperature": 71.5,
+      "pressure": 8.8,
+      "current": 94.4
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 3.73,
+      "temperature": 65.2,
+      "pressure": 8.75,
+      "current": 90.9
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 3.76,
+      "temperature": 70.9,
+      "pressure": 8.49,
+      "current": 104.3
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 3.93,
+      "temperature": 69.5,
+      "pressure": 8.59,
+      "current": 98.7
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 3.3,
+      "temperature": 67.3,
+      "pressure": 8.57,
+      "current": 93.4
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 3.19,
+      "temperature": 64.2,
+      "pressure": 7.77,
+      "current": 87.3
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 3.73,
+      "temperature": 66.8,
+      "pressure": 8.35,
+      "current": 91.9
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 3.9,
+      "temperature": 69.5,
+      "pressure": 8.43,
+      "current": 88.0
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 3.22,
+      "temperature": 71.4,
+      "pressure": 8.15,
+      "current": 92.9
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 3.51,
+      "temperature": 65.6,
+      "pressure": 8.76,
+      "current": 101.4
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 3.51,
+      "temperature": 67.6,
+      "pressure": 8.81,
+      "current": 83.6
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 3.54,
+      "temperature": 66.5,
+      "pressure": 8.84,
+      "current": 94.7
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 3.06,
+      "temperature": 67.8,
+      "pressure": 8.64,
+      "current": 79.6
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 3.23,
+      "temperature": 67.6,
+      "pressure": 8.66,
+      "current": 99.7
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 3.3,
+      "temperature": 70.1,
+      "pressure": 8.47,
+      "current": 90.3
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 3.19,
+      "temperature": 71.2,
+      "pressure": 8.49,
+      "current": 90.3
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 3.51,
+      "temperature": 67.3,
+      "pressure": 8.39,
+      "current": 89.5
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 3.32,
+      "temperature": 67.0,
+      "pressure": 8.34,
+      "current": 87.0
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 3.17,
+      "temperature": 66.6,
+      "pressure": 8.4,
+      "current": 87.4
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 3.65,
+      "temperature": 64.8,
+      "pressure": 8.58,
+      "current": 86.6
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 4.11,
+      "temperature": 69.8,
+      "pressure": 8.43,
+      "current": 97.5
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 3.81,
+      "temperature": 66.6,
+      "pressure": 8.52,
+      "current": 86.3
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 3.27,
+      "temperature": 68.5,
+      "pressure": 7.95,
+      "current": 96.9
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 3.51,
+      "temperature": 64.8,
+      "pressure": 8.86,
+      "current": 95.5
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 3.38,
+      "temperature": 68.8,
+      "pressure": 8.67,
+      "current": 82.9
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 3.21,
+      "temperature": 70.7,
+      "pressure": 8.63,
+      "current": 86.0
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 3.81,
+      "temperature": 67.9,
+      "pressure": 8.39,
+      "current": 92.1
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 3.46,
+      "temperature": 67.6,
+      "pressure": 8.08,
+      "current": 87.9
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 3.57,
+      "temperature": 70.0,
+      "pressure": 8.59,
+      "current": 95.5
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 3.42,
+      "temperature": 63.5,
+      "pressure": 8.49,
+      "current": 80.7
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 3.25,
+      "temperature": 62.7,
+      "pressure": 8.39,
+      "current": 87.7
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 3.19,
+      "temperature": 65.6,
+      "pressure": 8.08,
+      "current": 92.5
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 3.48,
+      "temperature": 67.1,
+      "pressure": 8.23,
+      "current": 99.1
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 3.28,
+      "temperature": 66.2,
+      "pressure": 8.67,
+      "current": 98.8
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 3.54,
+      "temperature": 65.3,
+      "pressure": 8.54,
+      "current": 92.2
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 3.43,
+      "temperature": 69.4,
+      "pressure": 8.63,
+      "current": 87.5
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 3.68,
+      "temperature": 68.6,
+      "pressure": 7.8,
+      "current": 83.7
+    }
+  ],
+  "RM-DM-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 6.53,
+      "temperature": 61.3,
+      "pressure": 0.01,
+      "current": 221.6
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 4.06,
+      "temperature": 65.0,
+      "pressure": 0.01,
+      "current": 228.0
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 3.66,
+      "temperature": 61.8,
+      "pressure": 0.0,
+      "current": 227.5
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 3.47,
+      "temperature": 63.1,
+      "pressure": 0,
+      "current": 227.7
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 3.51,
+      "temperature": 57.8,
+      "pressure": 0.0,
+      "current": 229.2
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 3.55,
+      "temperature": 58.2,
+      "pressure": 0,
+      "current": 293.1
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 3.81,
+      "temperature": 58.5,
+      "pressure": 0,
+      "current": 225.2
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 3.92,
+      "temperature": 61.8,
+      "pressure": 0.01,
+      "current": 226.4
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 3.81,
+      "temperature": 89.1,
+      "pressure": 0,
+      "current": 226.9
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 7.43,
+      "temperature": 59.1,
+      "pressure": 0,
+      "current": 217.1
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 4.04,
+      "temperature": 60.2,
+      "pressure": 0,
+      "current": 224.1
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 3.65,
+      "temperature": 61.4,
+      "pressure": 0,
+      "current": 227.2
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 3.56,
+      "temperature": 63.1,
+      "pressure": 0.01,
+      "current": 229.1
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 4.12,
+      "temperature": 60.3,
+      "pressure": 0.0,
+      "current": 230.5
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 4.32,
+      "temperature": 59.8,
+      "pressure": 0,
+      "current": 229.7
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 3.96,
+      "temperature": 60.4,
+      "pressure": 0.0,
+      "current": 237.4
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 7.34,
+      "temperature": 61.0,
+      "pressure": 0.01,
+      "current": 242.4
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 3.88,
+      "temperature": 61.1,
+      "pressure": 0,
+      "current": 227.9
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 3.77,
+      "temperature": 58.5,
+      "pressure": 0,
+      "current": 232.8
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 7.04,
+      "temperature": 60.9,
+      "pressure": 0,
+      "current": 240.4
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 3.67,
+      "temperature": 62.7,
+      "pressure": 0.0,
+      "current": 294.8
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 4.1,
+      "temperature": 59.0,
+      "pressure": 0,
+      "current": 285.3
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 3.79,
+      "temperature": 60.2,
+      "pressure": 0,
+      "current": 220.4
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 3.15,
+      "temperature": 84.6,
+      "pressure": 0,
+      "current": 219.3
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 3.7,
+      "temperature": 59.2,
+      "pressure": 0,
+      "current": 230.2
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 3.69,
+      "temperature": 59.0,
+      "pressure": 0.01,
+      "current": 285.7
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 3.75,
+      "temperature": 59.4,
+      "pressure": 0.01,
+      "current": 236.6
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 3.78,
+      "temperature": 82.6,
+      "pressure": 0.01,
+      "current": 228.0
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 3.12,
+      "temperature": 60.3,
+      "pressure": 0,
+      "current": 227.9
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 3.35,
+      "temperature": 59.7,
+      "pressure": 0.03,
+      "current": 222.1
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 3.99,
+      "temperature": 63.7,
+      "pressure": 0,
+      "current": 221.2
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 3.64,
+      "temperature": 59.6,
+      "pressure": 0,
+      "current": 228.8
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 3.73,
+      "temperature": 60.7,
+      "pressure": 0,
+      "current": 238.0
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 10.62,
+      "temperature": 62.0,
+      "pressure": 0.01,
+      "current": 224.1
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 3.31,
+      "temperature": 61.3,
+      "pressure": 0.0,
+      "current": 306.0
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 3.5,
+      "temperature": 62.1,
+      "pressure": 0.02,
+      "current": 239.5
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 3.38,
+      "temperature": 92.6,
+      "pressure": 0,
+      "current": 222.5
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 3.81,
+      "temperature": 87.0,
+      "pressure": 0,
+      "current": 230.7
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 4.43,
+      "temperature": 61.8,
+      "pressure": 0,
+      "current": 232.9
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 3.84,
+      "temperature": 61.3,
+      "pressure": 0,
+      "current": 225.8
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 9.29,
+      "temperature": 57.7,
+      "pressure": 0,
+      "current": 235.0
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 3.68,
+      "temperature": 56.8,
+      "pressure": 0.0,
+      "current": 229.1
+    }
+  ],
+  "RM-GB-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 6.67,
+      "temperature": 70.5,
+      "pressure": 0.01,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 6.81,
+      "temperature": 68.2,
+      "pressure": 0,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 6.88,
+      "temperature": 68.7,
+      "pressure": 0.01,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 6.68,
+      "temperature": 67.3,
+      "pressure": 0,
+      "current": 0.0
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 6.65,
+      "temperature": 68.5,
+      "pressure": 0.01,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 6.02,
+      "temperature": 66.5,
+      "pressure": 0.01,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 6.42,
+      "temperature": 72.2,
+      "pressure": 0.0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 6.63,
+      "temperature": 68.2,
+      "pressure": 0,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 6.91,
+      "temperature": 68.2,
+      "pressure": 0.0,
+      "current": 57.9
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 7.05,
+      "temperature": 65.8,
+      "pressure": 0,
+      "current": 0.0
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 6.84,
+      "temperature": 71.1,
+      "pressure": 0,
+      "current": 60.9
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 6.86,
+      "temperature": 68.7,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 6.71,
+      "temperature": 69.3,
+      "pressure": 0.0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 7.12,
+      "temperature": 70.2,
+      "pressure": 0.0,
+      "current": 57.4
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 6.96,
+      "temperature": 89.2,
+      "pressure": 0.02,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 6.82,
+      "temperature": 70.1,
+      "pressure": 0.0,
+      "current": 0.0
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 6.43,
+      "temperature": 68.5,
+      "pressure": 0.0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 7.03,
+      "temperature": 67.7,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 6.85,
+      "temperature": 67.5,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 6.69,
+      "temperature": 67.9,
+      "pressure": 0.01,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 6.85,
+      "temperature": 69.8,
+      "pressure": 0,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 14.46,
+      "temperature": 69.3,
+      "pressure": 0,
+      "current": 0.0
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 6.55,
+      "temperature": 66.7,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 6.44,
+      "temperature": 66.9,
+      "pressure": 0.01,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 6.6,
+      "temperature": 103.0,
+      "pressure": 0.0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 6.34,
+      "temperature": 68.4,
+      "pressure": 0,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 7.02,
+      "temperature": 70.8,
+      "pressure": 0.01,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 6.52,
+      "temperature": 67.9,
+      "pressure": 0.0,
+      "current": 0.0
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 6.62,
+      "temperature": 68.1,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 6.7,
+      "temperature": 68.4,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 6.94,
+      "temperature": 105.5,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 7.04,
+      "temperature": 70.4,
+      "pressure": 0.0,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 7.07,
+      "temperature": 68.4,
+      "pressure": 0,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 7.49,
+      "temperature": 69.6,
+      "pressure": 0.01,
+      "current": 0.0
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 6.66,
+      "temperature": 69.4,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 6.71,
+      "temperature": 68.2,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 6.93,
+      "temperature": 70.3,
+      "pressure": 0,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 11.73,
+      "temperature": 72.8,
+      "pressure": 0,
+      "current": 1.3
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 7.52,
+      "temperature": 69.2,
+      "pressure": 0.01,
+      "current": 47.8
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 11.29,
+      "temperature": 69.5,
+      "pressure": 0,
+      "current": 0.0
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 6.88,
+      "temperature": 95.8,
+      "pressure": 0.02,
+      "current": 0
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 6.95,
+      "temperature": 70.1,
+      "pressure": 0,
+      "current": 0
+    }
+  ],
+  "RM-RS-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 5.25,
+      "temperature": 57.1,
+      "pressure": 166.55,
+      "current": 205.0
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.29,
+      "temperature": 57.7,
+      "pressure": 144.64,
+      "current": 229.7
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 5.13,
+      "temperature": 58.0,
+      "pressure": 153.23,
+      "current": 221.8
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 4.46,
+      "temperature": 56.2,
+      "pressure": 148.75,
+      "current": 217.0
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 4.72,
+      "temperature": 56.0,
+      "pressure": 150.26,
+      "current": 220.3
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 4.71,
+      "temperature": 54.5,
+      "pressure": 145.58,
+      "current": 215.5
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 4.31,
+      "temperature": 56.2,
+      "pressure": 147.22,
+      "current": 223.3
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 4.57,
+      "temperature": 55.4,
+      "pressure": 155.85,
+      "current": 240.5
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.33,
+      "temperature": 57.3,
+      "pressure": 148.51,
+      "current": 210.1
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 5.01,
+      "temperature": 53.6,
+      "pressure": 149.76,
+      "current": 225.2
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 4.99,
+      "temperature": 56.1,
+      "pressure": 142.73,
+      "current": 203.9
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 5.18,
+      "temperature": 54.5,
+      "pressure": 148.72,
+      "current": 210.8
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 5.21,
+      "temperature": 55.1,
+      "pressure": 145.26,
+      "current": 199.9
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 4.91,
+      "temperature": 56.8,
+      "pressure": 140.06,
+      "current": 230.0
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 5.37,
+      "temperature": 53.7,
+      "pressure": 154.07,
+      "current": 237.2
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 5.06,
+      "temperature": 55.9,
+      "pressure": 153.88,
+      "current": 240.8
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 4.84,
+      "temperature": 56.4,
+      "pressure": 140.84,
+      "current": 246.7
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 4.75,
+      "temperature": 52.9,
+      "pressure": 154.67,
+      "current": 207.9
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 5.38,
+      "temperature": 56.2,
+      "pressure": 156.31,
+      "current": 223.1
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 5.13,
+      "temperature": 56.2,
+      "pressure": 139.25,
+      "current": 235.2
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 5.14,
+      "temperature": 55.9,
+      "pressure": 142.01,
+      "current": 224.8
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 4.47,
+      "temperature": 57.1,
+      "pressure": 152.44,
+      "current": 228.9
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 4.41,
+      "temperature": 54.5,
+      "pressure": 149.73,
+      "current": 220.2
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 4.92,
+      "temperature": 53.6,
+      "pressure": 150.79,
+      "current": 234.6
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 4.7,
+      "temperature": 54.5,
+      "pressure": 145.43,
+      "current": 228.6
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 4.99,
+      "temperature": 53.4,
+      "pressure": 149.44,
+      "current": 230.5
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.95,
+      "temperature": 57.5,
+      "pressure": 159.58,
+      "current": 239.4
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 4.99,
+      "temperature": 55.0,
+      "pressure": 149.28,
+      "current": 222.0
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 5.19,
+      "temperature": 55.6,
+      "pressure": 144.79,
+      "current": 236.6
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 4.97,
+      "temperature": 54.2,
+      "pressure": 147.61,
+      "current": 230.8
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 4.52,
+      "temperature": 55.5,
+      "pressure": 153.27,
+      "current": 221.8
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 5.05,
+      "temperature": 54.8,
+      "pressure": 163.17,
+      "current": 241.9
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 5.45,
+      "temperature": 59.3,
+      "pressure": 139.35,
+      "current": 230.5
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 5.09,
+      "temperature": 53.0,
+      "pressure": 145.54,
+      "current": 212.4
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 4.51,
+      "temperature": 51.2,
+      "pressure": 148.18,
+      "current": 230.3
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 4.64,
+      "temperature": 53.2,
+      "pressure": 159.96,
+      "current": 200.6
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 5.0,
+      "temperature": 53.6,
+      "pressure": 150.29,
+      "current": 215.3
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 4.77,
+      "temperature": 57.7,
+      "pressure": 143.84,
+      "current": 214.8
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.04,
+      "temperature": 54.9,
+      "pressure": 149.01,
+      "current": 236.8
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 5.42,
+      "temperature": 57.0,
+      "pressure": 151.0,
+      "current": 233.5
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 5.39,
+      "temperature": 53.0,
+      "pressure": 151.31,
+      "current": 220.0
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 5.04,
+      "temperature": 53.4,
+      "pressure": 141.58,
+      "current": 228.4
+    }
+  ],
+  "RM-FS-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 5.21,
+      "temperature": 56.3,
+      "pressure": 145.05,
+      "current": 218.3
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.12,
+      "temperature": 57.9,
+      "pressure": 153.49,
+      "current": 225.3
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 5.61,
+      "temperature": 58.7,
+      "pressure": 148.69,
+      "current": 224.7
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 5.19,
+      "temperature": 54.4,
+      "pressure": 151.72,
+      "current": 230.7
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 5.06,
+      "temperature": 53.0,
+      "pressure": 139.21,
+      "current": 215.3
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 4.62,
+      "temperature": 54.7,
+      "pressure": 150.67,
+      "current": 228.8
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 4.71,
+      "temperature": 59.0,
+      "pressure": 149.17,
+      "current": 202.4
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 5.19,
+      "temperature": 57.6,
+      "pressure": 144.6,
+      "current": 229.0
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.07,
+      "temperature": 53.8,
+      "pressure": 150.95,
+      "current": 226.4
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 4.73,
+      "temperature": 56.1,
+      "pressure": 158.48,
+      "current": 224.8
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 4.85,
+      "temperature": 54.2,
+      "pressure": 154.76,
+      "current": 221.6
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 4.83,
+      "temperature": 53.1,
+      "pressure": 159.77,
+      "current": 222.7
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 5.61,
+      "temperature": 58.2,
+      "pressure": 151.68,
+      "current": 210.3
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 5.42,
+      "temperature": 57.6,
+      "pressure": 158.89,
+      "current": 217.2
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 4.49,
+      "temperature": 55.8,
+      "pressure": 144.43,
+      "current": 223.5
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 5.14,
+      "temperature": 52.0,
+      "pressure": 152.6,
+      "current": 231.1
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 4.98,
+      "temperature": 51.8,
+      "pressure": 150.24,
+      "current": 225.2
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 4.7,
+      "temperature": 57.1,
+      "pressure": 138.95,
+      "current": 194.2
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 4.83,
+      "temperature": 55.5,
+      "pressure": 150.71,
+      "current": 202.5
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 4.45,
+      "temperature": 58.6,
+      "pressure": 153.91,
+      "current": 228.0
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 4.99,
+      "temperature": 56.9,
+      "pressure": 151.59,
+      "current": 233.6
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 5.19,
+      "temperature": 54.4,
+      "pressure": 145.1,
+      "current": 241.2
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 4.76,
+      "temperature": 57.8,
+      "pressure": 147.74,
+      "current": 221.7
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 4.6,
+      "temperature": 53.9,
+      "pressure": 153.4,
+      "current": 215.1
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 5.68,
+      "temperature": 57.7,
+      "pressure": 150.51,
+      "current": 227.3
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 4.95,
+      "temperature": 56.7,
+      "pressure": 147.99,
+      "current": 224.7
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.13,
+      "temperature": 55.5,
+      "pressure": 142.5,
+      "current": 220.2
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 5.05,
+      "temperature": 56.7,
+      "pressure": 145.69,
+      "current": 215.8
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 5.16,
+      "temperature": 55.1,
+      "pressure": 147.56,
+      "current": 232.0
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 4.27,
+      "temperature": 58.1,
+      "pressure": 143.37,
+      "current": 218.9
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 4.48,
+      "temperature": 58.0,
+      "pressure": 153.48,
+      "current": 237.7
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 4.59,
+      "temperature": 55.9,
+      "pressure": 153.01,
+      "current": 222.9
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 5.26,
+      "temperature": 54.9,
+      "pressure": 148.32,
+      "current": 217.5
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 4.63,
+      "temperature": 55.0,
+      "pressure": 144.12,
+      "current": 228.1
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 4.57,
+      "temperature": 54.4,
+      "pressure": 152.21,
+      "current": 241.6
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 4.67,
+      "temperature": 54.7,
+      "pressure": 150.35,
+      "current": 219.2
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 4.98,
+      "temperature": 57.4,
+      "pressure": 146.96,
+      "current": 221.2
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 5.29,
+      "temperature": 53.8,
+      "pressure": 157.04,
+      "current": 222.5
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.19,
+      "temperature": 54.8,
+      "pressure": 152.24,
+      "current": 206.2
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 5.16,
+      "temperature": 57.3,
+      "pressure": 159.1,
+      "current": 226.6
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 4.96,
+      "temperature": 53.4,
+      "pressure": 150.86,
+      "current": 221.7
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 5.07,
+      "temperature": 54.7,
+      "pressure": 153.37,
+      "current": 229.3
+    }
+  ],
+  "RM-CL-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 1.8,
+      "temperature": 35.6,
+      "pressure": 3.97,
+      "current": 40.1
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.02,
+      "temperature": 35.5,
+      "pressure": 4.06,
+      "current": 45.3
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.0,
+      "temperature": 36.1,
+      "pressure": 3.91,
+      "current": 46.1
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 2.1,
+      "temperature": 34.7,
+      "pressure": 4.18,
+      "current": 46.2
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 1.99,
+      "temperature": 34.0,
+      "pressure": 4.01,
+      "current": 47.6
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 2.09,
+      "temperature": 33.3,
+      "pressure": 4.04,
+      "current": 42.8
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 2.02,
+      "temperature": 34.3,
+      "pressure": 3.94,
+      "current": 45.6
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.15,
+      "temperature": 35.5,
+      "pressure": 4.0,
+      "current": 47.9
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.14,
+      "temperature": 34.9,
+      "pressure": 3.98,
+      "current": 45.1
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 2.22,
+      "temperature": 33.6,
+      "pressure": 3.95,
+      "current": 45.1
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 2.03,
+      "temperature": 31.2,
+      "pressure": 3.95,
+      "current": 42.4
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 1.92,
+      "temperature": 34.5,
+      "pressure": 3.93,
+      "current": 42.7
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 2.21,
+      "temperature": 36.6,
+      "pressure": 3.99,
+      "current": 48.0
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 2.36,
+      "temperature": 37.4,
+      "pressure": 4.23,
+      "current": 44.5
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 2.15,
+      "temperature": 35.9,
+      "pressure": 4.26,
+      "current": 48.4
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 1.94,
+      "temperature": 34.3,
+      "pressure": 4.04,
+      "current": 43.1
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 1.91,
+      "temperature": 34.5,
+      "pressure": 3.93,
+      "current": 42.2
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 1.77,
+      "temperature": 33.1,
+      "pressure": 4.26,
+      "current": 42.4
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 2.25,
+      "temperature": 34.3,
+      "pressure": 3.91,
+      "current": 46.0
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.12,
+      "temperature": 36.5,
+      "pressure": 4.02,
+      "current": 45.3
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.17,
+      "temperature": 35.4,
+      "pressure": 3.88,
+      "current": 43.4
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 1.82,
+      "temperature": 33.7,
+      "pressure": 3.88,
+      "current": 48.2
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 1.66,
+      "temperature": 35.1,
+      "pressure": 3.62,
+      "current": 42.8
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 1.82,
+      "temperature": 34.9,
+      "pressure": 4.06,
+      "current": 36.6
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 1.83,
+      "temperature": 37.9,
+      "pressure": 3.92,
+      "current": 45.6
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.03,
+      "temperature": 35.0,
+      "pressure": 3.85,
+      "current": 45.9
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 1.91,
+      "temperature": 34.4,
+      "pressure": 3.71,
+      "current": 41.7
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 2.04,
+      "temperature": 35.7,
+      "pressure": 4.09,
+      "current": 47.5
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 1.62,
+      "temperature": 32.9,
+      "pressure": 3.69,
+      "current": 43.5
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 2.12,
+      "temperature": 33.5,
+      "pressure": 3.72,
+      "current": 40.6
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 2.09,
+      "temperature": 36.3,
+      "pressure": 3.77,
+      "current": 49.1
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.08,
+      "temperature": 35.9,
+      "pressure": 3.7,
+      "current": 46.4
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.34,
+      "temperature": 36.8,
+      "pressure": 4.29,
+      "current": 43.8
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 2.05,
+      "temperature": 33.9,
+      "pressure": 4.09,
+      "current": 41.2
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 2.0,
+      "temperature": 33.5,
+      "pressure": 3.94,
+      "current": 46.9
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 1.69,
+      "temperature": 34.2,
+      "pressure": 3.9,
+      "current": 48.2
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 1.89,
+      "temperature": 34.6,
+      "pressure": 3.96,
+      "current": 44.7
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 1.87,
+      "temperature": 36.8,
+      "pressure": 4.03,
+      "current": 46.4
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 1.83,
+      "temperature": 34.9,
+      "pressure": 4.18,
+      "current": 45.3
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 1.92,
+      "temperature": 34.8,
+      "pressure": 3.99,
+      "current": 42.7
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 1.97,
+      "temperature": 32.1,
+      "pressure": 3.73,
+      "current": 43.8
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 1.93,
+      "temperature": 32.0,
+      "pressure": 3.6,
+      "current": 42.0
+    }
+  ],
+  "CO-PU-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 5.96,
+      "temperature": 47.8,
+      "pressure": 150.16,
+      "current": 141.9
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.54,
+      "temperature": 51.5,
+      "pressure": 149.0,
+      "current": 153.1
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 4.9,
+      "temperature": 53.5,
+      "pressure": 154.26,
+      "current": 154.1
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 5.37,
+      "temperature": 48.4,
+      "pressure": 145.52,
+      "current": 153.7
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 4.37,
+      "temperature": 51.8,
+      "pressure": 160.88,
+      "current": 136.3
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 4.79,
+      "temperature": 50.6,
+      "pressure": 146.1,
+      "current": 227.5
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 5.26,
+      "temperature": 52.6,
+      "pressure": 158.09,
+      "current": 206.9
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 10.75,
+      "temperature": 50.8,
+      "pressure": 149.67,
+      "current": 158.0
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.51,
+      "temperature": 50.4,
+      "pressure": 158.42,
+      "current": 163.6
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 5.03,
+      "temperature": 51.0,
+      "pressure": 155.97,
+      "current": 137.8
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 5.42,
+      "temperature": 45.5,
+      "pressure": 144.43,
+      "current": 144.4
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 4.69,
+      "temperature": 47.7,
+      "pressure": 139.39,
+      "current": 133.4
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 5.86,
+      "temperature": 51.0,
+      "pressure": 150.74,
+      "current": 156.4
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 6.23,
+      "temperature": 51.8,
+      "pressure": 142.2,
+      "current": 160.5
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 5.79,
+      "temperature": 52.4,
+      "pressure": 148.14,
+      "current": 150.2
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 5.59,
+      "temperature": 54.3,
+      "pressure": 152.71,
+      "current": 154.2
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 5.36,
+      "temperature": 48.9,
+      "pressure": 146.63,
+      "current": 183.6
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 5.73,
+      "temperature": 45.9,
+      "pressure": 150.66,
+      "current": 172.0
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 9.57,
+      "temperature": 48.5,
+      "pressure": 144.82,
+      "current": 160.5
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 5.89,
+      "temperature": 51.0,
+      "pressure": 147.05,
+      "current": 153.7
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 5.24,
+      "temperature": 51.0,
+      "pressure": 146.99,
+      "current": 147.3
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 4.79,
+      "temperature": 49.6,
+      "pressure": 154.21,
+      "current": 181.8
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 5.51,
+      "temperature": 48.3,
+      "pressure": 151.02,
+      "current": 192.1
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 4.62,
+      "temperature": 50.4,
+      "pressure": 153.39,
+      "current": 148.3
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 5.95,
+      "temperature": 52.1,
+      "pressure": 152.2,
+      "current": 192.7
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 5.63,
+      "temperature": 82.7,
+      "pressure": 150.61,
+      "current": 170.4
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.33,
+      "temperature": 48.3,
+      "pressure": 146.45,
+      "current": 160.4
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 5.6,
+      "temperature": 50.5,
+      "pressure": 144.31,
+      "current": 163.5
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 5.81,
+      "temperature": 47.1,
+      "pressure": 159.59,
+      "current": 157.7
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 5.78,
+      "temperature": 73.6,
+      "pressure": 142.73,
+      "current": 141.0
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 5.19,
+      "temperature": 51.1,
+      "pressure": 148.7,
+      "current": 140.5
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 5.05,
+      "temperature": 50.7,
+      "pressure": 156.7,
+      "current": 165.8
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 5.27,
+      "temperature": 50.7,
+      "pressure": 154.86,
+      "current": 169.3
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 5.73,
+      "temperature": 50.3,
+      "pressure": 147.92,
+      "current": 145.2
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 5.6,
+      "temperature": 47.3,
+      "pressure": 151.38,
+      "current": 193.8
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 5.56,
+      "temperature": 51.8,
+      "pressure": 149.83,
+      "current": 145.1
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 5.84,
+      "temperature": 49.5,
+      "pressure": 147.83,
+      "current": 151.0
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 6.32,
+      "temperature": 51.8,
+      "pressure": 150.8,
+      "current": 146.1
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.12,
+      "temperature": 50.8,
+      "pressure": 148.21,
+      "current": 152.0
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 5.55,
+      "temperature": 48.4,
+      "pressure": 147.92,
+      "current": 163.4
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 5.22,
+      "temperature": 49.0,
+      "pressure": 144.48,
+      "current": 158.6
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 4.89,
+      "temperature": 49.1,
+      "pressure": 158.84,
+      "current": 139.6
+    }
+  ],
+  "CO-QC-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 3.42,
+      "temperature": 43.1,
+      "pressure": 0.01,
+      "current": 93.9
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 3.04,
+      "temperature": 42.5,
+      "pressure": 0,
+      "current": 98.7
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 3.44,
+      "temperature": 42.5,
+      "pressure": 0.01,
+      "current": 89.8
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 3.36,
+      "temperature": 42.1,
+      "pressure": 0,
+      "current": 90.6
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 3.19,
+      "temperature": 41.7,
+      "pressure": 0,
+      "current": 87.4
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 3.4,
+      "temperature": 42.8,
+      "pressure": 0,
+      "current": 89.8
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 3.58,
+      "temperature": 42.2,
+      "pressure": 0.01,
+      "current": 85.4
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 3.99,
+      "temperature": 42.3,
+      "pressure": 0.01,
+      "current": 87.2
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 3.4,
+      "temperature": 44.8,
+      "pressure": 0,
+      "current": 84.2
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 3.57,
+      "temperature": 44.9,
+      "pressure": 0.0,
+      "current": 88.9
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 3.47,
+      "temperature": 38.3,
+      "pressure": 0,
+      "current": 89.3
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 3.28,
+      "temperature": 44.0,
+      "pressure": 0,
+      "current": 90.3
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 3.31,
+      "temperature": 42.1,
+      "pressure": 0,
+      "current": 94.9
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 3.46,
+      "temperature": 42.8,
+      "pressure": 0.01,
+      "current": 89.7
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 3.88,
+      "temperature": 44.9,
+      "pressure": 0.0,
+      "current": 89.9
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 3.72,
+      "temperature": 44.0,
+      "pressure": 0.0,
+      "current": 98.7
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 4.0,
+      "temperature": 43.1,
+      "pressure": 0,
+      "current": 90.4
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 3.08,
+      "temperature": 43.5,
+      "pressure": 0.01,
+      "current": 85.9
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 3.7,
+      "temperature": 42.1,
+      "pressure": 0.01,
+      "current": 86.9
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 3.33,
+      "temperature": 42.9,
+      "pressure": 0.01,
+      "current": 91.3
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 3.78,
+      "temperature": 45.5,
+      "pressure": 0,
+      "current": 86.1
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 3.2,
+      "temperature": 42.2,
+      "pressure": 0.0,
+      "current": 86.3
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 3.03,
+      "temperature": 42.0,
+      "pressure": 0,
+      "current": 86.4
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 3.53,
+      "temperature": 37.4,
+      "pressure": 0,
+      "current": 90.9
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 3.5,
+      "temperature": 44.5,
+      "pressure": 0,
+      "current": 90.6
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 3.45,
+      "temperature": 42.0,
+      "pressure": 0.0,
+      "current": 95.8
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 3.59,
+      "temperature": 43.6,
+      "pressure": 0,
+      "current": 91.3
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 3.06,
+      "temperature": 42.5,
+      "pressure": 0.02,
+      "current": 85.1
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 3.47,
+      "temperature": 39.2,
+      "pressure": 0,
+      "current": 85.5
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 3.72,
+      "temperature": 41.6,
+      "pressure": 0,
+      "current": 89.5
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 3.03,
+      "temperature": 44.6,
+      "pressure": 0.01,
+      "current": 85.8
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 4.02,
+      "temperature": 42.9,
+      "pressure": 0,
+      "current": 90.6
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 3.47,
+      "temperature": 43.8,
+      "pressure": 0.01,
+      "current": 100.6
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 3.39,
+      "temperature": 43.0,
+      "pressure": 0,
+      "current": 89.6
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 3.34,
+      "temperature": 41.8,
+      "pressure": 0,
+      "current": 84.4
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 3.35,
+      "temperature": 40.1,
+      "pressure": 0.01,
+      "current": 91.9
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 3.37,
+      "temperature": 44.3,
+      "pressure": 0.01,
+      "current": 81.1
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 3.87,
+      "temperature": 42.8,
+      "pressure": 0,
+      "current": 97.2
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 3.27,
+      "temperature": 42.6,
+      "pressure": 0,
+      "current": 86.9
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 3.16,
+      "temperature": 41.8,
+      "pressure": 0.01,
+      "current": 89.3
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 3.28,
+      "temperature": 43.3,
+      "pressure": 0,
+      "current": 81.8
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 3.21,
+      "temperature": 39.1,
+      "pressure": 0,
+      "current": 93.9
+    }
+  ],
+  "CO-GC-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 2.95,
+      "temperature": 49.9,
+      "pressure": 1.2,
+      "current": 113.8
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.79,
+      "temperature": 48.0,
+      "pressure": 1.3,
+      "current": 127.8
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.78,
+      "temperature": 47.9,
+      "pressure": 1.2,
+      "current": 120.4
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 2.83,
+      "temperature": 48.8,
+      "pressure": 1.2,
+      "current": 115.3
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 2.29,
+      "temperature": 47.9,
+      "pressure": 1.3,
+      "current": 111.6
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 2.46,
+      "temperature": 43.7,
+      "pressure": 1.23,
+      "current": 111.7
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 2.73,
+      "temperature": 47.1,
+      "pressure": 1.14,
+      "current": 110.1
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.99,
+      "temperature": 46.2,
+      "pressure": 1.16,
+      "current": 110.2
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.55,
+      "temperature": 46.8,
+      "pressure": 1.34,
+      "current": 115.9
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 3.0,
+      "temperature": 48.7,
+      "pressure": 1.31,
+      "current": 122.1
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 2.64,
+      "temperature": 46.1,
+      "pressure": 1.26,
+      "current": 115.9
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 2.88,
+      "temperature": 46.8,
+      "pressure": 1.32,
+      "current": 114.8
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 2.78,
+      "temperature": 47.1,
+      "pressure": 1.32,
+      "current": 117.1
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 2.69,
+      "temperature": 46.4,
+      "pressure": 1.24,
+      "current": 111.4
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 2.88,
+      "temperature": 48.9,
+      "pressure": 1.39,
+      "current": 109.8
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 2.45,
+      "temperature": 45.4,
+      "pressure": 1.2,
+      "current": 112.0
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 2.29,
+      "temperature": 48.7,
+      "pressure": 1.25,
+      "current": 108.5
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 2.13,
+      "temperature": 48.8,
+      "pressure": 1.14,
+      "current": 118.6
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 2.52,
+      "temperature": 49.9,
+      "pressure": 1.36,
+      "current": 111.3
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.44,
+      "temperature": 51.3,
+      "pressure": 1.3,
+      "current": 119.7
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 3.07,
+      "temperature": 48.2,
+      "pressure": 1.08,
+      "current": 117.1
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 2.85,
+      "temperature": 45.6,
+      "pressure": 1.32,
+      "current": 123.9
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 2.39,
+      "temperature": 48.7,
+      "pressure": 1.42,
+      "current": 113.3
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 2.5,
+      "temperature": 47.4,
+      "pressure": 1.18,
+      "current": 109.6
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 3.09,
+      "temperature": 46.3,
+      "pressure": 1.32,
+      "current": 105.4
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 3.03,
+      "temperature": 47.0,
+      "pressure": 1.37,
+      "current": 121.7
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 3.12,
+      "temperature": 47.3,
+      "pressure": 1.24,
+      "current": 118.7
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 2.81,
+      "temperature": 47.7,
+      "pressure": 1.32,
+      "current": 115.1
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 2.39,
+      "temperature": 46.2,
+      "pressure": 1.45,
+      "current": 113.1
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 2.64,
+      "temperature": 49.0,
+      "pressure": 1.28,
+      "current": 107.8
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 3.07,
+      "temperature": 46.8,
+      "pressure": 1.25,
+      "current": 116.7
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.83,
+      "temperature": 47.1,
+      "pressure": 1.2,
+      "current": 112.2
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.81,
+      "temperature": 46.4,
+      "pressure": 1.31,
+      "current": 110.8
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 2.9,
+      "temperature": 46.5,
+      "pressure": 1.12,
+      "current": 111.2
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 2.63,
+      "temperature": 48.1,
+      "pressure": 1.27,
+      "current": 109.9
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 2.35,
+      "temperature": 47.1,
+      "pressure": 1.38,
+      "current": 116.6
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 2.65,
+      "temperature": 49.3,
+      "pressure": 1.25,
+      "current": 118.8
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 3.11,
+      "temperature": 48.5,
+      "pressure": 1.23,
+      "current": 116.1
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 3.0,
+      "temperature": 47.1,
+      "pressure": 1.07,
+      "current": 128.9
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 3.23,
+      "temperature": 47.6,
+      "pressure": 1.41,
+      "current": 118.3
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 2.74,
+      "temperature": 43.6,
+      "pressure": 1.33,
+      "current": 118.3
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 2.78,
+      "temperature": 46.0,
+      "pressure": 1.19,
+      "current": 113.9
+    }
+  ],
+  "SP-FM-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 6.14,
+      "temperature": 64.4,
+      "pressure": 1.73,
+      "current": 191.4
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.98,
+      "temperature": 63.8,
+      "pressure": 1.71,
+      "current": 203.5
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 6.22,
+      "temperature": 63.8,
+      "pressure": 1.75,
+      "current": 209.9
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 6.0,
+      "temperature": 61.4,
+      "pressure": 1.72,
+      "current": 198.3
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 6.37,
+      "temperature": 62.6,
+      "pressure": 1.56,
+      "current": 198.5
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 6.16,
+      "temperature": 63.9,
+      "pressure": 1.65,
+      "current": 203.8
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 6.26,
+      "temperature": 65.5,
+      "pressure": 1.59,
+      "current": 204.9
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 6.4,
+      "temperature": 66.7,
+      "pressure": 1.75,
+      "current": 200.6
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 6.72,
+      "temperature": 67.4,
+      "pressure": 1.69,
+      "current": 204.4
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 6.31,
+      "temperature": 63.2,
+      "pressure": 1.58,
+      "current": 199.0
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 5.88,
+      "temperature": 61.9,
+      "pressure": 1.67,
+      "current": 185.6
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 6.03,
+      "temperature": 61.4,
+      "pressure": 1.7,
+      "current": 193.9
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 5.88,
+      "temperature": 64.4,
+      "pressure": 1.68,
+      "current": 190.1
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 6.45,
+      "temperature": 64.0,
+      "pressure": 1.49,
+      "current": 204.2
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 6.62,
+      "temperature": 62.2,
+      "pressure": 1.8,
+      "current": 216.7
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 6.36,
+      "temperature": 62.3,
+      "pressure": 1.62,
+      "current": 195.9
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 5.87,
+      "temperature": 62.1,
+      "pressure": 1.68,
+      "current": 196.1
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 6.09,
+      "temperature": 62.2,
+      "pressure": 1.75,
+      "current": 207.3
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 6.54,
+      "temperature": 63.9,
+      "pressure": 1.84,
+      "current": 209.8
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 6.49,
+      "temperature": 64.5,
+      "pressure": 1.52,
+      "current": 194.2
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 6.68,
+      "temperature": 66.1,
+      "pressure": 1.62,
+      "current": 204.5
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 6.51,
+      "temperature": 66.5,
+      "pressure": 1.43,
+      "current": 192.1
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 6.08,
+      "temperature": 63.3,
+      "pressure": 1.79,
+      "current": 190.5
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 6.39,
+      "temperature": 64.2,
+      "pressure": 1.67,
+      "current": 195.8
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 5.96,
+      "temperature": 65.5,
+      "pressure": 1.56,
+      "current": 191.5
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 6.45,
+      "temperature": 65.5,
+      "pressure": 1.66,
+      "current": 208.3
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 6.55,
+      "temperature": 64.7,
+      "pressure": 1.59,
+      "current": 205.5
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 6.62,
+      "temperature": 64.9,
+      "pressure": 1.53,
+      "current": 195.0
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 6.52,
+      "temperature": 62.9,
+      "pressure": 1.71,
+      "current": 194.6
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 6.25,
+      "temperature": 65.8,
+      "pressure": 1.69,
+      "current": 190.4
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 6.9,
+      "temperature": 66.0,
+      "pressure": 1.64,
+      "current": 203.6
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 6.24,
+      "temperature": 65.5,
+      "pressure": 1.55,
+      "current": 200.2
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 6.16,
+      "temperature": 64.4,
+      "pressure": 1.64,
+      "current": 206.3
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 6.44,
+      "temperature": 65.0,
+      "pressure": 1.84,
+      "current": 196.0
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 5.87,
+      "temperature": 63.4,
+      "pressure": 1.58,
+      "current": 199.6
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 6.73,
+      "temperature": 61.3,
+      "pressure": 1.69,
+      "current": 206.4
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 6.57,
+      "temperature": 64.7,
+      "pressure": 1.7,
+      "current": 203.4
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 6.88,
+      "temperature": 65.6,
+      "pressure": 1.71,
+      "current": 193.9
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 6.75,
+      "temperature": 65.9,
+      "pressure": 1.55,
+      "current": 201.7
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 6.12,
+      "temperature": 62.9,
+      "pressure": 1.56,
+      "current": 194.7
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 6.61,
+      "temperature": 64.5,
+      "pressure": 1.66,
+      "current": 198.4
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 6.4,
+      "temperature": 66.2,
+      "pressure": 1.66,
+      "current": 202.1
+    }
+  ],
+  "SP-IG-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 2.1,
+      "temperature": 981.2,
+      "pressure": 0.97,
+      "current": 34.1
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.08,
+      "temperature": 998.3,
+      "pressure": 0.94,
+      "current": 37.4
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.03,
+      "temperature": 1014.1,
+      "pressure": 0.93,
+      "current": 36.2
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 2.03,
+      "temperature": 995.2,
+      "pressure": 1.08,
+      "current": 34.6
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 1.81,
+      "temperature": 1001.5,
+      "pressure": 1.02,
+      "current": 33.9
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 1.95,
+      "temperature": 1002.1,
+      "pressure": 1.13,
+      "current": 33.7
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 1.98,
+      "temperature": 999.5,
+      "pressure": 0.94,
+      "current": 36.9
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.2,
+      "temperature": 996.9,
+      "pressure": 1.0,
+      "current": 33.9
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.08,
+      "temperature": 966.7,
+      "pressure": 1.04,
+      "current": 36.6
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 2.05,
+      "temperature": 1003.4,
+      "pressure": 1.08,
+      "current": 34.3
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 1.64,
+      "temperature": 1013.0,
+      "pressure": 0.97,
+      "current": 30.6
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 1.99,
+      "temperature": 948.8,
+      "pressure": 1.01,
+      "current": 34.2
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 1.9,
+      "temperature": 993.2,
+      "pressure": 0.99,
+      "current": 32.9
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 2.25,
+      "temperature": 1007.4,
+      "pressure": 1.01,
+      "current": 36.8
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 2.43,
+      "temperature": 1012.5,
+      "pressure": 0.99,
+      "current": 35.0
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 2.15,
+      "temperature": 1004.1,
+      "pressure": 1.01,
+      "current": 33.6
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 1.74,
+      "temperature": 1021.1,
+      "pressure": 0.96,
+      "current": 34.2
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 1.85,
+      "temperature": 1001.9,
+      "pressure": 0.88,
+      "current": 36.0
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 1.95,
+      "temperature": 1009.3,
+      "pressure": 1.05,
+      "current": 36.7
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.09,
+      "temperature": 1008.5,
+      "pressure": 0.95,
+      "current": 37.9
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.32,
+      "temperature": 1027.1,
+      "pressure": 1.05,
+      "current": 35.3
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 1.98,
+      "temperature": 991.9,
+      "pressure": 1.01,
+      "current": 32.4
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 2.18,
+      "temperature": 1040.1,
+      "pressure": 1.01,
+      "current": 34.3
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 1.85,
+      "temperature": 984.8,
+      "pressure": 0.98,
+      "current": 29.7
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 1.99,
+      "temperature": 1040.0,
+      "pressure": 0.97,
+      "current": 33.9
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.2,
+      "temperature": 1003.4,
+      "pressure": 1.08,
+      "current": 32.1
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 2.25,
+      "temperature": 1002.1,
+      "pressure": 0.98,
+      "current": 34.0
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 2.14,
+      "temperature": 992.8,
+      "pressure": 1.06,
+      "current": 37.2
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 1.68,
+      "temperature": 999.7,
+      "pressure": 1.03,
+      "current": 34.2
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 1.74,
+      "temperature": 1007.1,
+      "pressure": 1.07,
+      "current": 34.3
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 1.9,
+      "temperature": 1041.3,
+      "pressure": 1.0,
+      "current": 33.2
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.32,
+      "temperature": 1004.5,
+      "pressure": 1.0,
+      "current": 35.8
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 1.94,
+      "temperature": 978.0,
+      "pressure": 1.06,
+      "current": 38.9
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 2.01,
+      "temperature": 1017.4,
+      "pressure": 1.07,
+      "current": 35.8
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 2.06,
+      "temperature": 984.3,
+      "pressure": 0.96,
+      "current": 31.4
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 1.93,
+      "temperature": 954.6,
+      "pressure": 0.98,
+      "current": 33.2
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 2.04,
+      "temperature": 954.7,
+      "pressure": 1.0,
+      "current": 34.5
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 1.93,
+      "temperature": 980.4,
+      "pressure": 1.07,
+      "current": 38.9
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 2.24,
+      "temperature": 980.7,
+      "pressure": 0.96,
+      "current": 29.8
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 1.8,
+      "temperature": 981.6,
+      "pressure": 1.04,
+      "current": 32.5
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 1.7,
+      "temperature": 996.5,
+      "pressure": 1.07,
+      "current": 31.7
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 1.76,
+      "temperature": 1026.7,
+      "pressure": 1.06,
+      "current": 32.0
+    }
+  ],
+  "SP-CV-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 2.2,
+      "temperature": 36.5,
+      "pressure": 0,
+      "current": 79.9
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 1.9,
+      "temperature": 37.5,
+      "pressure": 0,
+      "current": 76.4
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.38,
+      "temperature": 36.4,
+      "pressure": 0,
+      "current": 75.1
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 1.92,
+      "temperature": 38.4,
+      "pressure": 0.02,
+      "current": 81.5
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 1.87,
+      "temperature": 36.7,
+      "pressure": 0,
+      "current": 74.7
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 2.06,
+      "temperature": 38.2,
+      "pressure": 0,
+      "current": 72.2
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 2.05,
+      "temperature": 37.3,
+      "pressure": 0,
+      "current": 72.6
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.23,
+      "temperature": 37.0,
+      "pressure": 0,
+      "current": 80.0
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.22,
+      "temperature": 36.4,
+      "pressure": 0,
+      "current": 75.6
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 2.26,
+      "temperature": 40.0,
+      "pressure": 0.0,
+      "current": 70.2
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 1.74,
+      "temperature": 37.6,
+      "pressure": 0,
+      "current": 71.3
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 1.8,
+      "temperature": 37.8,
+      "pressure": 0,
+      "current": 73.5
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 2.14,
+      "temperature": 40.8,
+      "pressure": 0.01,
+      "current": 78.9
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 1.96,
+      "temperature": 39.2,
+      "pressure": 0.02,
+      "current": 72.0
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 2.17,
+      "temperature": 39.7,
+      "pressure": 0,
+      "current": 71.3
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 1.94,
+      "temperature": 37.0,
+      "pressure": 0,
+      "current": 70.5
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 1.75,
+      "temperature": 36.9,
+      "pressure": 0,
+      "current": 79.9
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 1.8,
+      "temperature": 34.5,
+      "pressure": 0.01,
+      "current": 76.2
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 1.71,
+      "temperature": 33.9,
+      "pressure": 0.0,
+      "current": 80.3
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.18,
+      "temperature": 39.8,
+      "pressure": 0,
+      "current": 76.3
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.05,
+      "temperature": 38.5,
+      "pressure": 0.0,
+      "current": 73.1
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 2.05,
+      "temperature": 39.6,
+      "pressure": 0,
+      "current": 73.2
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 2.09,
+      "temperature": 36.3,
+      "pressure": 0.02,
+      "current": 70.8
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 1.69,
+      "temperature": 37.5,
+      "pressure": 0,
+      "current": 71.0
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 1.88,
+      "temperature": 35.8,
+      "pressure": 0,
+      "current": 74.4
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.2,
+      "temperature": 36.4,
+      "pressure": 0,
+      "current": 70.9
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 1.99,
+      "temperature": 38.2,
+      "pressure": 0,
+      "current": 75.0
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 1.78,
+      "temperature": 36.4,
+      "pressure": 0.0,
+      "current": 72.1
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 1.9,
+      "temperature": 37.9,
+      "pressure": 0,
+      "current": 73.0
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 1.9,
+      "temperature": 37.1,
+      "pressure": 0,
+      "current": 79.3
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 2.04,
+      "temperature": 37.4,
+      "pressure": 0,
+      "current": 78.9
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.34,
+      "temperature": 41.0,
+      "pressure": 0,
+      "current": 73.6
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.09,
+      "temperature": 38.4,
+      "pressure": 0.02,
+      "current": 77.2
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 2.13,
+      "temperature": 39.4,
+      "pressure": 0,
+      "current": 75.5
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 2.15,
+      "temperature": 36.5,
+      "pressure": 0.0,
+      "current": 76.2
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 1.72,
+      "temperature": 37.0,
+      "pressure": 0.01,
+      "current": 67.8
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 2.17,
+      "temperature": 38.0,
+      "pressure": 0.02,
+      "current": 73.4
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 1.93,
+      "temperature": 37.5,
+      "pressure": 0,
+      "current": 81.0
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 2.17,
+      "temperature": 38.4,
+      "pressure": 0,
+      "current": 73.2
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 2.14,
+      "temperature": 34.5,
+      "pressure": 0,
+      "current": 73.0
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 1.57,
+      "temperature": 36.9,
+      "pressure": 0.01,
+      "current": 73.1
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 1.9,
+      "temperature": 36.0,
+      "pressure": 0,
+      "current": 70.9
+    }
+  ],
+  "PP-TG-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 5.18,
+      "temperature": 76.9,
+      "pressure": 46.6,
+      "current": 523.6
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 5.06,
+      "temperature": 76.8,
+      "pressure": 44.75,
+      "current": 536.5
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 5.5,
+      "temperature": 75.7,
+      "pressure": 44.54,
+      "current": 513.2
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 4.6,
+      "temperature": 75.8,
+      "pressure": 44.99,
+      "current": 491.0
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 4.21,
+      "temperature": 76.2,
+      "pressure": 45.22,
+      "current": 526.4
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 4.66,
+      "temperature": 73.4,
+      "pressure": 47.39,
+      "current": 532.8
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 4.88,
+      "temperature": 80.7,
+      "pressure": 46.0,
+      "current": 559.7
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 5.6,
+      "temperature": 81.4,
+      "pressure": 45.78,
+      "current": 561.9
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 5.62,
+      "temperature": 82.4,
+      "pressure": 45.58,
+      "current": 532.5
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 5.33,
+      "temperature": 78.2,
+      "pressure": 44.69,
+      "current": 550.4
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 4.67,
+      "temperature": 79.9,
+      "pressure": 43.82,
+      "current": 526.9
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 4.68,
+      "temperature": 77.1,
+      "pressure": 44.55,
+      "current": 497.7
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 4.84,
+      "temperature": 78.8,
+      "pressure": 46.39,
+      "current": 528.8
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 4.9,
+      "temperature": 79.2,
+      "pressure": 42.57,
+      "current": 533.4
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 5.04,
+      "temperature": 81.4,
+      "pressure": 44.32,
+      "current": 533.0
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 5.21,
+      "temperature": 77.8,
+      "pressure": 46.77,
+      "current": 516.1
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 4.99,
+      "temperature": 78.2,
+      "pressure": 45.34,
+      "current": 523.8
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 4.74,
+      "temperature": 79.5,
+      "pressure": 47.5,
+      "current": 515.1
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 4.99,
+      "temperature": 76.9,
+      "pressure": 44.81,
+      "current": 535.6
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 5.71,
+      "temperature": 76.0,
+      "pressure": 44.58,
+      "current": 499.7
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 5.36,
+      "temperature": 80.5,
+      "pressure": 43.19,
+      "current": 534.6
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 4.96,
+      "temperature": 80.0,
+      "pressure": 41.43,
+      "current": 557.4
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 5.37,
+      "temperature": 77.6,
+      "pressure": 44.91,
+      "current": 534.6
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 5.14,
+      "temperature": 82.1,
+      "pressure": 46.25,
+      "current": 523.9
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 4.74,
+      "temperature": 74.4,
+      "pressure": 47.41,
+      "current": 501.7
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 5.36,
+      "temperature": 80.7,
+      "pressure": 45.01,
+      "current": 529.5
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 5.14,
+      "temperature": 80.5,
+      "pressure": 48.0,
+      "current": 472.6
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 5.28,
+      "temperature": 80.6,
+      "pressure": 45.65,
+      "current": 519.6
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 4.93,
+      "temperature": 79.5,
+      "pressure": 45.04,
+      "current": 596.2
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 5.12,
+      "temperature": 76.3,
+      "pressure": 43.22,
+      "current": 470.6
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 4.89,
+      "temperature": 78.6,
+      "pressure": 47.11,
+      "current": 524.7
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 5.62,
+      "temperature": 82.7,
+      "pressure": 43.74,
+      "current": 539.8
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 5.3,
+      "temperature": 82.2,
+      "pressure": 43.56,
+      "current": 547.8
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 5.63,
+      "temperature": 80.5,
+      "pressure": 43.59,
+      "current": 527.1
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 5.08,
+      "temperature": 79.1,
+      "pressure": 43.07,
+      "current": 503.4
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 4.99,
+      "temperature": 80.7,
+      "pressure": 44.54,
+      "current": 539.2
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 5.31,
+      "temperature": 80.9,
+      "pressure": 45.82,
+      "current": 522.5
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 5.59,
+      "temperature": 83.1,
+      "pressure": 44.03,
+      "current": 538.3
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 5.7,
+      "temperature": 79.0,
+      "pressure": 46.0,
+      "current": 515.6
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 4.93,
+      "temperature": 77.8,
+      "pressure": 45.11,
+      "current": 586.4
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 5.52,
+      "temperature": 83.5,
+      "pressure": 46.73,
+      "current": 544.7
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 4.95,
+      "temperature": 82.3,
+      "pressure": 43.48,
+      "current": 588.8
+    }
+  ],
+  "PP-BL-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 2.66,
+      "temperature": 52.0,
+      "pressure": 37.12,
+      "current": 86.6
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 2.86,
+      "temperature": 54.3,
+      "pressure": 34.55,
+      "current": 90.3
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 2.79,
+      "temperature": 53.0,
+      "pressure": 35.24,
+      "current": 84.1
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 2.71,
+      "temperature": 55.0,
+      "pressure": 35.31,
+      "current": 92.1
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 2.7,
+      "temperature": 51.4,
+      "pressure": 34.54,
+      "current": 84.7
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 3.03,
+      "temperature": 51.0,
+      "pressure": 32.73,
+      "current": 90.5
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 2.49,
+      "temperature": 51.1,
+      "pressure": 34.01,
+      "current": 84.0
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 2.95,
+      "temperature": 51.1,
+      "pressure": 33.99,
+      "current": 88.5
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 2.61,
+      "temperature": 52.8,
+      "pressure": 36.68,
+      "current": 132.2
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 2.69,
+      "temperature": 51.4,
+      "pressure": 36.32,
+      "current": 83.5
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 2.43,
+      "temperature": 51.9,
+      "pressure": 35.72,
+      "current": 81.4
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 2.67,
+      "temperature": 51.5,
+      "pressure": 33.93,
+      "current": 90.1
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 2.51,
+      "temperature": 52.1,
+      "pressure": 37.89,
+      "current": 87.5
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 3.12,
+      "temperature": 53.1,
+      "pressure": 35.64,
+      "current": 87.6
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 2.72,
+      "temperature": 52.6,
+      "pressure": 36.06,
+      "current": 91.8
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 2.87,
+      "temperature": 52.0,
+      "pressure": 33.44,
+      "current": 91.1
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 2.58,
+      "temperature": 50.4,
+      "pressure": 35.34,
+      "current": 90.4
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 2.41,
+      "temperature": 50.1,
+      "pressure": 33.75,
+      "current": 87.8
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 2.84,
+      "temperature": 51.9,
+      "pressure": 33.22,
+      "current": 81.7
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 2.82,
+      "temperature": 54.5,
+      "pressure": 35.75,
+      "current": 95.6
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 2.83,
+      "temperature": 79.0,
+      "pressure": 36.85,
+      "current": 83.2
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 2.61,
+      "temperature": 74.0,
+      "pressure": 37.11,
+      "current": 91.8
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 9.74,
+      "temperature": 53.1,
+      "pressure": 32.29,
+      "current": 88.7
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 3.09,
+      "temperature": 51.1,
+      "pressure": 38.22,
+      "current": 91.1
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 2.94,
+      "temperature": 52.1,
+      "pressure": 33.49,
+      "current": 92.4
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 2.85,
+      "temperature": 52.9,
+      "pressure": 36.59,
+      "current": 122.0
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 3.06,
+      "temperature": 51.9,
+      "pressure": 32.47,
+      "current": 82.6
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 2.88,
+      "temperature": 51.0,
+      "pressure": 36.03,
+      "current": 80.8
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 6.63,
+      "temperature": 51.8,
+      "pressure": 36.95,
+      "current": 89.4
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 2.73,
+      "temperature": 50.3,
+      "pressure": 36.29,
+      "current": 88.0
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 2.8,
+      "temperature": 52.9,
+      "pressure": 37.1,
+      "current": 121.1
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 2.45,
+      "temperature": 54.3,
+      "pressure": 33.03,
+      "current": 87.8
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 2.95,
+      "temperature": 53.4,
+      "pressure": 34.95,
+      "current": 94.7
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 2.98,
+      "temperature": 50.2,
+      "pressure": 34.18,
+      "current": 92.1
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 5.58,
+      "temperature": 52.8,
+      "pressure": 35.8,
+      "current": 92.1
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 2.75,
+      "temperature": 52.5,
+      "pressure": 32.46,
+      "current": 85.5
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 2.71,
+      "temperature": 52.4,
+      "pressure": 35.13,
+      "current": 91.0
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 2.68,
+      "temperature": 51.5,
+      "pressure": 34.89,
+      "current": 90.3
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 2.86,
+      "temperature": 53.4,
+      "pressure": 35.43,
+      "current": 89.2
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 2.48,
+      "temperature": 52.3,
+      "pressure": 35.4,
+      "current": 88.0
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 2.8,
+      "temperature": 50.5,
+      "pressure": 33.84,
+      "current": 92.4
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 2.59,
+      "temperature": 53.1,
+      "pressure": 35.88,
+      "current": 85.9
+    }
+  ],
+  "PP-CT-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 3.59,
+      "temperature": 46.5,
+      "pressure": 0.64,
+      "current": 132.0
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 3.8,
+      "temperature": 46.8,
+      "pressure": 0.64,
+      "current": 126.8
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 3.75,
+      "temperature": 45.6,
+      "pressure": 0.65,
+      "current": 116.1
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 3.47,
+      "temperature": 47.0,
+      "pressure": 0.73,
+      "current": 116.2
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 3.68,
+      "temperature": 43.0,
+      "pressure": 0.66,
+      "current": 108.2
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 2.94,
+      "temperature": 45.0,
+      "pressure": 0.69,
+      "current": 119.1
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 3.16,
+      "temperature": 45.3,
+      "pressure": 0.64,
+      "current": 118.3
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 3.37,
+      "temperature": 44.6,
+      "pressure": 0.63,
+      "current": 119.7
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 3.34,
+      "temperature": 44.6,
+      "pressure": 0.65,
+      "current": 128.5
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 3.7,
+      "temperature": 46.6,
+      "pressure": 0.6,
+      "current": 131.3
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 3.4,
+      "temperature": 44.7,
+      "pressure": 0.6,
+      "current": 113.2
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 3.44,
+      "temperature": 42.6,
+      "pressure": 0.68,
+      "current": 130.8
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 3.14,
+      "temperature": 44.8,
+      "pressure": 0.67,
+      "current": 114.0
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 3.54,
+      "temperature": 43.4,
+      "pressure": 0.65,
+      "current": 120.4
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 3.65,
+      "temperature": 47.3,
+      "pressure": 0.57,
+      "current": 118.6
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 3.38,
+      "temperature": 46.0,
+      "pressure": 0.64,
+      "current": 121.8
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 3.45,
+      "temperature": 44.4,
+      "pressure": 0.62,
+      "current": 121.9
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 3.13,
+      "temperature": 44.1,
+      "pressure": 0.69,
+      "current": 118.0
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 4.01,
+      "temperature": 46.2,
+      "pressure": 0.64,
+      "current": 114.6
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 3.77,
+      "temperature": 47.0,
+      "pressure": 0.64,
+      "current": 116.6
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 3.82,
+      "temperature": 43.8,
+      "pressure": 0.68,
+      "current": 120.1
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 3.67,
+      "temperature": 44.1,
+      "pressure": 0.66,
+      "current": 115.4
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 3.25,
+      "temperature": 41.8,
+      "pressure": 0.62,
+      "current": 115.3
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 3.39,
+      "temperature": 44.4,
+      "pressure": 0.64,
+      "current": 124.0
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 3.57,
+      "temperature": 46.5,
+      "pressure": 0.64,
+      "current": 124.1
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 3.66,
+      "temperature": 45.4,
+      "pressure": 0.64,
+      "current": 118.8
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 4.17,
+      "temperature": 44.1,
+      "pressure": 0.67,
+      "current": 113.6
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 3.19,
+      "temperature": 45.0,
+      "pressure": 0.66,
+      "current": 122.8
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 3.58,
+      "temperature": 44.5,
+      "pressure": 0.64,
+      "current": 117.5
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 3.07,
+      "temperature": 43.4,
+      "pressure": 0.66,
+      "current": 137.8
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 3.39,
+      "temperature": 43.3,
+      "pressure": 0.67,
+      "current": 128.1
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 3.93,
+      "temperature": 48.4,
+      "pressure": 0.65,
+      "current": 123.3
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 3.38,
+      "temperature": 45.9,
+      "pressure": 0.66,
+      "current": 115.4
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 3.73,
+      "temperature": 42.6,
+      "pressure": 0.62,
+      "current": 109.8
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 3.46,
+      "temperature": 45.6,
+      "pressure": 0.62,
+      "current": 116.9
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 3.2,
+      "temperature": 44.7,
+      "pressure": 0.65,
+      "current": 117.7
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 4.08,
+      "temperature": 45.1,
+      "pressure": 0.63,
+      "current": 114.5
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 3.41,
+      "temperature": 47.9,
+      "pressure": 0.62,
+      "current": 118.5
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 3.33,
+      "temperature": 47.6,
+      "pressure": 0.65,
+      "current": 122.2
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 3.58,
+      "temperature": 45.3,
+      "pressure": 0.6,
+      "current": 129.4
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 3.51,
+      "temperature": 44.4,
+      "pressure": 0.66,
+      "current": 127.1
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 3.49,
+      "temperature": 46.0,
+      "pressure": 0.61,
+      "current": 123.5
+    }
+  ],
+  "PP-TR-001": [
+    {
+      "timestamp": "2026-05-30T00:00:00",
+      "vibration": 1.38,
+      "temperature": 63.0,
+      "pressure": 0,
+      "current": 339.7
+    },
+    {
+      "timestamp": "2026-05-30T04:00:00",
+      "vibration": 1.43,
+      "temperature": 58.9,
+      "pressure": 0,
+      "current": 356.0
+    },
+    {
+      "timestamp": "2026-05-30T08:00:00",
+      "vibration": 1.3,
+      "temperature": 59.0,
+      "pressure": 0.0,
+      "current": 335.0
+    },
+    {
+      "timestamp": "2026-05-30T12:00:00",
+      "vibration": 1.26,
+      "temperature": 57.8,
+      "pressure": 0.0,
+      "current": 346.6
+    },
+    {
+      "timestamp": "2026-05-30T16:00:00",
+      "vibration": 1.15,
+      "temperature": 60.0,
+      "pressure": 0,
+      "current": 368.8
+    },
+    {
+      "timestamp": "2026-05-30T20:00:00",
+      "vibration": 0.97,
+      "temperature": 62.2,
+      "pressure": 0.0,
+      "current": 372.4
+    },
+    {
+      "timestamp": "2026-05-31T00:00:00",
+      "vibration": 1.23,
+      "temperature": 59.0,
+      "pressure": 0.01,
+      "current": 364.8
+    },
+    {
+      "timestamp": "2026-05-31T04:00:00",
+      "vibration": 1.23,
+      "temperature": 62.7,
+      "pressure": 0.0,
+      "current": 331.4
+    },
+    {
+      "timestamp": "2026-05-31T08:00:00",
+      "vibration": 1.56,
+      "temperature": 63.1,
+      "pressure": 0.02,
+      "current": 348.1
+    },
+    {
+      "timestamp": "2026-05-31T12:00:00",
+      "vibration": 1.21,
+      "temperature": 59.9,
+      "pressure": 0,
+      "current": 358.8
+    },
+    {
+      "timestamp": "2026-05-31T16:00:00",
+      "vibration": 1.16,
+      "temperature": 58.2,
+      "pressure": 0,
+      "current": 337.0
+    },
+    {
+      "timestamp": "2026-05-31T20:00:00",
+      "vibration": 1.09,
+      "temperature": 55.1,
+      "pressure": 0,
+      "current": 347.4
+    },
+    {
+      "timestamp": "2026-06-01T00:00:00",
+      "vibration": 1.25,
+      "temperature": 59.4,
+      "pressure": 0,
+      "current": 359.1
+    },
+    {
+      "timestamp": "2026-06-01T04:00:00",
+      "vibration": 1.36,
+      "temperature": 63.2,
+      "pressure": 0,
+      "current": 366.8
+    },
+    {
+      "timestamp": "2026-06-01T08:00:00",
+      "vibration": 1.43,
+      "temperature": 58.8,
+      "pressure": 0.01,
+      "current": 339.1
+    },
+    {
+      "timestamp": "2026-06-01T12:00:00",
+      "vibration": 1.24,
+      "temperature": 59.1,
+      "pressure": 0.0,
+      "current": 326.7
+    },
+    {
+      "timestamp": "2026-06-01T16:00:00",
+      "vibration": 0.93,
+      "temperature": 58.1,
+      "pressure": 0,
+      "current": 359.1
+    },
+    {
+      "timestamp": "2026-06-01T20:00:00",
+      "vibration": 1.01,
+      "temperature": 58.9,
+      "pressure": 0,
+      "current": 330.8
+    },
+    {
+      "timestamp": "2026-06-02T00:00:00",
+      "vibration": 1.15,
+      "temperature": 60.5,
+      "pressure": 0.0,
+      "current": 364.0
+    },
+    {
+      "timestamp": "2026-06-02T04:00:00",
+      "vibration": 1.4,
+      "temperature": 62.6,
+      "pressure": 0.01,
+      "current": 364.5
+    },
+    {
+      "timestamp": "2026-06-02T08:00:00",
+      "vibration": 1.32,
+      "temperature": 60.5,
+      "pressure": 0,
+      "current": 335.6
+    },
+    {
+      "timestamp": "2026-06-02T12:00:00",
+      "vibration": 0.98,
+      "temperature": 58.9,
+      "pressure": 0,
+      "current": 289.6
+    },
+    {
+      "timestamp": "2026-06-02T16:00:00",
+      "vibration": 0.99,
+      "temperature": 57.0,
+      "pressure": 0.01,
+      "current": 323.0
+    },
+    {
+      "timestamp": "2026-06-02T20:00:00",
+      "vibration": 1.11,
+      "temperature": 60.1,
+      "pressure": 0.02,
+      "current": 339.7
+    },
+    {
+      "timestamp": "2026-06-03T00:00:00",
+      "vibration": 1.29,
+      "temperature": 61.7,
+      "pressure": 0.01,
+      "current": 382.6
+    },
+    {
+      "timestamp": "2026-06-03T04:00:00",
+      "vibration": 1.46,
+      "temperature": 60.9,
+      "pressure": 0.0,
+      "current": 355.2
+    },
+    {
+      "timestamp": "2026-06-03T08:00:00",
+      "vibration": 1.24,
+      "temperature": 61.8,
+      "pressure": 0,
+      "current": 344.9
+    },
+    {
+      "timestamp": "2026-06-03T12:00:00",
+      "vibration": 1.45,
+      "temperature": 59.1,
+      "pressure": 0,
+      "current": 344.5
+    },
+    {
+      "timestamp": "2026-06-03T16:00:00",
+      "vibration": 1.18,
+      "temperature": 57.7,
+      "pressure": 0,
+      "current": 365.0
+    },
+    {
+      "timestamp": "2026-06-03T20:00:00",
+      "vibration": 0.98,
+      "temperature": 60.9,
+      "pressure": 0,
+      "current": 334.3
+    },
+    {
+      "timestamp": "2026-06-04T00:00:00",
+      "vibration": 1.31,
+      "temperature": 62.7,
+      "pressure": 0,
+      "current": 341.1
+    },
+    {
+      "timestamp": "2026-06-04T04:00:00",
+      "vibration": 1.44,
+      "temperature": 60.4,
+      "pressure": 0,
+      "current": 341.6
+    },
+    {
+      "timestamp": "2026-06-04T08:00:00",
+      "vibration": 1.49,
+      "temperature": 64.1,
+      "pressure": 0.02,
+      "current": 320.4
+    },
+    {
+      "timestamp": "2026-06-04T12:00:00",
+      "vibration": 1.27,
+      "temperature": 60.6,
+      "pressure": 0,
+      "current": 351.7
+    },
+    {
+      "timestamp": "2026-06-04T16:00:00",
+      "vibration": 1.27,
+      "temperature": 58.7,
+      "pressure": 0.0,
+      "current": 353.5
+    },
+    {
+      "timestamp": "2026-06-04T20:00:00",
+      "vibration": 1.04,
+      "temperature": 57.6,
+      "pressure": 0.02,
+      "current": 335.7
+    },
+    {
+      "timestamp": "2026-06-05T00:00:00",
+      "vibration": 1.21,
+      "temperature": 60.0,
+      "pressure": 0.0,
+      "current": 337.0
+    },
+    {
+      "timestamp": "2026-06-05T04:00:00",
+      "vibration": 1.44,
+      "temperature": 63.8,
+      "pressure": 0.01,
+      "current": 327.7
+    },
+    {
+      "timestamp": "2026-06-05T08:00:00",
+      "vibration": 1.46,
+      "temperature": 60.3,
+      "pressure": 0,
+      "current": 352.1
+    },
+    {
+      "timestamp": "2026-06-05T12:00:00",
+      "vibration": 1.24,
+      "temperature": 57.6,
+      "pressure": 0.01,
+      "current": 363.8
+    },
+    {
+      "timestamp": "2026-06-05T16:00:00",
+      "vibration": 0.97,
+      "temperature": 57.7,
+      "pressure": 0.0,
+      "current": 357.6
+    },
+    {
+      "timestamp": "2026-06-05T20:00:00",
+      "vibration": 1.21,
+      "temperature": 59.3,
+      "pressure": 0,
+      "current": 360.7
+    }
+  ]
+}

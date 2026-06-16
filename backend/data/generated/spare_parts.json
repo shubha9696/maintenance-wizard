@@ -1,0 +1,131 @@
+{
+  "Centrifugal Pump": [
+    {
+      "name": "SKF 6316 Deep Groove Bearing",
+      "part_no": "SP-BRG-001",
+      "cost": 450,
+      "lead_time_days": 7,
+      "stock": 4
+    },
+    {
+      "name": "Mechanical Seal Type A (65mm)",
+      "part_no": "SP-SEL-001",
+      "cost": 1200,
+      "lead_time_days": 14,
+      "stock": 2
+    },
+    {
+      "name": "SS316 Impeller Assembly",
+      "part_no": "SP-IMP-001",
+      "cost": 3500,
+      "lead_time_days": 30,
+      "stock": 1
+    },
+    {
+      "name": "Coupling Spider Element",
+      "part_no": "SP-CPL-001",
+      "cost": 180,
+      "lead_time_days": 5,
+      "stock": 6
+    }
+  ],
+  "Turbo Blower": [
+    {
+      "name": "Tilting Pad Journal Bearing",
+      "part_no": "SP-TPB-001",
+      "cost": 8500,
+      "lead_time_days": 45,
+      "stock": 1
+    },
+    {
+      "name": "Impeller Blade Set",
+      "part_no": "SP-BLD-001",
+      "cost": 15000,
+      "lead_time_days": 60,
+      "stock": 0
+    },
+    {
+      "name": "Thrust Bearing Assembly",
+      "part_no": "SP-THB-001",
+      "cost": 6200,
+      "lead_time_days": 30,
+      "stock": 1
+    }
+  ],
+  "AC Motor (2000kW)": [
+    {
+      "name": "Stator Winding Coil Set",
+      "part_no": "SP-WND-001",
+      "cost": 25000,
+      "lead_time_days": 90,
+      "stock": 0
+    },
+    {
+      "name": "Rotor Bearing (NU 330)",
+      "part_no": "SP-RBR-001",
+      "cost": 2800,
+      "lead_time_days": 14,
+      "stock": 2
+    },
+    {
+      "name": "Cooling Fan Assembly",
+      "part_no": "SP-FAN-001",
+      "cost": 1500,
+      "lead_time_days": 21,
+      "stock": 1
+    }
+  ],
+  "Helical Gearbox": [
+    {
+      "name": "Gear Pair Set (Module 12)",
+      "part_no": "SP-GPR-001",
+      "cost": 18000,
+      "lead_time_days": 75,
+      "stock": 0
+    },
+    {
+      "name": "Input Shaft Bearing",
+      "part_no": "SP-ISB-001",
+      "cost": 3200,
+      "lead_time_days": 14,
+      "stock": 2
+    },
+    {
+      "name": "Viton Oil Seal Set",
+      "part_no": "SP-OSL-001",
+      "cost": 350,
+      "lead_time_days": 7,
+      "stock": 8
+    },
+    {
+      "name": "Synthetic Gear Oil (ISO 320, 200L)",
+      "part_no": "SP-OIL-001",
+      "cost": 800,
+      "lead_time_days": 3,
+      "stock": 5
+    }
+  ],
+  "Steam Turbine": [
+    {
+      "name": "HP Blade Row Assembly",
+      "part_no": "SP-HPB-001",
+      "cost": 45000,
+      "lead_time_days": 120,
+      "stock": 0
+    },
+    {
+      "name": "Journal Bearing (White Metal)",
+      "part_no": "SP-JBR-001",
+      "cost": 12000,
+      "lead_time_days": 45,
+      "stock": 1
+    },
+    {
+      "name": "Governor Actuator",
+      "part_no": "SP-GOV-001",
+      "cost": 8000,
+      "lead_time_days": 30,
+      "stock": 1
+    }
+  ]
+}

@@ -14,6 +14,45 @@ from backend.services.anomaly_detector import anomaly_detector
 from backend.routers import chat, equipment, alerts, reports, feedback, knowledge
 
 
+async def initialize_services_in_background():
+    """Asynchronously initialize heavy services in background after app startup."""
+    import asyncio
+    print("  [Background] Initializing services...")
+    
+    # 1. Initialize vector store (ingest knowledge base)
+    print("  [Background] Loading knowledge base into vector store...")
+    try:
+        await asyncio.to_thread(vector_store.initialize)
+        print("  [Background] Vector store initialized.")
+    except Exception as e:
+        print(f"  [Background] Warning: Vector store initialization failed: {e}")
+
+    # 2. Train anomaly detection models
+    print("  [Background] Training anomaly detection models...")
+    try:
+        eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
+        sensor_path = os.path.join(settings.DATA_DIR, "sensor_data_full.json")
+        if os.path.exists(eq_path) and os.path.exists(sensor_path):
+            with open(eq_path, "r") as f:
+                equipment_list = json.load(f)
+            with open(sensor_path, "r") as f:
+                sensor_data = json.load(f)
+            await asyncio.to_thread(anomaly_detector.train_models, sensor_data, equipment_list)
+            print(f"  [Background] Trained models for {len(anomaly_detector.models)} equipment items.")
+    except Exception as e:
+        print(f"  [Background] Warning: Anomaly model training failed: {e}")
+
+    # 3. Warm up analytics cache
+    print("  [Background] Warming up analytics cache...")
+    try:
+        await equipment.warm_analytics_cache()
+        print("  [Background] Analytics cache warmed.")
+    except Exception as e:
+        print(f"  [Background] Warning: Analytics cache warming failed: {e}")
+
+    print("[Background] Maintenance Wizard is fully ready!")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Initialize services on startup."""
@@ -40,38 +79,11 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         print(f"  Warning: Failed to load predictor ranges: {e}")
 
-    # Initialize vector store (ingest knowledge base)
-    print("  Loading knowledge base into vector store...")
-    try:
-        vector_store.initialize()
-        print("  Vector store initialized.")
-    except Exception as e:
-        print(f"  Warning: Vector store initialization failed: {e}")
+    # Start background initialization task so startup returns immediately
+    import asyncio
+    asyncio.create_task(initialize_services_in_background())
 
-    # Train anomaly detection models
-    print("  Training anomaly detection models...")
-    try:
-        eq_path = os.path.join(settings.DATA_DIR, "equipment.json")
-        sensor_path = os.path.join(settings.DATA_DIR, "sensor_data_full.json")
-        if os.path.exists(eq_path) and os.path.exists(sensor_path):
-            with open(eq_path, "r") as f:
-                equipment_list = json.load(f)
-            with open(sensor_path, "r") as f:
-                sensor_data = json.load(f)
-            anomaly_detector.train_models(sensor_data, equipment_list)
-            print(f"  Trained models for {len(anomaly_detector.models)} equipment items.")
-    except Exception as e:
-        print(f"  Warning: Anomaly model training failed: {e}")
-
-    # Warm up analytics cache
-    print("  Warming up analytics cache...")
-    try:
-        await equipment.warm_analytics_cache()
-        print("  Analytics cache warmed.")
-    except Exception as e:
-        print(f"  Warning: Analytics cache warming failed: {e}")
-
-    print("Maintenance Wizard is ready!")
+    print("Maintenance Wizard is ready (services initializing in background)!")
     yield
     print("Shutting down Maintenance Wizard...")
 

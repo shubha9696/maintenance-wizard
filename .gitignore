@@ -14,7 +14,7 @@ venv/
 .venv/
 
 # ChromaDB
-chroma_db/
+# chroma_db/
 
 # Node
 node_modules/
@@ -30,7 +30,7 @@ out/
 Thumbs.db
 
 # Data (generated)
-backend/data/generated/
+# backend/data/generated/
 
 # Models
 *.pkl

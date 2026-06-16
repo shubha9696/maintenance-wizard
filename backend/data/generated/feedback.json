@@ -1,0 +1,182 @@
+[
+  {
+    "id": "FB-0001",
+    "session_id": "bf1139a8",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-11T00:48:46.200132"
+  },
+  {
+    "id": "FB-0002",
+    "session_id": "bf1139a8",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-11T00:48:48.474214"
+  },
+  {
+    "id": "FB-0003",
+    "session_id": "545c0847",
+    "message_index": 9,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-11T02:18:36.973337"
+  },
+  {
+    "id": "FB-0004",
+    "session_id": "f348d571",
+    "message_index": 21,
+    "feedback_type": "thumbs_down",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:09:04.489943"
+  },
+  {
+    "id": "FB-0005",
+    "session_id": "f348d571",
+    "message_index": 29,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:11:28.806104"
+  },
+  {
+    "id": "FB-0006",
+    "session_id": "f348d571",
+    "message_index": 29,
+    "feedback_type": "thumbs_down",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:11:30.555325"
+  },
+  {
+    "id": "FB-0007",
+    "session_id": "f348d571",
+    "message_index": 29,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:11:31.863149"
+  },
+  {
+    "id": "FB-0008",
+    "session_id": "f348d571",
+    "message_index": 29,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:11:32.041406"
+  },
+  {
+    "id": "FB-0009",
+    "session_id": "f348d571",
+    "message_index": 29,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:11:32.223967"
+  },
+  {
+    "id": "FB-0010",
+    "session_id": "f348d571",
+    "message_index": 29,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:11:32.450087"
+  },
+  {
+    "id": "FB-0011",
+    "session_id": "39e3a995",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:18:05.468762"
+  },
+  {
+    "id": "FB-0012",
+    "session_id": "7492913f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T17:23:32.125719"
+  },
+  {
+    "id": "FB-0013",
+    "session_id": "0682606f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T21:51:30.050800"
+  },
+  {
+    "id": "FB-0014",
+    "session_id": "0682606f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T21:51:34.307385"
+  },
+  {
+    "id": "FB-0015",
+    "session_id": "0682606f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T21:51:34.316066"
+  },
+  {
+    "id": "FB-0016",
+    "session_id": "0682606f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T21:51:34.331163"
+  },
+  {
+    "id": "FB-0017",
+    "session_id": "0682606f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T21:51:34.340014"
+  },
+  {
+    "id": "FB-0018",
+    "session_id": "0682606f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T21:51:34.345275"
+  },
+  {
+    "id": "FB-0019",
+    "session_id": "0682606f",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-15T21:51:58.382677"
+  },
+  {
+    "id": "FB-0020",
+    "session_id": "b43550cb",
+    "message_index": 1,
+    "feedback_type": "thumbs_up",
+    "comment": null,
+    "correction": null,
+    "timestamp": "2026-06-16T00:54:48.631311"
+  }
+]
