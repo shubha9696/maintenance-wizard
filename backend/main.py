@@ -14,6 +14,13 @@ from backend.services.anomaly_detector import anomaly_detector
 from backend.routers import chat, equipment, alerts, reports, feedback, knowledge
 
 
+startup_errors = {
+    "vector_store": None,
+    "anomaly_detector": None,
+    "analytics_cache": None
+}
+
+
 async def initialize_services_in_background():
     """Asynchronously initialize heavy services in background after app startup."""
     import asyncio
@@ -25,7 +32,10 @@ async def initialize_services_in_background():
         await asyncio.to_thread(vector_store.initialize)
         print("  [Background] Vector store initialized.")
     except Exception as e:
-        print(f"  [Background] Warning: Vector store initialization failed: {e}")
+        import traceback
+        error_msg = f"{e}\n{traceback.format_exc()}"
+        startup_errors["vector_store"] = error_msg
+        print(f"  [Background] Warning: Vector store initialization failed: {error_msg}")
 
     # 2. Train anomaly detection models
     if anomaly_detector.models:
@@ -43,7 +53,10 @@ async def initialize_services_in_background():
                 await asyncio.to_thread(anomaly_detector.train_models, sensor_data, equipment_list)
                 print(f"  [Background] Trained models for {len(anomaly_detector.models)} equipment items.")
         except Exception as e:
-            print(f"  [Background] Warning: Anomaly model training failed: {e}")
+            import traceback
+            error_msg = f"{e}\n{traceback.format_exc()}"
+            startup_errors["anomaly_detector"] = error_msg
+            print(f"  [Background] Warning: Anomaly model training failed: {error_msg}")
 
     # 3. Warm up analytics cache
     print("  [Background] Warming up analytics cache...")
@@ -51,7 +64,10 @@ async def initialize_services_in_background():
         await equipment.warm_analytics_cache()
         print("  [Background] Analytics cache warmed.")
     except Exception as e:
-        print(f"  [Background] Warning: Analytics cache warming failed: {e}")
+        import traceback
+        error_msg = f"{e}\n{traceback.format_exc()}"
+        startup_errors["analytics_cache"] = error_msg
+        print(f"  [Background] Warning: Analytics cache warming failed: {error_msg}")
 
     print("[Background] Maintenance Wizard is fully ready!")
 
@@ -128,4 +144,8 @@ async def root():
 
 @app.get("/health")
 async def health():
-    return {"status": "healthy", "vector_store": vector_store._initialized}
+    return {
+        "status": "healthy",
+        "vector_store": vector_store._initialized,
+        "startup_errors": startup_errors
+    }
